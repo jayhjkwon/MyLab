@@ -23,7 +23,7 @@
 }
 
 /* for masonry item */
-.item 
+.box 
 {
     width : 220px;
     margin: 10px;
@@ -58,4 +58,8 @@ box-shadow: 10px 10px 5px #888;
 -moz-box-shadow: 6px 6px 8px #888;
 -webkit-box-shadow: 6px 6px 8px #888;
 box-shadow: 6px 6px 8px #888;
+/* For IE 8 */
+-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+/* For IE 5.5 - 7 */
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
