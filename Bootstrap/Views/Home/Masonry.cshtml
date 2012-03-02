@@ -1,6 +1,48 @@
-﻿@{
+﻿<script src="@Url.Content("~/Scripts/jquery.masonry.min.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#container').masonry({
+            itemSelector : '.item',
+            columnWidth: 100,
+            isAnimated: true
+        });
+    });
+</script>
+@{
     ViewBag.Title = "Masonry";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Masonry</h2>
+<h2>
+    Masonry</h2>
+<div id="container">
+    <div class="item col1">
+        <p>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
+            commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+            Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Donec id elit
+            non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+            mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+            malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non mi porta gravida
+            at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
+            nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis
+            euismod. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Fusce
+            dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+            massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec</p>
+    </div>
+    <div class="item col1" >
+        <p>
+            Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus.</p>
+    </div>
+    <div class="item col2">
+        <p>
+            Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue.  Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+    </div>
+    <div class="item col3">
+        <p>
+            ed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
+    </div>
+    <div class="item col4">
+        <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
+    </div>
+</div>
