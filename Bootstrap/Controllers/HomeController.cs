@@ -10,12 +10,22 @@ namespace Bootstrap.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
+            ViewBag.Message = "MVC + Bootstrap = POWER!!";
 
             return View();
         }
 
         public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Masonry()
+        {
+            return View();
+        }
+
+        public ActionResult Carousel()
         {
             return View();
         }

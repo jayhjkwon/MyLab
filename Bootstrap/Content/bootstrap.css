@@ -2146,16 +2146,22 @@ button.btn.small, input[type="submit"].btn.small {
 .alert-success, .alert-success .alert-heading {
   color: #468847;
 }
-.alert-danger, .alert-error {
+
+/* edited by Kwon start */
+.alert-danger, .alert-error, .validation-summary-errors{
   background-color: #f2dede;
   border-color: #eed3d7;
 }
 .alert-danger,
 .alert-error,
 .alert-danger .alert-heading,
-.alert-error .alert-heading {
+.alert-error .alert-heading,
+.validation-summary-errors
+{
   color: #b94a48;
 }
+/* edited by Kwon end*/
+
 .alert-info {
   background-color: #d9edf7;
   border-color: #bce8f1;
