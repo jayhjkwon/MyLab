@@ -29,5 +29,10 @@ namespace Bootstrap.Controllers
         {
             return View();
         }
+
+        public ActionResult Prettify()
+        {
+            return View();
+        }
     }
 }

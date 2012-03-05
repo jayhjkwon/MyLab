@@ -39,3 +39,9 @@ box-shadow: 6px 6px 8px #888;
 /* For IE 5.5 - 7 */
 filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
 }
+
+/* space for line number column width in google-code-prettify */
+ol.linenums
+{
+    padding-left: 12px;
+}
