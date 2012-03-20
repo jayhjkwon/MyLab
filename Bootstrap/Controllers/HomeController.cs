@@ -73,5 +73,10 @@ MarkdownDeep is written by [Topten Software](http://www.toptensoftware.com).  Th
             m_Content = content;
             return RedirectToAction("Markdown");
         }
+
+        public ActionResult Isotope()
+        {
+            return View();
+        }
     }
 }
