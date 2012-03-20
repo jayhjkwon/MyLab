@@ -78,5 +78,15 @@ MarkdownDeep is written by [Topten Software](http://www.toptensoftware.com).  Th
         {
             return View();
         }
+
+        public ActionResult Tagcloud()
+        {
+            return View();
+        }
+
+        public ActionResult Layout()
+        {
+            return View();
+        }
     }
 }
