@@ -88,5 +88,15 @@ MarkdownDeep is written by [Topten Software](http://www.toptensoftware.com).  Th
         {
             return View();
         }
+
+        public ActionResult Gravatar()
+        {
+            return View();
+        }
+
+        public ActionResult Social()
+        {
+            return View();
+        }
     }
 }
