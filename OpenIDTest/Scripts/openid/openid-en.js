@@ -6,15 +6,21 @@
 */
 
 var providers_large = {
-	google : {
-		name : 'Google',
-		url : 'https://www.google.com/accounts/o8/id'
-	},
+	
 	yahoo : {
 		name : 'Yahoo',
 		url : 'http://me.yahoo.com/'
 	},
-	aol : {
+    google : {
+		name : 'Google',
+		url : 'https://www.google.com/accounts/o8/id'
+	},
+	openid : {
+		name : 'OpenID',
+		label : 'Enter your OpenID.',
+		url : null
+	},
+    aol : {
 		name : 'AOL',
 		label : 'Enter your AOL screenname.',
 		url : 'http://openid.aol.com/{username}'
@@ -24,11 +30,7 @@ var providers_large = {
 		label : 'Enter your MyOpenID username.',
 		url : 'http://{username}.myopenid.com/'
 	},
-	openid : {
-		name : 'OpenID',
-		label : 'Enter your OpenID.',
-		url : null
-	}
+	
 };
 
 var providers_small = {

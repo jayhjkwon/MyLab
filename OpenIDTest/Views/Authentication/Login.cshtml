@@ -23,3 +23,22 @@
     <input type="submit" value="Login" />
 </div>
 </form>
+@*<link rel="stylesheet" href="@Url.Content("~/Content/openid-reselector/style.css")" type="text/css" media="screen" charset="utf-8" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/openid-reselector/jquery.openid.js")"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#openid').openid(
+        {
+            img_path: '{{ MEDIA_URL }}img/openid/',
+            txt:
+            {
+                label: 'Enter your {provider} {username}',
+                username: 'username',
+                title: 'Select your openID provider',
+                sign: 'Sign-In'
+            }
+        }
+      );
+    });
+</script>
+<form action="@Url.Action("Authenticate", "Authentication")" method="post"  id="openid"></form>*@
