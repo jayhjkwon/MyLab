@@ -78,7 +78,9 @@ namespace OpenIDTest.Controllers
                         }
 
                         Session["FriendlyIdentifier"] = response.FriendlyIdentifierForDisplay;
-                        FormsAuthentication.SetAuthCookie(response.ClaimedIdentifier.ToString(), false);
+
+                        //FormsAuthentication.SetAuthCookie(response.ClaimedIdentifier.ToString(), false);
+                        Response.Cookies.Add(new HttpCookie("commenter", response.ClaimedIdentifier.ToString()) );
 
                         //TODO: response.ClaimedIdentifier, to login or create new account 
 
