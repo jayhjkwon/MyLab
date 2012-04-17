@@ -1,7 +1,17 @@
+TestResults
+[Dd]ebug/
+[Rr]elease/
+[Tt]est*
 [Oo]bj
 [Bb]in
 *.user
 *.suo
+*.sln.cache
+Output/
+*.user
+/.gitversion.tmp
+/.gitversion.short.tm
+Thumbs.db
 *.[Cc]ache
 *.bak
 *.ncb
@@ -11,3 +21,4 @@
 _ReSharper.*
 *.resharper
 Ankh.NoLoad
+packages
