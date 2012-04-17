@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleActiveRecordTest1", "ConsoleActiveRecordTest1\ConsoleActiveRecordTest1.csproj", "{E6CA5636-8B79-4FB7-90EE-ECD7B68CB3A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCastleWinFormTest", "WindowsFormsApplication1\ActiveCastleWinFormTest.csproj", "{3458A409-7444-4DE6-84AB-119E60D73B4F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveCastleMvcTest", "ActiveCastleMvcTest\ActiveCastleMvcTest.csproj", "{1F8BA466-9964-4BF5-91D7-ECAC8FB42000}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFConsole", "EFConsole\EFConsole.csproj", "{2668B744-A6C6-4E83-A04D-D5FA85353621}"
@@ -41,16 +39,6 @@ Global
 		{E6CA5636-8B79-4FB7-90EE-ECD7B68CB3A8}.Release|Mixed Platforms.Build.0 = Release|x86
 		{E6CA5636-8B79-4FB7-90EE-ECD7B68CB3A8}.Release|x86.ActiveCfg = Release|x86
 		{E6CA5636-8B79-4FB7-90EE-ECD7B68CB3A8}.Release|x86.Build.0 = Release|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Debug|x86.ActiveCfg = Debug|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Debug|x86.Build.0 = Debug|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Release|Any CPU.ActiveCfg = Release|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Release|Mixed Platforms.Build.0 = Release|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Release|x86.ActiveCfg = Release|x86
-		{3458A409-7444-4DE6-84AB-119E60D73B4F}.Release|x86.Build.0 = Release|x86
 		{1F8BA466-9964-4BF5-91D7-ECAC8FB42000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1F8BA466-9964-4BF5-91D7-ECAC8FB42000}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8BA466-9964-4BF5-91D7-ECAC8FB42000}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
