@@ -1,0 +1,25 @@
+﻿<script type="text/javascript">
+function Square(num) {
+    var total = num * num;
+
+    //this.getTotal = total;
+    this.getTotal = function() { return total; };
+
+}
+
+// create object with constructor function
+// this is useful when creating object with parameters
+var a = new Square(10); 
+alert(a.getTotal());
+
+// creating object in typical way
+var myClass = {};
+myClass.sayHello = "Hi";
+myClass.getName = function (name) {
+    return "Hello " + name;
+};
+
+alert(myClass.sayHello);
+alert(myClass.getName("효중"));
+
+</script>
