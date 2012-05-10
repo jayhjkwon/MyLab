@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Third";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    ul {
+        list-style: none;
+    }    
+</style>
+
+<ul data-bind="foreach: people">
+    <li>
+        <span data-bind="text:Name"></span>
+        <span data-bind="text:Address"></span>
+        이름<input type="text" data-bind="value:Name"></input>
+        주소<input type="text" data-bind="value:Address"></input>
+    </li>
+</ul>
+
+<button data-bind="click:addPerson">Add</button>
+<button data-bind="click:save">Save</button>
+
+<script>
+
+    function Person(name, address) {
+        var self = this;
+
+        self.Name = ko.observable(name);
+        self.Address = ko.observable(address);
+    }
+
+    function ViewModel() {
+        var self = this;
+        self.people = ko.observableArray([]);
+
+        // add one row
+        self.addPerson = function () {
+            self.people.push(new Person());
+        };
+
+        // send data to the server via ajax
+        self.save = function () {
+            $.ajax("Create",
+                {
+                    data: ko.toJSON({ people: self.people }),
+                    type: "post",
+                    contentType: "application/json",
+                    success: function (result) { alert(result); }
+                });
+        };
+
+        // get data from the server via ajax
+        $.getJSON("GetPeopleViaAjax",
+                  function (result) {
+                      var mappedResult = $.map(result, function (item) { return new Person(item.Name, item.Address); });
+                      self.people(mappedResult);
+                  }
+        );
+
+    }
+
+    ko.applyBindings(new ViewModel());
+</script>

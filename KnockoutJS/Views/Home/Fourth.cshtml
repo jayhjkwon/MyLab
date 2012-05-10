@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Fourth";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<ul data-bind="foreach: people">
+    <li>
+        <span data-bind="text:Name"></span>
+        <span data-bind="text:Address"></span>
+        <input type="text" data-bind="value:Name"></input>
+    </li>
+</ul>
+
+<script>
+
+    $(function () {
+        ko.applyBindings(people);
+    });
+    
+    function Person (name, address) {
+        var self = this;
+        self.Name = ko.observable(name);
+        self.Address = ko.observable(address);
+    };
+
+    var people = ko.observableArray([]);
+
+    $.getJSON("GetPeopleViaAjax",
+                  function (result) {
+                      var mappedResult = $.map(result, function (item) { return new Person(item.Name, item.Address); });
+                      people = mappedResult;
+                  }
+        );
+              
+    
+    
+    
+</script>
+
