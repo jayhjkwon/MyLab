@@ -32,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutJS", "KnockoutJS\Kn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptTest", "JavaScriptTest\JavaScriptTest.csproj", "{1A1146D9-4A96-453B-B216-A4753BA46578}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JQueryTest", "JQueryTest\JQueryTest.csproj", "{AD6D82A6-5399-4574-BA4A-E06259379ED2}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = MyLab.vsmdi
@@ -135,6 +137,16 @@ Global
 		{1A1146D9-4A96-453B-B216-A4753BA46578}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{1A1146D9-4A96-453B-B216-A4753BA46578}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{1A1146D9-4A96-453B-B216-A4753BA46578}.Release|x86.ActiveCfg = Release|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AD6D82A6-5399-4574-BA4A-E06259379ED2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<table>
+    <tr>
+        <td>00000000</td>
+        <td>00000000</td>
+        <td>00000000</td>
+        <td>00000000</td>
+    </tr>
+    <tr>
+        <td>11111111</td>
+        <td>11111111</td>
+        <td>11111111</td>
+        <td>11111111</td>
+    </tr>
+    <tr>
+        <td>22222222</td>
+        <td>22222222</td>
+        <td>22222222</td>
+        <td>22222222</td>
+    </tr>
+    <tr>
+        <td>33333333</td>
+        <td>33333333</td>
+        <td>33333333</td>
+        <td>33333333</td>
+    </tr>
+    <tr>
+        <td>444444444</td>
+        <td>444444444</td>
+        <td>444444444</td>
+        <td>444444444</td>
+    </tr>
+</table>
+
+<p></p>
+
+<div class="mydiv">
+    <button id="source">Table HTML</button>
+    <button id="div">Div HTML</button>
+    <button id="check">Button</button>
+    <button id="fade">Fade</button>
+    <button id="slide">Slide</button>
+</div>
+
+<script>
+    $(function () {
+        $("#div").click(function () {
+            var html = $(".mydiv").html();
+            alert(html);
+        });
+
+        $("#source").click(function () {
+            var html = $("table").html();
+            alert(html);
+        });
+        
+
+        $("#check").click(function() {
+            alert("button clicked");
+        });
+
+        $("#fade").click(function() {
+            $("table").fadeToggle("slow");
+        });
+
+        $("#slide").click(function () {
+            $("table").slideToggle("slow");
+        });
+    });
+</script>
