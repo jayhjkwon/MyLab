@@ -43,6 +43,7 @@
     <button id="check">Button</button>
     <button id="fade">Fade</button>
     <button id="slide">Slide</button>
+    <button id="append">Append HTML</button>
 </div>
 
 <script>
@@ -56,18 +57,22 @@
             var html = $("table").html();
             alert(html);
         });
-        
 
-        $("#check").click(function() {
+        $("#check").click(function () {
             alert("button clicked");
         });
 
-        $("#fade").click(function() {
+        $("#fade").click(function () {
             $("table").fadeToggle("slow");
         });
 
         $("#slide").click(function () {
             $("table").slideToggle("slow");
+        });
+
+        $("#append").click(function () {
+            $("table").append("<span>Hello</span>");
+            alert($("table").html());
         });
     });
 </script>
