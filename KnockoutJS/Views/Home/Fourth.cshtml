@@ -2,38 +2,94 @@
     ViewBag.Title = "Fourth";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+     #left {
+        width: 200px;
+        float: left;
+        background-color: bisque;
+        margin: 5px;
+    }
+    
+    #content {
+        width: 700px;
+        float: left;
+        background-color:cornflowerblue;
+        margin: 5px;
+    }
+    
+    #top {
+        background-color:aquamarine;
+        margin: 5px;
+    }
+    
+    #bottom {
+        background-color:brown;
+        margin: 5px;
+    }
+    
+    li {
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+    
+    .selected {
+        background-color: darkseagreen;
+        font-size: 19px;
+        font-weight: bold;
+    }
+</style>
 
-<ul data-bind="foreach: people">
-    <li>
-        <span data-bind="text:Name"></span>
-        <span data-bind="text:Address"></span>
-        <input type="text" data-bind="value:Name"></input>
-    </li>
-</ul>
+<div id="left">
+    <ul data-bind="foreach: patients">
+        <li data-bind="text: $data, 
+                       css: { selected: $data == $root.selectedPatientId() },
+                       click: $root.goToPatient">
+        </li>
+    </ul>    
+</div>
+
+<div id="content">
+    <div id="top" >
+        <ul data-bind="with: selectedPatient">
+            <li>이름:<span data-bind="text: Name"></span></li>
+            <li>주소:<span data-bind="text: Address"></span></li>
+            <li>나이:<span data-bind="text: Age"></span></li>
+        </ul>
+    </div>
+
+    <div id="bottom" data-bind="with: selectedDocument">
+    </div>
+</div>
 
 <script>
-
-    $(function () {
-        ko.applyBindings(people);
-    });
-    
-    function Person (name, address) {
+    function ViewModel() {
         var self = this;
-        self.Name = ko.observable(name);
-        self.Address = ko.observable(address);
-    };
 
-    var people = ko.observableArray([]);
+        // data
+        self.patients = ['권효중', '한원', '서영태', '마이클'];
+        self.selectedPatient = ko.observable();
+        self.selectedPatientId = ko.observable();
+        self.selectedDocument = ko.observable();
 
-    $.getJSON("GetPeopleViaAjax",
-                  function (result) {
-                      var mappedResult = $.map(result, function (item) { return new Person(item.Name, item.Address); });
-                      people = mappedResult;
-                  }
-        );
-              
-    
-    
-    
+        // behaviours
+        self.goToPatient = function (patient) {
+            location.hash = patient; 
+        };
+
+        // routes
+        Sammy(function () {
+            this.get('#:patient', function () {
+                self.selectedPatientId(this.params.patient);
+                $.ajax({
+                    url: "GetPatientInfo",
+                    cache: false,
+                    type: "GET",
+                    data: {patientId: this.params.patient},
+                    success: self.selectedPatient
+                });
+            });
+        }).run();
+    }
+
+    ko.applyBindings(new ViewModel());
 </script>
-
