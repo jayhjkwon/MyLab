@@ -20,11 +20,13 @@
     #top {
         background-color:aquamarine;
         margin: 5px;
+        padding:5px;
     }
     
     #bottom {
-        background-color:brown;
+        background-color:Aqua;
         margin: 5px;
+        padding:5px;
     }
     
     li {
@@ -57,7 +59,13 @@
         </ul>
     </div>
 
-    <div id="bottom" data-bind="with: selectedDocument">
+    <div id="bottom" >
+        <ol data-bind="foreach: selectedDocuments">
+            <li>
+                <p>제목:<span data-bind="text: Name"></span></p>
+                <p>내용:<span data-bind="text: Memo"></span></p>
+            </li>
+        </ol>
     </div>
 </div>
 
@@ -69,7 +77,7 @@
         self.patients = ['권효중', '한원', '서영태', '마이클'];
         self.selectedPatient = ko.observable();
         self.selectedPatientId = ko.observable();
-        self.selectedDocument = ko.observable();
+        self.selectedDocuments = ko.observable();
 
         // behaviours
         self.goToPatient = function (patient) {
@@ -87,6 +95,14 @@
                     data: {patientId: this.params.patient},
                     success: self.selectedPatient
                 });
+                $.ajax({
+                    url: "GetDocumentsByPatientId",
+                    cache: false,
+                    type: "GET",
+                    data: { patientId: this.params.patient },
+                    success: self.selectedDocuments
+                });
+
             });
         }).run();
     }

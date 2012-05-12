@@ -9,7 +9,8 @@ namespace KnockoutJS.Controllers
     public class HomeController : Controller
     {
         private static List<Person> _people;
-        private List<Patient> _patients; 
+        private List<Patient> _patients;
+        private List<Document> _documents;
  
         public HomeController()
         {
@@ -28,6 +29,16 @@ namespace KnockoutJS.Controllers
                                              new Patient {Name = "서영태", Address = "서울", Age = "40"},
                                              new Patient {Name = "마이클", Address = "인천", Age = "50"}
                                          };
+
+            _documents = _documents ?? new List<Document>
+            {
+                new Document{ Name="진단서", Memo="진단서진단서진단서진단서진단서진단서진단서진단서진단서진단서진단서진단서"},
+                new Document{Name="의뢰서", Memo="의뢰서의뢰서의뢰서의뢰서의뢰서의뢰서의뢰서의뢰서의뢰서의뢰서"},
+                new Document{Name="처방전", Memo="처방전처방전처방전처방전처방전처방전처방전처방전처방전처방전처방전처방전처방전"},
+                new Document{Name="수술기록지",Memo="수술기록지수술기록지수술기록지수술기록지수술기록지"},
+                new Document{Name="영수증",Memo="영수증영수증영수증영수증영수증영수증영수증영수증영수증영수증영수증영수증"}
+            };
+           
         }
         public ActionResult Index()
         {
@@ -80,8 +91,16 @@ namespace KnockoutJS.Controllers
 
         public JsonResult GetPatientInfo(string patientId)
         {
-
             return Json(_patients.FirstOrDefault(p=>p.Name == patientId), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetDocumentsByPatientId(string patiendId)
+        {
+            Random r = new Random();
+            var totalRows = r.Next(1, 5);
+
+            var documents = _documents.Take(totalRows).ToList();
+            return Json(documents, JsonRequestBehavior.AllowGet);
         }
 
     }
@@ -97,5 +116,11 @@ namespace KnockoutJS.Controllers
         public string Name { get; set; }
         public string Address { get; set; }
         public string Age { get; set; }
+    }
+
+    public class Document
+    {
+        public string Name { get; set; }
+        public string Memo { get; set; }
     }
 }
