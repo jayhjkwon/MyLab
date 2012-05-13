@@ -96,7 +96,7 @@ namespace KnockoutJS.Controllers
 
         public JsonResult GetDocumentsByPatientId(string patiendId)
         {
-            Random r = new Random();
+            var r = new Random();
             var totalRows = r.Next(1, 5);
 
             var documents = _documents.Take(totalRows).ToList();

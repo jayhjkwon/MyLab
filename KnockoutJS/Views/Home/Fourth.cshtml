@@ -81,8 +81,11 @@
 
         // behaviours 
         self.goToPatient = function (patient) {
-            location.hash = patient; 
+            location.hash = patient;
         };
+
+        // default route
+        self.goToPatient('권효중');
 
         // routes
         Sammy(function () {
