@@ -98,5 +98,10 @@ MarkdownDeep is written by [Topten Software](http://www.toptensoftware.com).  Th
         {
             return View();
         }
+
+        public ActionResult DynamicLayout()
+        {
+            return View();
+        }
     }
 }

@@ -8,10 +8,10 @@
     <meta name="author" content="">
     <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
     <style>
-        body
-        {
-            padding-top: 60px;
-        }
+        body {
+            padding-top: 100px;
+            padding-bottom: 40px;
+          }
     </style>
     <link href="@Url.Content("~/Content/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/common.css")" rel="stylesheet" type="text/css" />
@@ -39,6 +39,7 @@
                         <li>@Html.ActionLink("Markdown", "Markdown", "Home")</li>
                         <li>@Html.ActionLink("TagCanvas", "Tagcloud", "Home")</li>
                         <li>@Html.ActionLink("Layout", "Layout", "Home")</li>
+                        <li>@Html.ActionLink("DynamicLayout", "DynamicLayout", "Home")</li>
                         <li>@Html.ActionLink("Social", "Social", "Home")</li>
                         <li class="divider-vertical"></li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">File<b
@@ -80,14 +81,11 @@
         </div>
       </header>*@
         <div class="row-fluid">
-            <div class="span10">
-                <div class="well">
-                    @RenderBody()</div>
-            </div>
-            <div class="span2">
+                    @RenderBody()
+            @*<div class="span2">
                 <div class="well">
                     side</div>
-            </div>
+            </div>*@
         </div>
     </div>
     <!-- /container -->

@@ -69,46 +69,49 @@
     </div>
 </div>
 
-<script>
-    function ViewModel() {
-        var self = this;
+@section Script{
+    <script>
+        function ViewModel() {
+            var self = this;
 
-        // data
-        self.patients = ['권효중', '한원', '서영태', '마이클'];
-        self.selectedPatient = ko.observable();
-        self.selectedPatientId = ko.observable();
-        self.selectedDocuments = ko.observable();
+            // data
+            self.patients = ['권효중', '한원', '서영태', '마이클'];
+            self.selectedPatient = ko.observable();
+            self.selectedPatientId = ko.observable();
+            self.selectedDocuments = ko.observable();
 
-        // behaviours 
-        self.goToPatient = function (patient) {
-            location.hash = patient;
-        };
+            // behaviours 
+            self.goToPatient = function(patient) {
+                location.hash = patient;
+            };
 
-        // default route
-        self.goToPatient('권효중');
+            // default route
+            self.goToPatient('권효중');
 
-        // routes
-        Sammy(function () {
-            this.get('#:patient', function () {
-                self.selectedPatientId(this.params.patient);
-                $.ajax({
-                    url: "GetPatientInfo",
-                    cache: false,
-                    type: "GET",
-                    data: {patientId: this.params.patient},
-                    success: self.selectedPatient
+            // routes
+            Sammy(function() {
+                this.get('#:patient', function() {
+                    alert(this.params.patient);
+                    self.selectedPatientId(this.params.patient);
+                    $.ajax({
+                        url: "GetPatientInfo",
+                        cache: false,
+                        type: "GET",
+                        data: { patientId: this.params.patient },
+                        success: self.selectedPatient
+                    });
+                    $.ajax({
+                        url: "GetDocumentsByPatientId",
+                        cache: false,
+                        type: "GET",
+                        data: { patientId: this.params.patient },
+                        success: self.selectedDocuments
+                    });
+
                 });
-                $.ajax({
-                    url: "GetDocumentsByPatientId",
-                    cache: false,
-                    type: "GET",
-                    data: { patientId: this.params.patient },
-                    success: self.selectedDocuments
-                });
+            }).run();
+        }
 
-            });
-        }).run();
-    }
-
-    ko.applyBindings(new ViewModel());
-</script>
+        ko.applyBindings(new ViewModel());
+    </script>
+}

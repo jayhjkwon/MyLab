@@ -9,34 +9,35 @@
 </ul>
 <button data-bind="click:save">Save</button>
 
+@section Script{
+    <script>
 
-<script>
+        function Person(name, address) {
+            var self = this;
 
-    function Person(name, address) {
-        var self = this;
+            self.name = ko.observable(name);
+            self.address = ko.observable(address);
+        }
 
-        self.name = ko.observable(name);
-        self.address = ko.observable(address);
-    }
-
-    function ViewModel() {
-        var self = this;
-        self.people = [
+        function ViewModel() {
+            var self = this;
+            self.people = [
                 new Person("Kwon HJ", "Incheon"),
                 new Person("Lee SJ", "Seoul"),
                 new Person("Park JS", "London")
             ];
-        
-        self.save = function () {
-            var vm = "";
-            for (var i in self.people) {
-                vm += self.people[i].name() + " " + self.people[i].address() + '\r\n';
-            }
-            alert(vm);
-        };
 
-        ko.observableArray(self.people);
-    }
+            self.save = function() {
+                var vm = "";
+                for (var i in self.people) {
+                    vm += self.people[i].name() + " " + self.people[i].address() + '\r\n';
+                }
+                alert(vm);
+            };
 
-    ko.applyBindings(new ViewModel());
-</script>
+            ko.observableArray(self.people);
+        }
+
+        ko.applyBindings(new ViewModel());
+    </script>
+}

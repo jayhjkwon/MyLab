@@ -22,48 +22,49 @@
 <button data-bind="click:addPerson">Add</button>
 <button data-bind="click:save">Save</button>
 
-<script>
+@section Script{
+    <script>
 
-    function Person(name, address) {
-        var self = this;
+        function Person(name, address) {
+            var self = this;
 
-        self.Name = ko.observable(name);
-        self.Address = ko.observable(address);
-    }
+            self.Name = ko.observable(name);
+            self.Address = ko.observable(address);
+        }
 
-    function ViewModel() {
-        var self = this;
-        self.people = ko.observableArray();
+        function ViewModel() {
+            var self = this;
+            self.people = ko.observableArray();
 
-        // add one row
-        self.addPerson = function () {
-            self.people.push(new Person());
-        };
+            // add one row
+            self.addPerson = function() {
+                self.people.push(new Person());
+            };
 
-        // send data to the server via ajax
-        self.save = function () {
-            $.ajax("Create",
+            // send data to the server via ajax
+            self.save = function() {
+                $.ajax("Create",
+                    {
+                        cache: false,
+                        data: ko.toJSON({ people: self.people }),
+                        type: "post",
+                        contentType: "application/json",
+                        success: function(result) { alert(result); }                    
+                    });
+            };
+
+            // get data from the server via ajax
+            $.ajax("GetPeopleViaAjax",
                 {
-                    cache: false,
-                    data: ko.toJSON({ people: self.people }),
-                    type: "post",
-                    contentType: "application/json",
-                    success: function (result) { alert(result); }
-                    
+                    cache: false,   // for IE, sucks
+                    type: "get",
+                    success: function(result) {
+                        var mappedResult = $.map(result, function(item) { return new Person(item.Name, item.Address); });
+                        self.people(mappedResult);
+                    }
                 });
-        };
+        }
 
-        // get data from the server via ajax
-        $.ajax("GetPeopleViaAjax",
-            {
-                cache: false,   // for IE, sucks
-                type: "get",
-                success: function (result) {
-                    var mappedResult = $.map(result, function (item) { return new Person(item.Name, item.Address); });
-                    self.people(mappedResult);
-                }
-            });
-    }
-
-    ko.applyBindings(new ViewModel());
-</script>
+        ko.applyBindings(new ViewModel());
+    </script>
+}
