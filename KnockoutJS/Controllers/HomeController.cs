@@ -72,6 +72,11 @@ namespace KnockoutJS.Controllers
             return View();
         }
 
+        public ActionResult Fifth()
+        {
+            return View();
+        }
+
         
         public JsonResult GetPeopleViaAjax()
         {
@@ -101,6 +106,21 @@ namespace KnockoutJS.Controllers
 
             var documents = _documents.Take(totalRows).ToList();
             return Json(documents, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetPeople()
+        {
+            //return Json(new string[] {"권효중", "한원", "서영태", "마이클"}, JsonRequestBehavior.AllowGet);
+            //return Json(new string[] { "aaa", "bbb", "ccc", "ddd" }, JsonRequestBehavior.AllowGet);
+            //return Json(_people, JsonRequestBehavior.AllowGet);
+
+            var people = new List<Person>
+                             {
+                                 new Person {Name = "aaaa", Address = "aaaaaaaaa"},
+                                 new Person {Name = "bbbb", Address = "bbbbbbbbb"},
+                                 new Person {Name = "cccc", Address = "ccccccccc"}
+                             };
+            return Json(people, JsonRequestBehavior.AllowGet);
         }
 
     }

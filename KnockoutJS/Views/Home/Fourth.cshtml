@@ -43,9 +43,11 @@
 
 <div id="left">
     <ul data-bind="foreach: patients">
-        <li data-bind="text: $data, 
+        @*<li data-bind="text: $data, 
                        css: { selected: $data == $root.selectedPatientId() },
                        click: $root.goToPatient">
+        </li>*@
+        <li data-bind="text: Name">
         </li>
     </ul>    
 </div>
@@ -71,14 +73,40 @@
 
 @section Script{
     <script>
+        function getPeopleFromServer() {
+            var people= [];
+            $.ajax({
+                async: false,
+                url: "GetPeople",
+                cache: false,
+                type: "GET",
+                success: function (result) {
+                    console.log("result= " + result);
+
+                    //this.people = $.parseJSON(result);
+                    //this.people = ko.utils.parseJson(result);
+                    //this.people = JSON.parse(result);
+                    //this.people = result;
+                    //console.log("people= " + this.people);
+                    //console.log("test= " + ko.utils.parseJson(result));
+
+                    people = $.parseJSON(result);
+                    console.log("people= " + people);
+                    return people;
+                }
+            });
+
+            //return people;
+        }
+
         function ViewModel() {
             var self = this;
 
             // data
-            self.patients = ['권효중', '한원', '서영태', '마이클'];
+            self.patients = ko.observableArray(getPeopleFromServer());// ['권효중', '한원', '서영태', '마이클'];
             self.selectedPatient = ko.observable();
             self.selectedPatientId = ko.observable();
-            self.selectedDocuments = ko.observable();
+            self.selectedDocuments = ko.observableArray();
 
             // behaviours 
             self.goToPatient = function(patient) {
@@ -89,9 +117,9 @@
             self.goToPatient('권효중');
 
             // routes
-            Sammy(function() {
-                this.get('#:patient', function() {
-                    alert(this.params.patient);
+            Sammy(function () {
+                this.get('#:patient', function () {
+                    //alert(this.params.patient);
                     self.selectedPatientId(this.params.patient);
                     $.ajax({
                         url: "GetPatientInfo",
