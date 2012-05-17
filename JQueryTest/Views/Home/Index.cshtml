@@ -44,6 +44,7 @@
     <button id="fade">Fade</button>
     <button id="slide">Slide</button>
     <button id="append">Append HTML</button>
+    <button id="hideAndFade">Hide and FadeIn</button>
 </div>
 
 <script>
@@ -73,6 +74,10 @@
         $("#append").click(function () {
             $("table").append("<span>Hello</span>");
             alert($("table").html());
+        });
+
+        $("#hideAndFade").click(function () {
+            $("table").hide().fadeIn(2000);
         });
     });
 </script>
