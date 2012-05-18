@@ -77,6 +77,10 @@ namespace KnockoutJS.Controllers
             return View();
         }
 
+        public ActionResult Sixth()
+        {
+            return View();
+        }
         
         public JsonResult GetPeopleViaAjax()
         {
