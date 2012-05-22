@@ -47,6 +47,16 @@ namespace KnockoutJS.Controllers
             return View();
         }
 
+        public ActionResult person()
+        {
+            return View();
+        }
+
+        public ActionResult TemplateTest()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             return View();

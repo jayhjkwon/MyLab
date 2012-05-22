@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Zoom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="../../Scripts/ddpowerzoomer.js" type="text/javascript"></script>
+<script type="text/javascript">
+//    jQuery(document).ready(function ($) { //fire on DOM ready
+//        $('#myimage').addpowerzoom({ magnifiersize: [200, 200] })
+//        
+//    });
+
+    $(function () {
+        $('#myimage').addpowerzoom({ magnifiersize: [200, 200] })
+
+        $("body").click(function () {
+            alert('aaa');
+        });
+    });
+</script>
+
+
+<h2>Zoom</h2>
+<img id="myimage" src="../../Content/1.PNG" />
