@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../Scripts/lib/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="../Scripts/lib/underscore.js" type="text/javascript"></script>
+    <script src="../Scripts/lib/backbone.js" type="text/javascript"></script>
+</head>
+<body>
+
+
+<script>
+    Person = Backbone.Model.extend({
+        defaults: {
+            name: 'fetus',
+            age: 0,
+            children: [{ nickname: ''}]
+        },
+
+        initialize: function () {
+            console.log('Person is initialized');
+            this.on('change:name', function () {
+                console.log('name changed to ' + this.get('name'));
+            });
+            this.on('error', function (model, error) {
+                console.log(error);
+            });
+        },
+
+        validate: function (attributes) {
+            if (attributes.age < 0) {
+                return 'your age is ' + attributes.age + ', age must over 0';
+            }
+        },
+
+        addChild: function (child) {
+            var child_array = this.get('children');
+            child_array.push(child);
+            this.set({ children: child_array });
+        }
+    });
+
+    var person = new Person({ name: 'thomas', age: 80, children: [{ nickname: 'khj' }, { nickname: 'lsh'}] });
+    person.set({ name: 'james' });
+    person.set({ name: 'Steve' });
+    person.name = 'Scott';
+    person.set({age:-1});
+
+</script>
+
+</body>
+</html>

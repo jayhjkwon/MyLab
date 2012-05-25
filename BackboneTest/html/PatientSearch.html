@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .patientlist
+        {
+            float: left;
+            height: 500px;
+            background-color: bisque;
+            padding: 5px;            
+        }
+        
+        .title
+        {
+            font-weight: bold;
+            text-align:center;
+        }
+        
+        .patientbox
+        {
+            margin: 10px;
+            background-color: darkseagreen;
+        }
+        
+        .patientdetail
+        {
+            float: left;
+            margin-left: 50px;
+            width: 500px;
+            height: 500px;
+            background-color: cornflowerblue;
+            padding: 10px;
+        }
+    </style>
+    <script src="../Scripts/lib/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="../Scripts/lib/underscore.js" type="text/javascript"></script>
+    <script src="../Scripts/lib/backbone.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="patientListContainer">
+    <div class="patientlist">
+        <p class="title">Patient List</p>
+        <ul id="patientBoxList">       
+            <script type="text/template" id="patientBoxTemplate" >
+                <li class="patientbox"><p><%= patientName %></p></li>
+            </script>
+        </ul>
+    </div>
+    <div class="patientdetail">
+        <p class="title">Patient Detail</p>
+        <ul>
+            <li><p>NAME: <span id="patientName"></span></p></li>
+            <li><p>AGE: <span id="patientAge"></span></p></li>
+            <li><p>ADDRESS: <span id="patientAddress"></span></p></li>
+            <li><p>MEMO: <span id="patientMemo"></span></p></li>
+        </ul>
+    </div>
+</div>
+<script>
+    var Patient = Backbone.Model.extend({
+        defaults: {
+            name: '',
+            age: '',
+            address: '',
+            memo: ''
+        }
+    });
+
+    var Patients = Backbone.Collection.extend({
+        model: Patient
+    });
+
+    var AppRouter = Backbone.Router.extend({
+        routes: {
+            "patient/:id": "showPatient"
+        },
+
+        showPatient: function (id) {
+            console.log(id);
+        }
+    });
+
+    var appRouter = new AppRouter;
+    Backbone.history.start();
+
+    var appView = Backbone.View.extend({
+        el: $('patientListContainer')
+    });
+
+    var patientBox = Backbone.View.extend({
+        template: _.template($('#patientBoxTemplate').html())
+    });
+</script>
+
+</body>
+</html>
