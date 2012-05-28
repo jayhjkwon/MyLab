@@ -3,34 +3,40 @@
 <head>
     <title></title>
     <style>
+        .topMenu
+        {
+            background-color: #BAE568;
+            padding: 5px; 
+            margin:5px;           
+        }
         .patientlist
         {
             float: left;
-            height: 500px;
-            background-color: bisque;
+            width: 215px;
+			background-color: #BAE568;
             padding: 5px;            
+            margin:5px;
         }
-        
-        .title
-        {
-            font-weight: bold;
-            text-align:center;
-        }
-        
         .patientbox
         {
-            margin: 10px;
+            margin: 5px;
             background-color: darkseagreen;
+            cursor:pointer;
         }
         
         .patientdetail
         {
             float: left;
-            margin-left: 50px;
-            width: 500px;
-            height: 500px;
-            background-color: cornflowerblue;
+			width: 70%;
+			background-color: #BAE568;
             padding: 10px;
+            margin:5px;
+        }
+        .title
+        {
+            font-weight: bold;
+            text-align:center;
+            cursor:pointer;
         }
     </style>
     <script src="../Scripts/lib/jquery-1.7.2.js" type="text/javascript"></script>
@@ -39,25 +45,31 @@
 </head>
 <body>
 <div id="patientListContainer">
+    <div class="topMenu">
+        <p class="title">Home</p>
+    </div>
     <div class="patientlist">
         <p class="title">Patient List</p>
-        <ul id="patientBoxList">       
-            <script type="text/template" id="patientBoxTemplate" >
-                <li class="patientbox"><p><%= patientName %></p></li>
-            </script>
-        </ul>
+        <ul id="patientBoxList"></ul>
     </div>
     <div class="patientdetail">
         <p class="title">Patient Detail</p>
-        <ul>
-            <li><p>NAME: <span id="patientName"></span></p></li>
-            <li><p>AGE: <span id="patientAge"></span></p></li>
-            <li><p>ADDRESS: <span id="patientAddress"></span></p></li>
-            <li><p>MEMO: <span id="patientMemo"></span></p></li>
+        <ul id="patientDetailInfo">
+            <li><p>NAME: <b><span id="patientName"></span></b></p></li>
+            <li><p>AGE: <b><span id="patientAge"></span></b></p></li>
+            <li><p>ADDRESS: <b><span id="patientAddress"></span></b></p></li>
+            <li><p>MEMO: <b><span id="patientMemo"></span></b></p></li>
         </ul>
     </div>
 </div>
+
+
+<script type="text/template" id="patientBoxTemplate" >
+    <p><%= name %></p>
+</script>
+
 <script>
+    /**** Models and Collections ****/
     var Patient = Backbone.Model.extend({
         defaults: {
             name: '',
@@ -68,29 +80,115 @@
     });
 
     var Patients = Backbone.Collection.extend({
-        model: Patient
+        model: Patient,
+        initialize: function () {
+            _.bindAll(this, 'getPatientByName');
+            this.add([{ name: 'aa', age: 10, address: 'seoul', memo: 'aaaa' },
+                    { name: 'bb', age: 20, address: 'Incheon', memo: 'bbbbb'}]);
+        },
+        getPatientByName: function (name) {
+            var ms = this.models;
+            _.find(ms, function (patient) {
+                return patient.get('name') == name;
+            });
+
+        }
     });
 
-    var AppRouter = Backbone.Router.extend({
-        routes: {
-            "patient/:id": "showPatient"
-        },
 
-        showPatient: function (id) {
-            console.log(id);
+    /**** Views ****/
+    var PatientBox = Backbone.View.extend({
+        tagName: 'li',
+        className: 'patientbox',
+        template: _.template($('#patientBoxTemplate').html()),
+        appView: undefined,
+        model: undefined,
+        initialize: function(options){
+            _.bindAll(this, 'render', 'onPatientBoxClick');
+            this.model = options.model;
+            this.appView = options.appView;            
+        },
+        render: function () {
+            var h = $(this.el).html(this.template(this.model.toJSON()));
+            return this;
+        },
+        events: {
+            'click p' : 'onPatientBoxClick'            
+        },
+        onPatientBoxClick:function(){
+            //this.appView.onPatientBoxClick(this.model);
+            //location.hash = this.model.get('name');
+            location.href = "#patient/" + this.model.get('name');
+        }
+    });
+
+    var AppView = Backbone.View.extend({
+        el: $('#patientListContainer'),
+        initialize: function () {
+            console.log('AppView.initialize collection length : ' + this.collection.length);
+            _.bindAll(this, 'render', 'onHomeButtonClick', 'showPatientDetail');
+            this.render();
+        },
+        render: function () {
+            for (var i = 0; i < this.collection.length; i++) {
+                (function (patient, appView) {
+                    var patientBox = new PatientBox({ model: patient, appView: appView });
+                    var pb = patientBox.render().el;
+                    $('ul#patientBoxList').append(pb);
+                })(this.collection.models[i], this)
+            };
+
+            return this;
+        },
+        events: {
+            'click p.title': 'onHomeButtonClick'
+        },
+        onHomeButtonClick: function () {
+            location.href = '#';
+        },
+        goToHome: function () {
+            $('#patientName').text('');
+            $('#patientAge').text('');
+            $('#patientAddress').text('');
+            $('#patientMemo').text('');
+        },
+        showPatientDetail: function (patientName) {
+            var patient = _.find(this.collection.models, function(patient){ return patient.get('name') == patientName; });
+            //var patient = this.collection.getPatientByName(patientName);
+
+            $('#patientName').text(patient.get('name'));
+            $('#patientAge').text(patient.get('age'));
+            $('#patientAddress').text(patient.get('address'));
+            $('#patientMemo').text(patient.get('memo'));
+        }
+    });    
+
+    
+    /**** Router ****/
+    var AppRouter = Backbone.Router.extend({
+        initialized: function () {
+            _.bindAll(this, 'home', 'showPatient');
+        },
+        routes: {
+            "patient/:name": "showPatientDetail",
+            "": "home"
+        },
+        appView: undefined || new AppView({ collection: new Patients() }),
+        home: function () {
+            console.log('AppRouter.default');
+            this.appView.goToHome();
+        },
+        showPatientDetail: function (name) {
+            console.log('AppRouter.showPatient name=' + name);
+            this.appView.showPatientDetail(name);
         }
     });
 
     var appRouter = new AppRouter;
     Backbone.history.start();
 
-    var appView = Backbone.View.extend({
-        el: $('patientListContainer')
-    });
 
-    var patientBox = Backbone.View.extend({
-        template: _.template($('#patientBoxTemplate').html())
-    });
+    
 </script>
 
 </body>
