@@ -100,8 +100,7 @@
     </script>
     <script>
 
-        var Patient = Backbone.Model.extend({
-        });
+        var Patient = Backbone.Model.extend({});
 
         var Patients = Backbone.Collection.extend({
             model: Patient,
@@ -124,8 +123,8 @@
                 var self = this;
                 $('#LeftView').html('');
                 this.collection.fetch({ data: { name: $('#patientSearchName').val()} });
-                this.collection.each(function(patient){
-                    $('#LeftView').append(new PatientItemView({model:patient}).render().el);
+                this.collection.each(function (patient) {
+                    $('#LeftView').append(new PatientItemView({ model: patient }).render().el);
                 });
             }
         });
@@ -177,7 +176,7 @@
 
         var AppRouter = Backbone.Router.extend({
             initialize : function(){
-                _.bindAll(this, "goToHome", "goToPatientListByName");
+                _.bindAll(this,"goToPatientListByName");
             },
             routes: {
                 "patients:/name" : "goToPatientListByName"

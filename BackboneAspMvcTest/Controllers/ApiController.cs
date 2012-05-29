@@ -15,7 +15,7 @@ namespace BackboneAspMvcTest.Controllers
         public JsonResult GetAllPatients(string name)
         {
             if (string.IsNullOrEmpty(name))
-                return Json(patients, JsonRequestBehavior.AllowGet);
+                return Json(null, JsonRequestBehavior.AllowGet);
             else
                 return Json(patients.FindAll(p => p.FirstName.ToUpper().Contains(name.ToUpper()) || p.LastName.ToUpper().Contains(name.ToUpper())), JsonRequestBehavior.AllowGet);
         }
