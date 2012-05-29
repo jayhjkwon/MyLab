@@ -86,12 +86,10 @@
             this.add([{ name: 'aa', age: 10, address: 'seoul', memo: 'aaaa' },
                     { name: 'bb', age: 20, address: 'Incheon', memo: 'bbbbb'}]);
         },
-        getPatientByName: function (name) {
-            var ms = this.models;
-            _.find(ms, function (patient) {
+        getPatientByName: function (patients, name) {
+            this.find(function (patient) {
                 return patient.get('name') == name;
             });
-
         }
     });
 
@@ -117,7 +115,6 @@
         },
         onPatientBoxClick:function(){
             //this.appView.onPatientBoxClick(this.model);
-            //location.hash = this.model.get('name');
             location.href = "#patient/" + this.model.get('name');
         }
     });
@@ -125,7 +122,6 @@
     var AppView = Backbone.View.extend({
         el: $('#patientListContainer'),
         initialize: function () {
-            console.log('AppView.initialize collection length : ' + this.collection.length);
             _.bindAll(this, 'render', 'onHomeButtonClick', 'showPatientDetail');
             this.render();
         },
@@ -146,41 +142,49 @@
         onHomeButtonClick: function () {
             location.href = '#';
         },
-        goToHome: function () {
-            $('#patientName').text('');
-            $('#patientAge').text('');
-            $('#patientAddress').text('');
-            $('#patientMemo').text('');
+        showHome: function () {
+            this.setPatientDatail();
         },
-        showPatientDetail: function (patientName) {
-            var patient = _.find(this.collection.models, function(patient){ return patient.get('name') == patientName; });
-            //var patient = this.collection.getPatientByName(patientName);
-
-            $('#patientName').text(patient.get('name'));
-            $('#patientAge').text(patient.get('age'));
-            $('#patientAddress').text(patient.get('address'));
-            $('#patientMemo').text(patient.get('memo'));
+        showPatientDetail: function (patient) {
+            this.setPatientDatail(patient);
+        },
+        setPatientDatail: function (patient) {
+            if (patient == undefined) {
+                $('#patientName').text('');
+                $('#patientAge').text('');
+                $('#patientAddress').text('');
+                $('#patientMemo').text('');
+            } else {
+                $('#patientName').text(patient.get('name'));
+                $('#patientAge').text(patient.get('age'));
+                $('#patientAddress').text(patient.get('address'));
+                $('#patientMemo').text(patient.get('memo'));
+            }
         }
+
     });    
 
     
     /**** Router ****/
     var AppRouter = Backbone.Router.extend({
-        initialized: function () {
-            _.bindAll(this, 'home', 'showPatient');
+        patients: undefined,
+        appView: undefined,
+        initialize: function () {
+            _.bindAll(this, 'goToHome', 'goToPatientDetail');
+            this.patients = this.patients == undefined ? new Patients() : this.patients;
+            this.appView = this.appView == undefined ? new AppView({ collection: this.patients }) : this.appView;
         },
         routes: {
-            "patient/:name": "showPatientDetail",
-            "": "home"
+            "patient/:name": "goToPatientDetail",
+            "": "goToHome"
         },
-        appView: undefined || new AppView({ collection: new Patients() }),
-        home: function () {
-            console.log('AppRouter.default');
-            this.appView.goToHome();
+        goToHome: function () {
+            this.appView.showHome();
         },
-        showPatientDetail: function (name) {
-            console.log('AppRouter.showPatient name=' + name);
-            this.appView.showPatientDetail(name);
+        goToPatientDetail: function (name) {
+            //var patient = this.patients.getPatientByName(name);
+            var patient = this.patients.find(function (patient) { return patient.get('name') == name; });
+            this.appView.showPatientDetail(patient);
         }
     });
 

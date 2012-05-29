@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JQueryTest", "JQueryTest\JQ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackboneTest", "BackboneTest\BackboneTest.csproj", "{FBFF53FD-B3CC-406E-A990-61C4942F147E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackboneAspMvcTest", "BackboneAspMvcTest\BackboneAspMvcTest.csproj", "{59048AB0-0486-47E4-BF0D-D388E4E195DB}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = MyLab.vsmdi
@@ -159,6 +161,16 @@ Global
 		{FBFF53FD-B3CC-406E-A990-61C4942F147E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FBFF53FD-B3CC-406E-A990-61C4942F147E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FBFF53FD-B3CC-406E-A990-61C4942F147E}.Release|x86.ActiveCfg = Release|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{59048AB0-0486-47E4-BF0D-D388E4E195DB}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
