@@ -158,6 +158,8 @@
     <Content Include="Content\themes\vader\jquery-ui-1.8.20.custom.css" />
     <Content Include="Global.asax" />
     <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Scripts\lib\json2.js" />
+    <Content Include="Scripts\lib\json2.min.js" />
     <Content Include="Scripts\lib\backbone.js" />
     <Content Include="Scripts\lib\backbone.min.js" />
     <Content Include="Scripts\lib\jquery-1.7.2-vsdoc.js" />
@@ -210,6 +212,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

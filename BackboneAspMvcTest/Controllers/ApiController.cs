@@ -55,6 +55,19 @@ namespace BackboneAspMvcTest.Controllers
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
+        public JsonResult GetFolderList(string pid)
+        {
+            return Json(GetFolders(pid), JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        [ActionName("Documents")]
+        public JsonResult GetDocumentList(string pid)
+        {
+            return Json(GetDocuments(pid), JsonRequestBehavior.AllowGet);
+        }
+
         private static List<Patient> MakeTestData()
         {
             List<Patient> returnValues = new List<Patient>();
@@ -99,10 +112,11 @@ namespace BackboneAspMvcTest.Controllers
                         ID = ids[i],
                         LastName = lastName[i],
                         FirstName = firstName[i],
-                        DateOfBirth = "19900101",
+                        DateOfBirth = "1990-01-01",
                         Address = GetAddress("1026 Montgomery Street^^Norristown^PA^19401^USA^^^CHITTENDEN"),
                         Gender = gender[i],
-                        HomePhone = "(032)717-1234"
+                        HomePhone = "(032)717-1234",
+                        Folders = GetFolders(ids[i])
                     });
             }
 
@@ -125,10 +139,75 @@ namespace BackboneAspMvcTest.Controllers
 
             return returnValue;
         }
+
+        private static List<Folder> GetFolders(string id)
+        {
+            return new List<Folder>(){
+                new Folder{PatientId = id, Title="CT - Right Head", LastUpdateTime="2012-03-12"},
+                new Folder{PatientId = id, Title="MRI - Knee", LastUpdateTime="2012-05-12"},
+                new Folder{PatientId = id, Title="X-Ray - Left Hand", LastUpdateTime="2012-05-24"},
+                new Folder{PatientId = id, Title="CT - Breast", LastUpdateTime="2012-06-12"},
+            };
+        }
+
+        private static List<Document> GetDocuments(string pid)
+        {
+            return new List<Document>()
+            {
+                new Document
+                { 
+                    Comments = "Below is an example request and response from a Provide and Register Document Set-b transaction taken from a trace of the Public Registry. The original was chunk encoded (included header Transfer-Encoding: chunked). This encoding has been removed for readability. To make this a valid transaction either the chunked encoding would have to be redone or a Content-Length header would have to be added.",
+                    AuthorPerson = "Kim Hyejin",
+                    ContentType = "jpg",
+                    PatientId = pid,
+                    CreationTime = "2012-04-30",
+                    Title = "X-Ray Right Brain",
+                    Size = "155kb",
+                    URI = "",
+                },
+                new Document
+                { 
+                    Comments = "Below is an example request and response from a Provide and Register Document Set-b transaction taken from a trace of the Public Registry. The original was chunk encoded (included header Transfer-Encoding: chunked). This encoding has been removed for readability. To make this a valid transaction either the chunked encoding would have to be redone or a Content-Length header would have to be added.",
+                    AuthorPerson = "Kim Hyejin",
+                    ContentType = "jpg",
+                    PatientId = pid,
+                    CreationTime = "2012-04-30",
+                    Title = "X-Ray Right Brain",
+                    Size = "155kb",
+                    URI = "",
+                },
+                new Document
+                { 
+                    Comments = "Below is an example request and response from a Provide and Register Document Set-b transaction taken from a trace of the Public Registry. The original was chunk encoded (included header Transfer-Encoding: chunked). This encoding has been removed for readability. To make this a valid transaction either the chunked encoding would have to be redone or a Content-Length header would have to be added.",
+                    AuthorPerson = "Kim Hyejin",
+                    ContentType = "jpg",
+                    PatientId = pid,
+                    CreationTime = "2012-04-30",
+                    Title = "X-Ray Right Brain",
+                    Size = "155kb",
+                    URI = "",
+                },
+                new Document
+                { 
+                    Comments = "Below is an example request and response from a Provide and Register Document Set-b transaction taken from a trace of the Public Registry. The original was chunk encoded (included header Transfer-Encoding: chunked). This encoding has been removed for readability. To make this a valid transaction either the chunked encoding would have to be redone or a Content-Length header would have to be added.",
+                    AuthorPerson = "Kim Hyejin",
+                    ContentType = "jpg",
+                    PatientId = pid,
+                    CreationTime = "2012-04-30",
+                    Title = "X-Ray Right Brain",
+                    Size = "155kb",
+                    URI = "",
+                }
+            };
+        }
     }
 
     public class Patient
     {
+        public Patient()
+        {
+            this.Folders = new List<Folder>();
+        }
         public string ID { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
@@ -136,5 +215,35 @@ namespace BackboneAspMvcTest.Controllers
         public string Address { get; set; }
         public string Gender { get; set; }
         public string HomePhone { get; set; }
+        public List<Folder> Folders { get; set; }
+    }
+
+    public class Folder
+    {
+        public string Comments { get; set; }
+        public string EntryUuid { get; set; }
+        public string PatientId { get; set; }
+        public string Title { get; set; }
+        public string UniqueId { get; set; }
+        public string HomeCommunityId { get; set; }
+        public string LastUpdateTime { get; set; }
+    }
+
+    public class Document
+    {
+        public string Comments { get; set; }
+        public string EntryUuid { get; set; }
+        public string PatientId { get; set; }
+        public string Title { get; set; }
+        public string UniqueId { get; set; }
+        public string RepositoryUniqueId { get; set; }
+        public string HomeCommunityId { get; set; }
+        public string AuthorPerson { get; set; }
+        public string ContentType { get; set; }
+        public string CreationTime { get; set; }
+        public string Size { get; set; }
+        public string URI { get; set; }
+        public string Content { get; set; }
+        public string Image { get; set; }
     }
 }

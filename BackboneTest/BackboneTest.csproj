@@ -60,6 +60,8 @@
     <Content Include="html\PatientSearch.html" />
     <Content Include="html\RouterTest.html" />
     <Content Include="html\ViewWithModelTest.html" />
+    <Content Include="scripts\json2.js" />
+    <Content Include="scripts\json2.min.js" />
     <Content Include="scripts\lib\backbone.js" />
     <Content Include="scripts\lib\backbone.min.js" />
     <Content Include="scripts\lib\jquery-1.7.2-vsdoc.js" />
