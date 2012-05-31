@@ -100,6 +100,7 @@
     <script src="@Url.Content("~/Scripts/lib/underscore.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/lib/backbone.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/lib/json2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/lib/json2.js")" type="text/javascript"></script>
     <script>
         $(function () {
         });
@@ -201,7 +202,7 @@
             },
             routes: {
                 "documents/:id": "goToDocumentList"
-            },
+            },  
             goToDocumentList: function (id) {
                 console.log('goToDocumentList ID=' + id);
                 this.documentList = new Documents();

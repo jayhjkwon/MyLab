@@ -77,6 +77,10 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\1.PNG" />
+    <Content Include="Content\images\2.PNG" />
+    <Content Include="Content\images\3.PNG" />
+    <Content Include="Content\images\4.PNG" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\ajax-loader.png" />
     <Content Include="Content\images\ge_white.png" />
@@ -86,6 +90,25 @@
     <Content Include="Content\images\icons-18-white.png" />
     <Content Include="Content\images\icons-36-black.png" />
     <Content Include="Content\images\icons-36-white.png" />
+    <Content Include="Content\images\Tulips.jpg" />
+    <Content Include="Content\layout-default-latest.css" />
+    <Content Include="Content\ml\assets\base.png" />
+    <Content Include="Content\ml\assets\calendar.png" />
+    <Content Include="Content\ml\assets\carousel.png" />
+    <Content Include="Content\ml\assets\close.png" />
+    <Content Include="Content\ml\assets\expando.png" />
+    <Content Include="Content\ml\assets\gradients.png" />
+    <Content Include="Content\ml\assets\icons.png" />
+    <Content Include="Content\ml\assets\layer.png" />
+    <Content Include="Content\ml\assets\loading.gif" />
+    <Content Include="Content\ml\assets\loading_small.gif" />
+    <Content Include="Content\ml\assets\mini-arrows.png" />
+    <Content Include="Content\ml\assets\tooltip.png" />
+    <Content Include="Content\ml\assets\validation.png" />
+    <Content Include="Content\ml\css\chico-0.10.5.css" />
+    <Content Include="Content\ml\css\chico-min-0.10.5.css" />
+    <Content Include="Content\ml\css\mesh-0.10.5.css" />
+    <Content Include="Content\ml\css\mesh-min-0.10.5.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -157,7 +180,11 @@
     <Content Include="Content\themes\vader\images\ui-icons_f29a00_256x240.png" />
     <Content Include="Content\themes\vader\jquery-ui-1.8.20.custom.css" />
     <Content Include="Global.asax" />
-    <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Scripts\lib\chico-0.10.5.js" />
+    <Content Include="Scripts\lib\chico-min-0.10.5.js" />
+    <Content Include="Scripts\lib\ddpowerzoomer.js" />
+    <Content Include="Scripts\lib\jquery.layout-latest.js" />
+    <Content Include="Scripts\lib\jquery.layout.resizePaneAccordions-1.0.js" />
     <Content Include="Scripts\lib\json2.js" />
     <Content Include="Scripts\lib\json2.min.js" />
     <Content Include="Scripts\lib\backbone.js" />
@@ -215,6 +242,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -24,7 +24,7 @@ namespace BackboneAspMvcTest.Controllers
         [ActionName("PatientById")]
         public JsonResult GetPatientById(string id)
         {
-            return Json(patients.SingleOrDefault(p => p.ID == id), JsonRequestBehavior.AllowGet);
+            return Json(patients.FindAll(p => p.ID == id), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -163,7 +163,7 @@ namespace BackboneAspMvcTest.Controllers
                     CreationTime = "2012-04-30",
                     Title = "X-Ray Right Brain",
                     Size = "155kb",
-                    URI = "",
+                    URI = "/Content/images/1.png",
                 },
                 new Document
                 { 
@@ -174,7 +174,7 @@ namespace BackboneAspMvcTest.Controllers
                     CreationTime = "2012-04-30",
                     Title = "X-Ray Right Brain",
                     Size = "155kb",
-                    URI = "",
+                    URI = "/Content/images/2.png",
                 },
                 new Document
                 { 
@@ -185,7 +185,7 @@ namespace BackboneAspMvcTest.Controllers
                     CreationTime = "2012-04-30",
                     Title = "X-Ray Right Brain",
                     Size = "155kb",
-                    URI = "",
+                    URI = "/Content/images/3.png",
                 },
                 new Document
                 { 
@@ -196,7 +196,7 @@ namespace BackboneAspMvcTest.Controllers
                     CreationTime = "2012-04-30",
                     Title = "X-Ray Right Brain",
                     Size = "155kb",
-                    URI = "",
+                    URI = "/Content/images/4.png",
                 }
             };
         }
