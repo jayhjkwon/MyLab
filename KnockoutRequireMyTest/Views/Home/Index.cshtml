@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Index</title>
+    <script type="text/javascript" src="../../Scripts/lib/require.js"></script>
+    <script type="text/javascript">
+        require.config({
+            baseUrl: "Scripts",
+            paths: {
+                "domReady": "lib/domReady",
+                "jQuery": "lib/jquery-1.7.2",
+                "text": "lib/text",
+                "knockout": "lib/knockout-2.1.0",
+                "koexternaltemplate": "lib/koExternalTemplateEngine_all",
+                "appViewModel": "appViewModel"
+            },
+            deps: ['domReady!', 'init']
+        });
+    </script>
+</head>
+<body>
+    <div id="names">
+        <p>First Name: <input data-bind="value: firstName" /></p>    
+        <p>First Name Capitalized: <strong data-bind="text: firstNameCaps"></strong></p>
+        <ul data-bind="template:{name:'name-template', foreach:names}"></ul>
+    </div>
+
+    <script type="text/html" id="name-template">
+        <li><span data-bind="text:$data"></span></li>
+    </script>
+
+</body>
+</html>

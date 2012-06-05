@@ -14,9 +14,10 @@
 </p>
 
 <p>
-    <label data-bind="text:fullName"></label>
+    Full Name: <label data-bind="text:fullName"></label>
 </p>
 
+@section Script{
 <script>
     function ViewModel(){
         var self = this;
@@ -28,6 +29,6 @@
         });
     };
 
-    ko.applyBindings(new ViewModel());
-    
+    ko.applyBindings(new ViewModel());    
 </script>
+}

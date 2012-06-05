@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+	<title>Trackr</title>
+	<script type="text/javascript">
+	    window.require = {
+	        baseUrl: 'Scripts',
+	        paths: {
+	            'domReady': '/Scripts/lib/domReady',
+	            'text': '/Scripts/lib/text',
+	            'knockout': '/Scripts/lib/knockout-2.1.0',
+	            'signals': '/Scripts/lib/signals',
+	            'hasher': '/Scripts/lib/hasher',
+	            'crossroads': '/Scripts/lib/crossroads',
+	            'underscore': '/Scripts/lib/underscore',
+	            'jquery': '/Scripts/lib/jquery-1.7.2'
+	        },
+	        deps: ['domReady!', 'main']
+	    };
+	</script>
+	<script type="text/javascript" src="Scripts/lib/require.js"></script>
+</head>
+<body>
+<div data-bind="with: tasks">
+	<input type="text" data-bind="value: filter, valueUpdate: 'afterkeydown'">
+	<ul  data-bind="foreach: tasks">
+		<li>
+			<a href="#" data-bind="text: title, click: click"></a>
+		</li>
+	</ul>
+</div>
+<div data-bind="with: taskController">
+	<ul>
+		<li>Id: <span data-bind="text: id"></span></li>
+		<li>Title: <input type="text" data-bind="value: title"></li>
+	</ul>
+	<p>
+		<button data-bind='click: update'>Update</button>
+	</p>
+</div>
+</body>
+</html>
