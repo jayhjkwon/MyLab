@@ -1,5 +1,0 @@
-D:\GitRepositories\MyLab\KnockoutRequireTest\bin\KnockoutRequireTest.dll
-D:\GitRepositories\MyLab\KnockoutRequireTest\bin\KnockoutRequireTest.pdb
-D:\GitRepositories\MyLab\KnockoutRequireTest\obj\Debug\ResolveAssemblyReference.cache
-D:\GitRepositories\MyLab\KnockoutRequireTest\obj\Debug\KnockoutRequireTest.dll
-D:\GitRepositories\MyLab\KnockoutRequireTest\obj\Debug\KnockoutRequireTest.pdb

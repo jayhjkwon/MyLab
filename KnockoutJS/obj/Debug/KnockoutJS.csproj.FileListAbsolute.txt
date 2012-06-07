@@ -1,7 +1,0 @@
-D:\GitRepositories\MyLab\KnockoutJS\bin\KnockoutJS.dll
-D:\GitRepositories\MyLab\KnockoutJS\bin\KnockoutJS.pdb
-D:\GitRepositories\MyLab\KnockoutJS\bin\EntityFramework.dll
-D:\GitRepositories\MyLab\KnockoutJS\bin\EntityFramework.xml
-D:\GitRepositories\MyLab\KnockoutJS\obj\Debug\ResolveAssemblyReference.cache
-D:\GitRepositories\MyLab\KnockoutJS\obj\Debug\KnockoutJS.dll
-D:\GitRepositories\MyLab\KnockoutJS\obj\Debug\KnockoutJS.pdb

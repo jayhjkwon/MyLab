@@ -1,5 +1,0 @@
-D:\GitRepositories\MyLab\EmberTest\bin\EmberTest.dll
-D:\GitRepositories\MyLab\EmberTest\bin\EmberTest.pdb
-D:\GitRepositories\MyLab\EmberTest\obj\Debug\ResolveAssemblyReference.cache
-D:\GitRepositories\MyLab\EmberTest\obj\Debug\EmberTest.dll
-D:\GitRepositories\MyLab\EmberTest\obj\Debug\EmberTest.pdb

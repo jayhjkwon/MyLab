@@ -1,8 +1,0 @@
-D:\GitRepositories\MyLab\MoqTest\bin\Debug\MoqTest.dll
-D:\GitRepositories\MyLab\MoqTest\bin\Debug\MoqTest.pdb
-D:\GitRepositories\MyLab\MoqTest\obj\Debug\ResolveAssemblyReference.cache
-D:\GitRepositories\MyLab\MoqTest\obj\Debug\MoqTest.dll
-D:\GitRepositories\MyLab\MoqTest\obj\Debug\MoqTest.pdb
-D:\GitRepositories\MyLab\MoqTest\bin\Debug\Moq.dll
-D:\GitRepositories\MyLab\MoqTest\bin\Debug\Moq.pdb
-D:\GitRepositories\MyLab\MoqTest\bin\Debug\Moq.xml

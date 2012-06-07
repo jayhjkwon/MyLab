@@ -1,7 +1,0 @@
-D:\GitRepositories\MyLab\JQueryTest\bin\JQueryTest.dll
-D:\GitRepositories\MyLab\JQueryTest\bin\JQueryTest.pdb
-D:\GitRepositories\MyLab\JQueryTest\bin\EntityFramework.dll
-D:\GitRepositories\MyLab\JQueryTest\bin\EntityFramework.xml
-D:\GitRepositories\MyLab\JQueryTest\obj\Debug\ResolveAssemblyReference.cache
-D:\GitRepositories\MyLab\JQueryTest\obj\Debug\JQueryTest.dll
-D:\GitRepositories\MyLab\JQueryTest\obj\Debug\JQueryTest.pdb
