@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Test1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test1</h2>
+
+<script>
+//    var sayHello = function (name) {
+//        alert(name);
+//    } ("Kwon");
+
+//    (function sayHello(name) {
+//        alert(name);
+//    })('HJ');
+
+
+    var app = {};
+    app.model = {};
+    app.model.goodNight = (function () { alert('ccc'); })();
+    
+    var app = app || {};
+    app.model = app.model || {};
+
+    app.model.hi = (function () {
+        var say = function (name) {
+            return name;
+        };
+
+        return {
+            hello: say
+        };
+    })();
+
+    app.model.bye = (function () {
+        var see = function (msg) {
+            return app.model.hi.hello('invoke hi from bye ' + msg);
+        };
+
+        return {
+            see:see
+        }
+    })();
+    
+    alert(app.model.bye.see('aa'));
+    app.model.goodNight();
+
+</script>

@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test6</title>
+</head>
+<body>
+    <div>
+        Scope - Block Scope(X), Function Scope(O) and Hoisting        
+    </div>
+    <script>
+        var num = 10;       // variable in block scope from foo() functions perspective
+
+        function foo() {
+            alert(num); // undefined
+            var num = 20;
+            alert(num); // 20
+        }
+
+        foo();
+
+        function boo() {
+            {
+                var i = 0;  // this is a variable in block scope, but able to be called out of {} block since variable i is in the function scope
+            }
+
+            alert(i);
+        }
+
+        boo();
+
+        function moo() {
+            alert(num); // --> output is 10
+        }
+        moo();
+
+    </script>
+</body>
+</html>

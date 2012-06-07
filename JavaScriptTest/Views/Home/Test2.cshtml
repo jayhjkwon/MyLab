@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test2</title>
+</head>
+<body>
+    <div>
+        Closure
+    </div>
+
+    <script>
+
+//        (function show() {
+//            var a = "aaaa";
+
+//            function getPlanet() {
+//                var a = "bbbb";
+//                return a;
+//            }
+
+//            alert(getPlanet());
+//        })();
+
+
+//        function foo() {
+//            var x = 10;
+
+//            return function () {
+//                return x;
+//            };
+//        };
+
+//        var a = foo();
+        //        alert(a());
+
+        // 클로져 샘플 코드
+        function outerFn() {
+            var closure = 'is closure';
+            var private = 'this';
+            return function () {
+                alert(private + ' ' + closure);
+            }
+        }
+
+        // funct는 함수 블럭(function(){alert(private+' '+closure);})을 가지고 있다.
+        // 즉 private와 closure는 funct에서는 정의되어있지않은 undefind 여야 하지만, outerFn()에서 정의한 closure와 private를
+        // 가지고 있다. 이것은 클로저를 통해서 가능한 일이다.
+        // 즉 클로져는 코드가 실행되는 타임이 아닌 디자인 타임시의 변수를 메모리에 가지고 있음으로해서 closure와 private을 
+        // 사용할수있게 된 것이다.
+        var funct = outerFn(); 
+        var result = funct();
+
+
+    </script>
+</body>
+</html>

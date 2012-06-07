@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test4</title>
+</head>
+<body>
+    <div>
+        Object - Object Literal and Constructor Function
+    </div>
+
+    <script>
+          // Object Literal, one of the way to create Object in javascript
+//        var person = {
+//            name: 'kwon',
+//            address: 'seoul'
+//        }
+
+//        alert(person.name);
+        //        alert(person['name']);
+
+
+        // second way to create object in javascript
+        // so called, Constructor Function, exactly the same as function :)
+        function Person() {
+            this.name = 'kwon';
+
+            var address = 'seoul';
+            this.getAddress = function () { 
+                return address;
+            };
+
+            function setAddress() { }   //  this function is private while getAddress is public
+
+            //return { setAddressValue: setAddress }    // encapsulation
+            //return { getAddr: getAddress }
+            //return 'test';
+
+        }
+//        var a = Person();
+//        alert(a.getAddr());
+
+        var p = new Person();
+        alert(p.getAddress());
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test3</title>
+</head>
+<body>
+    <div>
+        this
+    </div>
+
+    <script>
+        var outFn = {
+            a: "aaaa",
+
+            innferFn: function () {
+                var self = this;    // this will be remain as ourFn object due to Closure
+                var a = "bbbbbbbbbb";
+                return function () {
+                    //return this.a;
+                    return self.a;
+                }
+            }
+        }
+
+        var func = outFn;
+        var result = func.innferFn();
+        alert(result());
+    </script>
+</body>
+</html>

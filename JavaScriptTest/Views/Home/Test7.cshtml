@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test7</title>
+</head>
+<body>
+    <div>
+        Static method
+    </div>
+
+    <script>
+        var foo = {};
+        foo.say = function () { alert('hello'); }
+
+        foo.say();
+
+        function boo() {
+        }
+
+        boo.say = function () { alert('hi'); };
+        boo.prototype.bye = function () { alert('bye'); };
+
+        boo.say();
+        //boo.bye(); // ----> compile error
+        var b = new boo();
+        b.bye();
+        
+    </script>
+</body>
+</html>

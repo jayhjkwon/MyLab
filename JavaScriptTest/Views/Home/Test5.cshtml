@@ -1,0 +1,32 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test5</title>
+</head>
+<body>
+    <div>
+        Prototype
+    </div>
+
+    <script>
+        function foo(name) {
+            this.name = name;
+        };
+        var f = new foo('kwon');
+
+        foo.prototype.getName = function () {
+            return this.name;
+        }
+        
+        alert(f.getName());
+
+        var f1 = new foo('lee');
+        alert(f1.getName());
+    </script>
+</body>
+</html>
