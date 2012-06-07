@@ -1,0 +1,4 @@
+Please follow the instructions available here to use Chico in your website:
+
+http://www.chico-ui.com.ar/guides/how-to-install-chico
+

@@ -1,0 +1,7 @@
+D:\GitRepositories\MyLab\BackboneAspMvcTest\bin\BackboneAspMvcTest.dll
+D:\GitRepositories\MyLab\BackboneAspMvcTest\bin\BackboneAspMvcTest.pdb
+D:\GitRepositories\MyLab\BackboneAspMvcTest\bin\EntityFramework.dll
+D:\GitRepositories\MyLab\BackboneAspMvcTest\bin\EntityFramework.xml
+D:\GitRepositories\MyLab\BackboneAspMvcTest\obj\Debug\ResolveAssemblyReference.cache
+D:\GitRepositories\MyLab\BackboneAspMvcTest\obj\Debug\BackboneAspMvcTest.dll
+D:\GitRepositories\MyLab\BackboneAspMvcTest\obj\Debug\BackboneAspMvcTest.pdb

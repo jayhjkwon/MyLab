@@ -1,0 +1,5 @@
+D:\GitRepositories\MyLab\EmberTweets\bin\EmberTweets.dll
+D:\GitRepositories\MyLab\EmberTweets\bin\EmberTweets.pdb
+D:\GitRepositories\MyLab\EmberTweets\obj\Debug\ResolveAssemblyReference.cache
+D:\GitRepositories\MyLab\EmberTweets\obj\Debug\EmberTweets.dll
+D:\GitRepositories\MyLab\EmberTweets\obj\Debug\EmberTweets.pdb

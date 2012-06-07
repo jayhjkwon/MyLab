@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/lib/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="Scripts/lib/ember-0.9.8.1.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div>
+    <fieldset>
+        <legend>User</legend>
+        <script type="text/x-handlebars">
+            <div><label>ID:</label><label></label></div>
+            <div><label>Name:</label><label></label></div>
+            <div><label>Year:</label><label></label></div>
+            <div><label>Country:</label><label></label></div>
+        </script>
+    </fieldset>
+</div>
+
+
+<script>
+    App = Em.Application.create();
+
+    App.User = Em.Object.extend({
+        id: '',
+        firstName: '',
+        lastName: '',
+        year: '',
+        country: '',
+        fullName: function () {
+            var self = this;
+            return self.get('firstName') + ' ' + self.get('lastName');
+        }.property('firstName','lastName'),
+    });
+
+    var user = App.User.create({firstName:'Hyojung', lastName:'Kwon'});
+    var fullName = user.get('fullName');
+    //alert(fullName);
+
+</script>
+
+</body>
+</html>

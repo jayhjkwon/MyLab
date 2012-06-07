@@ -1,0 +1,5 @@
+D:\GitRepositories\MyLab\BackboneTest\bin\BackboneTest.dll
+D:\GitRepositories\MyLab\BackboneTest\bin\BackboneTest.pdb
+D:\GitRepositories\MyLab\BackboneTest\obj\Debug\ResolveAssemblyReference.cache
+D:\GitRepositories\MyLab\BackboneTest\obj\Debug\BackboneTest.dll
+D:\GitRepositories\MyLab\BackboneTest\obj\Debug\BackboneTest.pdb

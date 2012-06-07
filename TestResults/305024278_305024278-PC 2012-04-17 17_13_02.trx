@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="51811ef0-bb59-4fee-aaa4-8a4f0c8ab34e" name="305024278@305024278-PC 2012-04-17 17:13:02" runUser="305024278-PC\305024278" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="e7b99bec-0d40-4bec-af5e-d5b64adc87f8">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="305024278_305024278-PC 2012-04-17 17_13_02">
+      <DeploymentItem filename="D:\GitRepositories\MyLab\packages\Moq.4.0.10827\lib\NET40\Moq.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-17T17:13:02.2621269+09:00" queuing="2012-04-17T17:13:02.3011292+09:00" start="2012-04-17T17:13:02.3081296+09:00" finish="2012-04-17T17:13:02.6331481+09:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod2" storage="d:\gitrepositories\mylab\moqtest\bin\debug\moqtest.dll" id="764e04a1-00c1-db9c-490d-88249b1f2660">
+      <Execution id="f35116aa-163d-4921-806c-9b379b4d1fb9" />
+      <TestMethod codeBase="D:/GitRepositories/MyLab/MoqTest/bin/Debug/MoqTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MoqTest.UnitTest1, MoqTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod2" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="764e04a1-00c1-db9c-490d-88249b1f2660" executionId="f35116aa-163d-4921-806c-9b379b4d1fb9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="f35116aa-163d-4921-806c-9b379b4d1fb9" testId="764e04a1-00c1-db9c-490d-88249b1f2660" testName="TestMethod2" computerName="305024278-PC" duration="00:00:00.1524705" startTime="2012-04-17T17:13:02.3101297+09:00" endTime="2012-04-17T17:13:02.6211475+09:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f35116aa-163d-4921-806c-9b379b4d1fb9">
+    </UnitTestResult>
+  </Results>
+</TestRun>

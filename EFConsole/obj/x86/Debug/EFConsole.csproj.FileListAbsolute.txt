@@ -1,0 +1,8 @@
+D:\GitRepositories\MyLab\EFConsole\bin\Debug\EFConsole.exe
+D:\GitRepositories\MyLab\EFConsole\bin\Debug\EFConsole.pdb
+D:\GitRepositories\MyLab\EFConsole\bin\Debug\EntityFramework.dll
+D:\GitRepositories\MyLab\EFConsole\bin\Debug\EntityFramework.xml
+D:\GitRepositories\MyLab\EFConsole\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\GitRepositories\MyLab\EFConsole\obj\x86\Debug\EFConsole.exe
+D:\GitRepositories\MyLab\EFConsole\obj\x86\Debug\EFConsole.pdb
+D:\GitRepositories\MyLab\EFConsole\bin\Debug\EFConsole.exe.config

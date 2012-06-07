@@ -1,0 +1,10 @@
+D:\GitRepositories\MyLab\Bootstrap\bin\Bootstrap.dll
+D:\GitRepositories\MyLab\Bootstrap\bin\Bootstrap.pdb
+D:\GitRepositories\MyLab\Bootstrap\bin\EntityFramework.dll
+D:\GitRepositories\MyLab\Bootstrap\bin\EntityFramework.xml
+D:\GitRepositories\MyLab\Bootstrap\obj\Debug\ResolveAssemblyReference.cache
+D:\GitRepositories\MyLab\Bootstrap\obj\Debug\Bootstrap.dll
+D:\GitRepositories\MyLab\Bootstrap\obj\Debug\Bootstrap.pdb
+D:\GitRepositories\MyLab\Bootstrap\bin\MarkdownDeep.dll
+D:\GitRepositories\MyLab\Bootstrap\bin\MarkdownDeep.pdb
+D:\GitRepositories\MyLab\Bootstrap\bin\Microsoft.Web.Helpers.dll
