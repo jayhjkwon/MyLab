@@ -1,8 +1,0 @@
-<Modules>
-  <Module PersistentId="BC9F5DC6-7561-4EEA-892B-B99B9864CBA4" ModuleId="KnockoutJS" />
-  <Module PersistentId="1F8BA466-9964-4BF5-91D7-ECAC8FB42000" ModuleId="ActiveCastleMvcTest" />
-  <Module PersistentId="F83D95F9-EEBE-46E3-BD26-265E276417BF" ModuleId="Bootstrap" />
-  <Module PersistentId="4663ED3A-74BA-4E96-8A28-214B31AA8901" ModuleId="OpenIDTest" />
-  <Module PersistentId="1A1146D9-4A96-453B-B216-A4753BA46578" ModuleId="JavaScriptTest" />
-  <Module PersistentId="AD6D82A6-5399-4574-BA4A-E06259379ED2" ModuleId="JQueryTest" />
-</Modules>
