@@ -11,7 +11,7 @@ var ktc = ktc || {};
 *
 * namespace() utility function's usage is as follow
 *
-*   ktc.namespace('ktc.model.user');
+*   ktc.namespace('ktc.model');
 *   ktc.model.user = (function () {
 *       var name = 'khj';
 *       var getFullName = function () { return name; };
@@ -33,3 +33,4 @@ ktc.namespace = function (namespaceString) {
         parent = parent[currentPart];
     }
 }
+
