@@ -48,6 +48,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutRequireMyTest", "Kn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutExternalTemplate", "KnockoutExternalTemplate\KnockoutExternalTemplate.csproj", "{17FB119D-92C4-41F3-AC1A-A00F79274441}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalPortalKO", "ClinicalPortalKO\ClinicalPortalKO.csproj", "{AB73AB50-B3F3-4FB5-AA57-A12B95300697}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = MyLab.vsmdi
@@ -231,6 +233,16 @@ Global
 		{17FB119D-92C4-41F3-AC1A-A00F79274441}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{17FB119D-92C4-41F3-AC1A-A00F79274441}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{17FB119D-92C4-41F3-AC1A-A00F79274441}.Release|x86.ActiveCfg = Release|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AB73AB50-B3F3-4FB5-AA57-A12B95300697}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

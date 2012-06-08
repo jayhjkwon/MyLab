@@ -36,8 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -129,6 +130,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Require.JS - LICENSE.txt" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\libs\cs.js" />
     <Content Include="Scripts\libs\domReady.js" />
     <Content Include="Scripts\libs\domReady.min.js" />
@@ -172,6 +176,7 @@
     <Content Include="Scripts\libs\require.min.js" />
     <Content Include="Scripts\libs\text.js" />
     <Content Include="Scripts\libs\text.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="templates\list.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

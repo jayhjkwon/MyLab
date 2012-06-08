@@ -128,6 +128,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\AppController.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\lib\crossroads.js" />
     <Content Include="Scripts\lib\crossroads.min.js" />
     <Content Include="Scripts\lib\domReady.js" />
@@ -151,6 +154,7 @@
     <Content Include="Scripts\lib\text.js" />
     <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\on.js" />
     <Content Include="Scripts\StringTemplateEngine.js" />
     <Content Include="Scripts\StringTemplateSource.js" />

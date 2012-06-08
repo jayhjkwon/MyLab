@@ -127,6 +127,9 @@
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Require.JS - LICENSE.txt" />
     <Content Include="Scripts\appViewModel.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\lib\infuser-amd.js" />
     <Content Include="Scripts\lib\infuser-amd.min.gz.js" />
     <Content Include="Scripts\lib\infuser-amd.min.js" />
@@ -164,6 +167,7 @@
     <Content Include="Scripts\lib\require.min.js" />
     <Content Include="Scripts\lib\text.js" />
     <Content Include="Scripts\lib\text.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\name-template.html" />
     <Content Include="Scripts\lib\TrafficCop-amd.js" />
     <Content Include="Scripts\lib\TrafficCop-amd.min.gz.js" />

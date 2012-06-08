@@ -36,8 +36,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data.Entity" />
@@ -154,8 +155,7 @@
     <Content Include="Scripts\koExternalTemplateEngine_all.js" />
     <Content Include="Scripts\koExternalTemplateEngine_all.min.gz.js" />
     <Content Include="Scripts\koExternalTemplateEngine_all.min.js" />
-    <Content Include="Scripts\modernizr-1.7.js" />
-    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\sammy\sammy.cache.js" />
     <Content Include="Scripts\sammy\sammy.cache.min.js" />
     <Content Include="Scripts\sammy\sammy.data_location_proxy.js" />

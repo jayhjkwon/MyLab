@@ -126,6 +126,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\lib\ember-0.9.8.1.js" />
     <Content Include="Scripts\lib\jquery-1.7.2-vsdoc.js" />
     <Content Include="Scripts\lib\jquery-1.7.2.js" />
@@ -137,6 +140,7 @@
     <Content Include="Scripts\lib\jquery.validate.min.js" />
     <Content Include="Scripts\lib\modernizr-1.7.js" />
     <Content Include="Scripts\lib\modernizr-1.7.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
