@@ -11,8 +11,8 @@ ktc.namespace('ktc.model');
 ktc.model.Document = function () {
     var self = this;
 
-    self.comments = ko.observable();
     self.patientId = ko.observable();
+    self.comments = ko.observable();    
     self.title = ko.observable();
-    self.uri = ko.observable();
+    self.url = ko.observable();
 }

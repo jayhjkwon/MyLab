@@ -8,6 +8,9 @@
 /// <reference path="../Models/patient.js" />
 /// <reference path="../Data/patientData.js" />
 /// <reference path="topMenuVM.js" />
+/// <reference path="folderListVM.js" />
+/// <reference path="documentListVM.js" />
+/// <reference path="uploadDocumentVM.js" />
 
 ktc.namespace('ktc.vm');
 ktc.vm.PatientListVM = (function () {

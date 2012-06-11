@@ -20,4 +20,10 @@ ktc.vm.TopMenuVM = (function () {
 
 $(function () {
     ko.applyBindings(ktc.vm.TopMenuVM, document.getElementById('top'));
+
+    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+        if (name === '') {
+            location.hash = '';
+        }
+    });
 });

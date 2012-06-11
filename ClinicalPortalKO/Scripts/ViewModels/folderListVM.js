@@ -7,30 +7,39 @@
 /// <reference path="../common.js" />
 /// <reference path="../Models/folder.js" />
 /// <reference path="../Data/folderData.js" />
+/// <reference path="topMenuVM.js" />
 
 ktc.namespace('ktc.vm');
 ktc.vm.FolderListVM = (function () {
     var self = this;
 
+    isVisible: ko.observable(false);
     folderList = ko.observableArray();
 
     loadFolderList = function (pid) {
         ktc.data.folder.getFolderListByPid(pid, bindFolderList);
     };
 
+    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+        if (name === '') {
+            folderList([]);
+        }
+    });
+
     bindFolderList = function (folders) {
         folderList.removeAll();
         _.each(folders, function (f) {
             var folder = new ktc.model.Folder();
-                                folder.patientId(f.PatientId);
-                                folder.title(f.Title);
-                                folder.lastUpdateTime(f.LastUpdateTime);
+            folder.patientId(f.PatientId);
+            folder.title(f.Title);
+            folder.lastUpdateTime(f.LastUpdateTime);
             folderList.push(folder);
         });
     };
 
     return {
-        folderList: folderList
+        isVisible: isVisible
+        , folderList: folderList
         , loadFolderList: loadFolderList
     };
 
