@@ -7,20 +7,107 @@
     <meta charset="utf-8" />
     <title>Clinical Portal</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />    
+    <style>
+    .topMenu
+    {
+        height:50px;
+        clear:both;
+        background-color:#ddd;        
+    }
+    .top-left
+    {
+        float:left;
+        margin-top:13px;
+    }
+    .top-right
+    {
+        float:right;
+        margin-top:13px;
+    }
+    .leftMenu
+    {
+        width:30%;
+        min-height:300px;
+        float:left;
+        background-color:#aaa;
+    }
+    .left-header-title
+    {
+        text-align:center;
+        font-size:15px;
+        font-weight:bold;
+    }
+    .bodyMenu
+    {
+        width:70%;
+        min-height:300px;
+        float:left;
+        background-color:#bbb;
+    }
+    </style>
 </head>
 <body>
-    <div>
+    <div id="main-container">
+        <div id="top" class="topMenu">
+            <a href="" class="top-left">Home</a>
+            <div class="top-right">
+            Patient Name: <input type="text" data-bind="value: patientNameForSearch, valueUpdate: 'keyup'" />
+            </div>
+        </div>
         
+        <div id="left" class="leftMenu">
+            <div id="left-patient-list">
+                <p class="left-header-title">*** Patient List ***</p>
+                <ul data-bind="foreach: patientList">
+                    <li>
+                        <p><a data-bind="attr:{href: '#/patient/' + pid()}"><span data-bind="text: fullName"></span></a></p>
+                        <p data-bind="text: gender"></p>
+                        <p data-bind="text: dateOfBirth"></p>
+                        <p data-bind="text: phone"></p>
+                    </li>
+                </ul>
+            </div>
+            <div id="left-folder-list">
+                <p class="left-header-title">*** Folder List ***</p>
+                <ul data-bind="foreach: folderList">
+                    <li>
+                        <p data-bind="text: title"></p>
+                        <p data-bind="text: lastUpdateTime"></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="body" class="bodyMenu">Body</div>
     </div>
 
+    <!-- scripts : libraries -->
     <script src="@Url.Content("~/Scripts/Libs/jquery-1.7.2.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Libs/modernizr-2.5.3.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Libs/knockout.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Libs/knockout.mapping-latest.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Libs/koExternalTemplateEngine_all.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/Libs/sammy/sammy.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Libs/underscore.js")" type="text/javascript"></script>
+
+    <!-- scripts : entry point -->
     <script src="@Url.Content("~/Scripts/main.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
     
+    <!-- scripts : data -->
+    <script src="@Url.Content("~/Scripts/Data/patientData.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Data/folderData.js")" type="text/javascript"></script>
+    
+    <!-- scripts : models -->
+    <script src="@Url.Content("~/Scripts/Models/patient.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Models/folder.js")" type="text/javascript"></script>
+
+    <!-- scripts : view-models -->
+    <script src="@Url.Content("~/Scripts/ViewModels/topMenuVM.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/ViewModels/folderListVM.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/ViewModels/patientListVM.js")" type="text/javascript"></script>
+
+    <!-- scripts : routers -->
+    <script src="@Url.Content("~/Scripts/router.js")" type="text/javascript"></script>
 </body>
 </html>

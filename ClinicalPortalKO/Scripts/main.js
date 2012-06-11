@@ -1,8 +1,13 @@
-﻿
+﻿/// <reference path="../Libs/jquery-1.7.2.js" />
+/// <reference path="../Libs/modernizr-2.5.3.js" />
+/// <reference path="../Libs/knockout.debug.js" />
+/// <reference path="../Libs/knockout.mapping-latest.debug.js" />
+/// <reference path="../Libs/sammy/sammy.js" />
+
+
 /***********************************
 * define root namespace
 ***********************************/
-
 var ktc = ktc || {};
 
 
@@ -21,7 +26,6 @@ var ktc = ktc || {};
 *   var n = ktc.model.user.getFullName();
 *
 ***********************************/
-
 ktc.namespace = function (namespaceString) {
     var parts = namespaceString.split('.'),
         parent = window,
@@ -33,4 +37,6 @@ ktc.namespace = function (namespaceString) {
         parent = parent[currentPart];
     }
 }
+
+
 

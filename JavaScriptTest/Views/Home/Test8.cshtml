@@ -16,14 +16,14 @@
     <script>
         var GEHCIT = GEHCIT || {};
         GEHCIT.model = GEHCIT.model || {};
-        
+
         GEHCIT.model.user = (function () {
             var name = 'khj';
             var getName = function(){ return name;}
             return {getName: getName}
         })();
 
-        GEHCIT.model.person = (function () {
+        GEHCIT.model.person = function () {
             this.take = function () { };
             var say = function () {
                 var name = GEHCIT.model.user.getName();
@@ -33,7 +33,7 @@
             return {
                 saySomething: say
             }
-        })();
+        }();
         
         GEHCIT.model.person.saySomething();
 //        var p = new GEHCIT.model.person();
