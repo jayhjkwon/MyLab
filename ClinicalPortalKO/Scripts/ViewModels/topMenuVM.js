@@ -10,19 +10,19 @@ ktc.namespace('ktc.vm');
 ktc.vm.TopMenuVM = (function () {
     var self = this;
 
-    patientNameForSearch = ko.observable();
+    var patientNameForSearch = ko.observable();
 
     return {
         patientNameForSearch : patientNameForSearch
     }
 
-})();
+}());
 
 $(function () {
     ko.applyBindings(ktc.vm.TopMenuVM, document.getElementById('top'));
 
     ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
-        if (name === '') {
+        if (!name) {
             location.hash = '';
         }
     });

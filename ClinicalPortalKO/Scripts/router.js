@@ -42,7 +42,7 @@ ktc.router.AppRouter = (function () {
 
     return { init: init };
 
-})();
+}());
 
 $(function(){
     ktc.router.AppRouter.init;

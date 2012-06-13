@@ -15,12 +15,13 @@
     <script>
         var num = 10;       // variable in block scope from foo() functions perspective
 
-        function foo() {
+        var foo = function () {
             alert(num); // undefined
             var num = 20;
             alert(num); // 20
         }
 
+        
         foo();
 
         function boo() {

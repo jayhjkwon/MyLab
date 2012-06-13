@@ -15,7 +15,7 @@ ktc.vm.UploadDocumentVM = (function () {
     isVisible = ko.observable(false);
 
     ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
-        if (name === '') {
+        if (!name) {
             isVisible(false);
         }
     });
@@ -24,7 +24,7 @@ ktc.vm.UploadDocumentVM = (function () {
         isVisible: isVisible
     };
 
-})();
+}());
 
 $(function () {
     ko.applyBindings(ktc.vm.UploadDocumentVM, document.getElementById('body-pnr'));

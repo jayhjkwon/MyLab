@@ -38,5 +38,3 @@ ktc.namespace = function (namespaceString) {
     }
 }
 
-
-

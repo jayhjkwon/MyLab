@@ -5,4 +5,4 @@ ktc.namespace('ktc.common');
 ktc.common = (function () {
 
     return {};
-})();
+}());

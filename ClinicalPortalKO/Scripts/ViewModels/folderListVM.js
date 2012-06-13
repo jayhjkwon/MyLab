@@ -10,21 +10,15 @@
 /// <reference path="topMenuVM.js" />
 
 ktc.namespace('ktc.vm');
-ktc.vm.FolderListVM = (function () {
+ktc.vm.FolderListVM = (function (ktc) {
     var self = this;
 
-    isVisible: ko.observable(false);
-    folderList = ko.observableArray();
+    var isVisible = ko.observable(false),
+    folderList = ko.observableArray(),
 
     loadFolderList = function (pid) {
         ktc.data.folder.getFolderListByPid(pid, bindFolderList);
-    };
-
-    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
-        if (name === '') {
-            folderList([]);
-        }
-    });
+    },
 
     bindFolderList = function (folders) {
         folderList.removeAll();
@@ -37,13 +31,21 @@ ktc.vm.FolderListVM = (function () {
         });
     };
 
+    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+        if (!name) {
+            folderList([]);
+        }
+    });
+
+    
+
     return {
         isVisible: isVisible
         , folderList: folderList
         , loadFolderList: loadFolderList
     };
 
-})();
+}(ktc));
 
 $(function () {
     ko.applyBindings(ktc.vm.FolderListVM, document.getElementById('left-folder-list'));

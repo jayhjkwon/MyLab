@@ -13,18 +13,18 @@
 /// <reference path="uploadDocumentVM.js" />
 
 ktc.namespace('ktc.vm');
-ktc.vm.PatientListVM = (function () {
+ktc.vm.PatientListVM = (function (ktc) {
     var self = this;
 
-    patientList = ko.observableArray();
+    var patientList = ko.observableArray(),
 
     loadPatientListById = function (pid) {
         ktc.data.patient.getPatientListById(pid, bindPatientList);
-    };
+    },
 
     loadPatientListByName = function (name) {
         ktc.data.patient.getPatientListByName(name, bindPatientList);
-    }
+    },
 
     bindPatientList = function (patients) {
         patientList.removeAll();
@@ -49,7 +49,7 @@ ktc.vm.PatientListVM = (function () {
         , loadPatientListByName: loadPatientListByName
     }
 
-})();
+}(ktc));
 
 $(function () {
     ko.applyBindings(ktc.vm.PatientListVM, document.getElementById('left-patient-list'));

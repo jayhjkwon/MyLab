@@ -1,7 +1,7 @@
 ﻿<p class="header-title" >*** Document List ***</p>
 <ul data-bind="foreach: documentList">
     <li>
-        <p data-bind="text: title">
+        <p data-bind="text: title, click: onClickTitle, style:{cursor:'pointer'} ">
         </p>
         <p data-bind="text: url">
         </p>
