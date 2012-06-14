@@ -38,7 +38,7 @@ ktc.vm.DocumentListVM = (function (ktc) {
         if (!name) {
             documentList([]);
             isVisible(false);
-        };
+        }
     });
 
     return {
