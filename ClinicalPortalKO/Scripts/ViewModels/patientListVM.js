@@ -37,6 +37,10 @@ ktc.vm.PatientListVM = (function (ktc) {
                                         .dateOfBirth(p.DateOfBirth)
                                         .phone(p.Phone));
         });
+    },
+
+    test = function (doc) {
+        alert(doc.title() + ' ' + doc.url() + ' ' + doc.comments());
     };
 
     ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
@@ -47,9 +51,10 @@ ktc.vm.PatientListVM = (function (ktc) {
         patientList: patientList
         , loadPatientListById: loadPatientListById
         , loadPatientListByName: loadPatientListByName
+        , test: test
     }
 
-}(ktc));
+} (ktc));
 
 $(function () {
     ko.applyBindings(ktc.vm.PatientListVM, document.getElementById('left-patient-list'));

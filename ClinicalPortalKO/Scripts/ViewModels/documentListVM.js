@@ -31,7 +31,7 @@ ktc.vm.DocumentListVM = (function (ktc) {
     },
 
     onTitleClick = function (document) {
-        alert(document.title());
+        ktc.vm.PatientListVM.test(document);    // demonstrate to call function in other ViewModels
     };
 
     ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
