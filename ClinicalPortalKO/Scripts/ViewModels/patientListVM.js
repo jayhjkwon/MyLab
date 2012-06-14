@@ -40,7 +40,11 @@ ktc.vm.PatientListVM = (function (ktc) {
     },
 
     test = function (doc) {
-        alert(doc.title() + ' ' + doc.url() + ' ' + doc.comments());
+        if (doc) {
+            alert(doc.title() + ' ' + doc.url() + ' ' + doc.comments());
+        } else {
+            alert('test');
+        }
     };
 
     ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
