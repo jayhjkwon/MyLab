@@ -69,5 +69,10 @@ namespace JavaScriptTest.Controllers
         {
             return View();
         }
+
+        public ActionResult Test11()
+        {
+            return View();
+        }
     }
 }

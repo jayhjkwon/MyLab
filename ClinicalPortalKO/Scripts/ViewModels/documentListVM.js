@@ -10,8 +10,8 @@
 
 ktc.namespace('ktc.vm');
 ktc.vm.DocumentListVM = (function (ktc) {
-    var self = this,
-    isVisible = ko.observable(false),
+    var self = this;
+    var isVisible = ko.observable(false),
     documentList = ko.observableArray(),
 
     loadDocumentList = function (pid) {
@@ -28,9 +28,9 @@ ktc.vm.DocumentListVM = (function (ktc) {
                                 .comments(f.Comments);
             documentList.push(document);
         });
-    };
+    },
 
-    onClickTitle = function (document) {
+    onTitleClick = function (document) {
         alert(document.title());
     };
 
@@ -45,7 +45,7 @@ ktc.vm.DocumentListVM = (function (ktc) {
         isVisible: isVisible
         , documentList: documentList
         , loadDocumentList: loadDocumentList
-        , onClickTitle: onClickTitle
+        , onTitleClick: onTitleClick
     };
 
 } (ktc));

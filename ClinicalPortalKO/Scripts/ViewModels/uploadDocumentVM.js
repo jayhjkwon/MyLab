@@ -12,7 +12,7 @@ ktc.namespace('ktc.vm');
 ktc.vm.UploadDocumentVM = (function () {
     var self = this;
 
-    isVisible = ko.observable(false);
+    var isVisible = ko.observable(false);
 
     ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
         if (!name) {

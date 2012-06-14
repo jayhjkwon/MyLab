@@ -10,13 +10,13 @@
 
 ktc.namespace('ktc.data');
 ktc.data.folder = (function () {
-    foldersJson = [{ "PatientId" : "100", "Title":"CT - Right Head", "LastUpdateTime":"2012-03-12" }
+    var foldersJson = [{ "PatientId" : "100", "Title":"CT - Right Head", "LastUpdateTime":"2012-03-12" }
             ,{ "PatientId" : "100", "Title":"MRI - Knee", "LastUpdateTime":"2010-01-25" }
             ,{ "PatientId" : "100", "Title":"X-Ray - Left Hand", "LastUpdateTime":"2012-05-12" }
             ,{ "PatientId" : "100", "Title":"CT - Breast", "LastUpdateTime":"2012-06-12" }
             ,{ "PatientId" : "200", "Title":"CT - Breast", "LastUpdateTime":"2012-06-12" }
             ,{ "PatientId" : "200", "Title":"X-Ray - Left Hand", "LastUpdateTime":"2012-06-12" }
-            ];
+            ],
 
     getFolderListByPid = function (pid, callback) {
         if (pid === '') {

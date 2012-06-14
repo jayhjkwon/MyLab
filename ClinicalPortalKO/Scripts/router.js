@@ -14,7 +14,7 @@
 ktc.namespace('ktc.router');
 ktc.router.AppRouter = (function () {
 
-    init = $.sammy(function () {
+    var init = $.sammy(function () {
         this.get("", function () {
             console.log("default route page");
         });
