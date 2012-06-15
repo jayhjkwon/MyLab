@@ -9,7 +9,7 @@
 
 
 ktc.namespace('ktc.data');
-ktc.data.document = (function () {
+ktc.data.documentDataService = (function () {
     var documentsJson = [{ "PatientId": "100", "Title": "CT - Right Head", "Comments": "aaaaaaaaaaaaaa", "Url":"a.jpg" }
             , { "PatientId": "100", "Title": "MRI - Knee", "Comments": "bbbbbbbbbbb", "Url": "b.jpg" }
             , { "PatientId": "100", "Title": "X-Ray - Left Hand", "Comments": "cccccccccccccc", "Url": "c.jpg" }

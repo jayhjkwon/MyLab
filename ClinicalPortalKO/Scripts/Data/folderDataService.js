@@ -9,7 +9,7 @@
 
 
 ktc.namespace('ktc.data');
-ktc.data.folder = (function () {
+ktc.data.folderDataService = (function () {
     var foldersJson = [{ "PatientId" : "100", "Title":"CT - Right Head", "LastUpdateTime":"2012-03-12" }
             ,{ "PatientId" : "100", "Title":"MRI - Knee", "LastUpdateTime":"2010-01-25" }
             ,{ "PatientId" : "100", "Title":"X-Ray - Left Hand", "LastUpdateTime":"2012-05-12" }

@@ -6,18 +6,18 @@
 /// <reference path="../main.js" />
 /// <reference path="../common.js" />
 /// <reference path="../Models/folder.js" />
-/// <reference path="../Data/folderData.js" />
+/// <reference path="../Data/folderDataService.js" />
 /// <reference path="topMenuVM.js" />
 
 ktc.namespace('ktc.vm');
-ktc.vm.FolderListVM = (function (ktc) {
+ktc.vm.folderListVM = (function (ktc) {
     var self = this;
 
     var isVisible = ko.observable(false),
     folderList = ko.observableArray(),
 
     loadFolderList = function (pid) {
-        ktc.data.folder.getFolderListByPid(pid, bindFolderList);
+        ktc.data.folderDataService.getFolderListByPid(pid, bindFolderList);
     },
 
     bindFolderList = function (folders) {
@@ -31,7 +31,7 @@ ktc.vm.FolderListVM = (function (ktc) {
         });
     };
 
-    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+    ktc.vm.topMenuVM.patientNameForSearch.subscribe(function (name) {
         if (!name) {
             folderList([]);
         }
@@ -48,5 +48,5 @@ ktc.vm.FolderListVM = (function (ktc) {
 }(ktc));
 
 $(function () {
-    ko.applyBindings(ktc.vm.FolderListVM, document.getElementById('left-folder-list'));
+    ko.applyBindings(ktc.vm.folderListVM, document.getElementById('left-folder-list'));
 });

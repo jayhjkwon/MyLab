@@ -6,15 +6,15 @@
 /// <reference path="../main.js" />
 /// <reference path="../common.js" />
 /// <reference path="../Models/document.js" />
-/// <reference path="../Data/documentData.js" />
+/// <reference path="../Data/documentDataService.js" />
 
 ktc.namespace('ktc.vm');
-ktc.vm.UploadDocumentVM = (function () {
+ktc.vm.uploadDocumentVM = (function () {
     var self = this;
 
     var isVisible = ko.observable(false);
 
-    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+    ktc.vm.topMenuVM.patientNameForSearch.subscribe(function (name) {
         if (!name) {
             isVisible(false);
         }
@@ -27,5 +27,5 @@ ktc.vm.UploadDocumentVM = (function () {
 }());
 
 $(function () {
-    ko.applyBindings(ktc.vm.UploadDocumentVM, document.getElementById('body-pnr'));
+    ko.applyBindings(ktc.vm.uploadDocumentVM, document.getElementById('body-pnr'));
 });

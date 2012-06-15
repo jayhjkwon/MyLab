@@ -9,7 +9,7 @@
 
 
 ktc.namespace('ktc.data');
-ktc.data.patient = (function () {
+ktc.data.patientDataService = (function () {
     var patientsJson = [{ "PatientId": "100", "FirstName": "Scott", "LastName": "Hanselman", "Gender": "Male", "DateOfBirth": "1980-04-24", "Phone": "000-0000-0000" },
             { "PatientId": "200", "FirstName": "Choi", "LastName": "Hongman", "Gender": "Male", "DateOfBirth": "1970-12-21", "Phone": "000-1111-1111" },
             { "PatientId": "300", "FirstName": "Jason", "LastName": "Mraz", "Gender": "Female", "DateOfBirth": "1978-05-21", "Phone": "000-2222-2222" },

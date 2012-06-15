@@ -6,16 +6,16 @@
 /// <reference path="../main.js" />
 /// <reference path="../common.js" />
 /// <reference path="../Models/document.js" />
-/// <reference path="../Data/documentData.js" />
+/// <reference path="../Data/documentDataService.js" />
 
 ktc.namespace('ktc.vm');
-ktc.vm.DocumentListVM = (function (ktc) {
+ktc.vm.documentListVM = (function (ktc) {
     var self = this;
     var isVisible = ko.observable(false),
     documentList = ko.observableArray(),
 
     loadDocumentList = function (pid) {
-        ktc.data.document.getDocumentListByPid(pid, bindDocumentList);
+        ktc.data.documentDataService.getDocumentListByPid(pid, bindDocumentList);
     },
 
     bindDocumentList = function (documents) {
@@ -31,10 +31,10 @@ ktc.vm.DocumentListVM = (function (ktc) {
     },
 
     onTitleClick = function (document) {
-        ktc.vm.PatientListVM.test(document);    // demonstrate to call function in other ViewModels
+        ktc.vm.patientListVM.test(document);    // demonstrate to call function in other ViewModels
     };
 
-    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+    ktc.vm.topMenuVM.patientNameForSearch.subscribe(function (name) {
         if (!name) {
             documentList([]);
             isVisible(false);
@@ -51,5 +51,5 @@ ktc.vm.DocumentListVM = (function (ktc) {
 } (ktc));
 
 $(function () {
-    ko.applyBindings(ktc.vm.DocumentListVM, document.getElementById('body-document-list'));
+    ko.applyBindings(ktc.vm.documentListVM, document.getElementById('body-document-list'));
 });

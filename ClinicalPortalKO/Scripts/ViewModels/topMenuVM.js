@@ -7,7 +7,7 @@
 /// <reference path="../common.js" />
 
 ktc.namespace('ktc.vm');
-ktc.vm.TopMenuVM = (function () {
+ktc.vm.topMenuVM = (function () {
     var self = this;
 
     var patientNameForSearch = ko.observable();
@@ -19,9 +19,9 @@ ktc.vm.TopMenuVM = (function () {
 }());
 
 $(function () {
-    ko.applyBindings(ktc.vm.TopMenuVM, document.getElementById('top'));
+    ko.applyBindings(ktc.vm.topMenuVM, document.getElementById('top'));
 
-    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+    ktc.vm.topMenuVM.patientNameForSearch.subscribe(function (name) {
         if (!name) {
             location.hash = '';
         }

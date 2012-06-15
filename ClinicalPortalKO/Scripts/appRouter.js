@@ -12,7 +12,7 @@
 
 
 ktc.namespace('ktc.router');
-ktc.router.AppRouter = (function () {
+ktc.router.appRouter = (function () {
 
     var init = $.sammy(function () {
         this.get("", function () {
@@ -21,22 +21,22 @@ ktc.router.AppRouter = (function () {
 
         this.get('#/patient/:pid', function () {
             var pid = this.params.pid;
-            ktc.vm.PatientListVM.loadPatientListById(pid, true);
-            ktc.vm.FolderListVM.loadFolderList(pid);
+            ktc.vm.patientListVM.loadPatientListById(pid, true);
+            ktc.vm.folderListVM.loadFolderList(pid);
         });
 
         this.get('#/patient/folder/:pid', function () {
             var pid = this.params.pid;
-            ktc.vm.PatientListVM.loadPatientListById(pid, true);
-            ktc.vm.FolderListVM.loadFolderList(pid);
-            ktc.vm.DocumentListVM.isVisible(true);
-            ktc.vm.DocumentListVM.loadDocumentList(pid);
-            ktc.vm.UploadDocumentVM.isVisible(false);
+            ktc.vm.patientListVM.loadPatientListById(pid, true);
+            ktc.vm.folderListVM.loadFolderList(pid);
+            ktc.vm.documentListVM.isVisible(true);
+            ktc.vm.documentListVM.loadDocumentList(pid);
+            ktc.vm.uploadDocumentVM.isVisible(false);
         });
 
         this.get('#/document/upload', function () {
-            ktc.vm.DocumentListVM.isVisible(false);
-            ktc.vm.UploadDocumentVM.isVisible(true);
+            ktc.vm.documentListVM.isVisible(false);
+            ktc.vm.uploadDocumentVM.isVisible(true);
         });
     }).run();
 
@@ -45,5 +45,5 @@ ktc.router.AppRouter = (function () {
 }());
 
 $(function(){
-    ktc.router.AppRouter.init;
+    ktc.router.appRouter.init;
 });

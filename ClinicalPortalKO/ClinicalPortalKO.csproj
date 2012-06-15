@@ -131,9 +131,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\common.js" />
-    <Content Include="Scripts\Data\documentData.js" />
-    <Content Include="Scripts\Data\folderData.js" />
-    <Content Include="Scripts\Data\patientData.js" />
+    <Content Include="Scripts\Data\documentDataService.js" />
+    <Content Include="Scripts\Data\folderDataService.js" />
+    <Content Include="Scripts\Data\patientDataService.js" />
     <Content Include="Scripts\Libs\infuser-amd.js" />
     <Content Include="Scripts\Libs\infuser-amd.min.gz.js" />
     <Content Include="Scripts\Libs\infuser-amd.min.js" />
@@ -210,7 +210,7 @@
     <Content Include="Scripts\Models\document.js" />
     <Content Include="Scripts\Models\folder.js" />
     <Content Include="Scripts\Models\patient.js" />
-    <Content Include="Scripts\router.js" />
+    <Content Include="Scripts\appRouter.js" />
     <Content Include="Scripts\Libs\underscore.js" />
     <Content Include="Scripts\Libs\underscore.min.js" />
     <Content Include="Scripts\ViewModels\documentListVM.js" />

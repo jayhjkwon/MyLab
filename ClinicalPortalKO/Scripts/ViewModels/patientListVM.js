@@ -6,24 +6,24 @@
 /// <reference path="../main.js" />
 /// <reference path="../common.js" />
 /// <reference path="../Models/patient.js" />
-/// <reference path="../Data/patientData.js" />
+/// <reference path="../Data/patientDataService.js" />
 /// <reference path="topMenuVM.js" />
 /// <reference path="folderListVM.js" />
 /// <reference path="documentListVM.js" />
 /// <reference path="uploadDocumentVM.js" />
 
 ktc.namespace('ktc.vm');
-ktc.vm.PatientListVM = (function (ktc) {
+ktc.vm.patientListVM = (function (ktc) {
     var self = this;
 
     var patientList = ko.observableArray(),
 
     loadPatientListById = function (pid) {
-        ktc.data.patient.getPatientListById(pid, bindPatientList);
+        ktc.data.patientDataService.getPatientListById(pid, bindPatientList);
     },
 
     loadPatientListByName = function (name) {
-        ktc.data.patient.getPatientListByName(name, bindPatientList);
+        ktc.data.patientDataService.getPatientListByName(name, bindPatientList);
     },
 
     bindPatientList = function (patients) {
@@ -47,7 +47,7 @@ ktc.vm.PatientListVM = (function (ktc) {
         }
     };
 
-    ktc.vm.TopMenuVM.patientNameForSearch.subscribe(function (name) {
+    ktc.vm.topMenuVM.patientNameForSearch.subscribe(function (name) {
         loadPatientListByName(name);
     });
 
@@ -61,5 +61,5 @@ ktc.vm.PatientListVM = (function (ktc) {
 } (ktc));
 
 $(function () {
-    ko.applyBindings(ktc.vm.PatientListVM, document.getElementById('left-patient-list'));
+    ko.applyBindings(ktc.vm.patientListVM, document.getElementById('left-patient-list'));
 });
