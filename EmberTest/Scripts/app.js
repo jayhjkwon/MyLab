@@ -3,10 +3,6 @@
 
 var App = Em.Application.create();
 
-App.MyView = Em.View.extend({
-    tagName: 'div',
-    templateName: 'hello',
-    message: 'hello ember'
+App.Person = Em.Object.create({
+   message: 'hello' 
 });
-
-var myView = App.MyView.create();
