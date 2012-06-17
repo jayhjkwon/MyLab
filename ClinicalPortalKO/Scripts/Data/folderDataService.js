@@ -19,7 +19,7 @@ ktc.data.folderDataService = (function () {
             ],
 
     getFolderListByPid = function (pid, callback) {
-        if (pid === '') {
+        if (!pid) {
             callback([]);
         } else {
             callback(_.filter(foldersJson, function (f) {

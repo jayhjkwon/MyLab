@@ -19,7 +19,7 @@ ktc.data.documentDataService = (function () {
             ],
 
     getDocumentListByPid = function (pid, callback) {
-        if (pid === '') {
+        if (!pid) {
             callback([]);
         } else {
             callback(_.filter(documentsJson, function (d) {

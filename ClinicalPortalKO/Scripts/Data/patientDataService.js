@@ -17,7 +17,7 @@ ktc.data.patientDataService = (function () {
             { "PatientId": "500", "FirstName": "Michael", "LastName": "Carick", "Gender": "Male", "DateOfBirth": "1993-04-21", "Phone": "000-4444-4444"}],
 
     getPatientListById = function (pid, callback) {
-        if (pid === '') {
+        if (!pid) {
             callback([]);
         } else {
             callback(_.filter(patientsJson, function (p) {
