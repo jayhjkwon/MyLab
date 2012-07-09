@@ -50,7 +50,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnockoutExternalTemplate", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicalPortalKO", "ClinicalPortalKO\ClinicalPortalKO.csproj", "{AB73AB50-B3F3-4FB5-AA57-A12B95300697}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssTest", "..\..\WorkSpaceForNet\MvcApplication27\MvcApplication27\CssTest.csproj", "{23A8A2E9-5873-48D8-8DA3-72E11E41AB9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CssTest", "MvcApplication27\CssTest.csproj", "{23A8A2E9-5873-48D8-8DA3-72E11E41AB9D}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
