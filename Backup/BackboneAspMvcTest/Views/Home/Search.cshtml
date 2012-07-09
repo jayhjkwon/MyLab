@@ -1,0 +1,290 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="en" />
+    <title>Clinical Portal</title>
+    <link href="@Url.Content("~/Content/layout-default-latest.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/bootstrap-responsive.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/themes/vader/jquery-ui-1.8.20.custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/app.css")" rel="stylesheet" type="text/css" />
+    
+    <style type="text/css">
+        .ui-layout-center, .ui-layout-west, .ui-layout-content
+        {
+            padding: 0;
+            overflow: hidden;
+        }
+        .ui-layout-center P.ui-layout-content
+        {
+            line-height: 1.4em;
+            margin: 0; 
+        }
+    </style>    
+</head>
+<body id="RootView">
+    <div class="ui-layout-north ui-widget-content" >
+        <div style="float: left;">
+            <a class="brand" href="@Url.Action("Search", "Home")">
+                <img src="@Url.Content("~/Content/images/ge_white.png")" style="margin-top: -5px;width:25px;height:23px"  />Clinical Portal
+            </a> 
+            <a style="margin-left:40px;" href="@Url.Action("Search", "Home")" >
+                <i class="icon-home icon-white"></i><b>Patient and Document</b>
+            </a> 
+            <a style="margin-left:15px;" href="@Url.Action("Create", "PnR")" >
+                <i class="icon-pencil icon-white"></i><b>Send Document</b>
+            </a>
+            <input id="patientSearchName" type="text" class="search-query" style="margin-left:15px; placeholder="Search Patient">
+        </div>
+    </div>
+    <div id="ContentView" class="ui-layout-center" style="display: none;">
+        <div id="DocumentListView" class="ui-layout-content ui-widget-content">
+            <h3 class="ui-widget-header"><i class="icon-file icon-white" style="margin-left:20px;margin-top:3px;"></i>&nbsp;Document View</h3>          
+            <div class="ui-widget-header" style="height:60px;">
+                <div id="zoom-slider-vertical" style="width:200px;margin-left:20px;margin-top:22px;"></div>
+                <a data-slide="prev" href="#documentDetail" class="left carousel-control" style="margin-left:280px;top:55px;">‹</a>
+                <a data-slide="next" href="#documentDetail" class="carousel-control" style="margin-left:340px;top:55px;">›</a>
+            </div>
+            
+            <div class="carousel slide" id="documentDetail" style="display:none;" >
+                <div id="carousel-inner" class="carousel-inner" >
+                    <script type="text/template" id="document-item-template">
+                        <% if (Index == 0) { %>
+                            <div class="item active">
+                        <% }else{ %>
+                            <div class="item">
+                        <% } %>
+                            <img id="img<%=Index%>" src="<%= URI %>" style="width:100%;height:100%;margin:5px;" alt="">                             
+                        </div>
+                    </script> 
+                </div>
+                @*<a data-slide="prev" href="#documentDetail" class="left carousel-control">‹</a>
+                <a data-slide="next" href="#documentDetail" class="right carousel-control">›</a>*@
+            </div>
+        </div>
+    </div>
+    <div id="LeftView" class="ui-layout-west" style="display: none;background-color:black;padding:5px;">        
+        <script type="text/template" id="patient-item-template">
+            <div>
+                <p>
+                    <span><%= DateOfBirth %></span>&nbsp;
+                    <% if (Gender == "M") { %>
+                        <span class="badge badge-info"><%= Gender %></span>
+                    <% }else{ %>
+                        <span class="badge badge-important"><%= Gender %></span>
+                    <% } %>
+                </p>
+                <p>
+                    <span><%= HomePhone %></span>
+                </p>
+                <p>
+                    <address><%= Address %></address>
+                </p>
+            </div>
+            <ul>
+                <% _.each(Folders, function(folder){ %>
+                <li style="margin-left:-10px;margin-bottom:3px;"><a href="#documents/<%=ID%>"><ul style="margin-left:0px;list-style-type:none;"><li><%= folder.Title %></li><li><%= folder.LastUpdateTime %></li></ul></a></li>
+                <% }) %>
+            </ul>
+        </script>
+    </div>
+
+<script src="@Url.Content("~/Scripts/lib/jquery-1.7.2.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/jquery-ui-1.8.20.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/modernizr-1.7.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/bootstrap.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/underscore.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/backbone.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/json2.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/jquery.layout-latest.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/lib/jquery.layout.resizePaneAccordions-1.0.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    var imageWidth, imageHeight;
+
+    $(document).ready(function () {
+        myLayout = $('body').layout({
+            west__size: 300, west__onresize: $.layout.callbacks.resizePaneAccordions
+        });
+
+        $("#zoom-slider-vertical").slider({
+            range: "min",
+            min: 1,
+            max: 2,
+            value: 1,
+            step: 0.1,
+            slide: function (event, ui) {
+                console.log('zoom silder val=' + ui.value);
+                console.log('imageWidth=' + window.imageWidth);
+                var img = $('.active');
+                img.css('width', window.imageWidth * ui.value);
+                img.css('height', window.imageHeight * ui.value);
+            }
+        });
+    });
+</script>
+<script>
+
+    var Patient = Backbone.Model.extend({});
+
+    var Patients = Backbone.Collection.extend({
+        model: Patient,
+        url: "/Api/Patients"
+    });
+
+    var Document = Backbone.Model.extend({});
+
+    var Documents = Backbone.Collection.extend({
+        model: Document,
+        url: "/Api/Documents"
+    });
+        
+    var RootView = Backbone.View.extend({
+        el: $('#RootView'),
+        initialize: function () {
+            _.bindAll(this, 'onPatientSearchNameKeyup', 'searchPatientByName', 'searchPatientById');
+            this.collection = new Patients;
+        },
+        events: {
+            "keyup #patientSearchName": "onPatientSearchNameKeyup"
+        },
+        onPatientSearchNameKeyup : function(){
+            var self = this;
+            self.searchPatientByName($('#patientSearchName').val());
+        },
+        searchPatientByName: function (patientName) {
+            var self = this;
+            $('#LeftView').html('');
+            self.collection.fetch({ data: { name: patientName, success: function () {
+                        $('#LeftView').append(new PatientItemView({collection:self.collection}).render().el);
+                    }
+                }
+            });
+        },
+        searchPatientById: function (pid) {
+            var self = this;
+            $('#LeftView').html('');
+            self.collection.url = "/Api/PatientById";
+            self.collection.fetch({ data: { id: pid, success: function () {
+                        console.log('collection length=' + self.collection.length);
+                        $('#LeftView').append(new PatientItemView({collection:self.collection}).render().el);
+                    }
+                }
+            });
+            self.collection.url = "/Api/Patients";
+        },
+    });
+    var rootView = new RootView;
+
+    var PatientItemView = Backbone.View.extend({
+        render: function () {
+            var self = this;
+            var panels = self.collection;
+            for (var p, i = 0; i < panels.length; ++i) {
+                var patient = panels.models[i];
+                p = new PatientItemPanelView({ model: patient });
+                this.$el.append('<h2><strong><a href="#">' + patient.get('LastName') + '&nbsp;' + patient.get('FirstName') + '</a></strong></h2>');
+                this.$el.append(p.render().el);
+            }
+            setTimeout(function () { self.$el.accordion({autoHeight:false, navigation:true}) }, 0);
+            return this;
+        }
+    });
+
+    var PatientItemPanelView = Backbone.View.extend({
+        patientItemTemplate: _.template($('#patient-item-template').html()),
+        render: function () {
+            var self = this;
+            var jsonForTemplate = JSON.parse(JSON.stringify(self.model));
+            this.$el.html(self.patientItemTemplate(jsonForTemplate));
+            return this;
+        },
+    });
+
+    var ContentView = Backbone.View.extend({
+        el: $('#ContentView'),
+        initialize:function(){
+        },
+        render : function(){
+        }
+    });
+
+    var DocumentListView = Backbone.View.extend({
+        el: $('#DocumentListView'),
+        initialize:function(){
+            this.render();
+        },
+        template : _.template($('#document-item-template').html()),
+        render : function(){
+            var self = this;
+            var documents = self.collection;
+            $('#carousel-inner').html('');
+            for(var i=0; i<documents.length; i++){
+                var document = documents.models[i];
+                document.set({Index : i});
+                var jsonDocument = document.toJSON();
+                $('#carousel-inner').append(self.template(jsonDocument));
+            }
+            $('#documentDetail').show().carousel({interval:false, pause:'hover'});
+            
+            $("#zoom-slider-vertical").slider({value:1});
+
+            // set activated image size to the global variable
+            window.imageWidth = $('.active img').width();
+            window.imageHeight = $('.active img').height();
+            $("#documentDetail").on("slid", function () {
+                window.imageWidth = $('.active img').width();
+                window.imageHeight = $('.active img').height();
+            });
+
+            // enable image drag
+            for (i = 0; i < documents.length; i++) {
+                $('img#img' + i).draggable();
+            }
+
+            return this;
+        }
+    });
+
+    var PnrView = Backbone.View.extend({
+        el: $(''),
+        initialize:function(){
+        },
+        render : function(){
+        }
+    });
+
+    var AppRouter = Backbone.Router.extend({
+        initialize: function () {
+            _.bindAll(this, "goToDocumentList");
+        },
+        routes: {
+            "documents/:id": "goToDocumentList"
+        },  
+        goToDocumentList: function (id) {
+            console.log('goToDocumentList ID=' + id);
+            
+            rootView.searchPatientById(id);
+
+            this.documentList = new Documents();
+            var self = this;
+            this.documentList.fetch({
+                data:{pid:id}, 
+                success:function(){
+                    self.documentListView = new DocumentListView({collection:self.documentList});
+                }
+            });
+        }
+    });
+        
+    var appRouter = new AppRouter;
+    Backbone.history.start();
+
+    var vent = _.extend({}, Backbone.Events);
+        
+</script>
+</body>
+</html>

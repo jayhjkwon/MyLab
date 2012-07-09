@@ -1,0 +1,38 @@
+﻿.topMenu
+{
+    height: 50px;
+    clear: both;
+    background-color: #ddd;
+}
+.top-left
+{
+    float: left;
+    margin-top: 13px;
+    margin-left: 20px;
+}
+.top-right
+{
+    float: right;
+    margin-top: 13px;
+    margin-right: 20px;
+}
+.leftMenu
+{
+    width: 30%;
+    min-height: 300px;
+    float: left;
+    background-color: #aaa;
+}
+.header-title
+{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.bodyMenu
+{
+    width: 70%;
+    min-height: 300px;
+    float: left;
+    background-color: #bbb;
+}

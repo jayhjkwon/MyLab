@@ -1,0 +1,11 @@
+﻿<p class="header-title" >*** Document List ***</p>
+<ul data-bind="foreach: documentList">
+    <li>
+        <p data-bind="text: title, style:{cursor:'pointer'}, click: $root.onTitleClick">
+        </p>
+        <p data-bind="text: url">
+        </p>
+        <p data-bind="text: comments">
+        </p>
+    </li>
+</ul>
