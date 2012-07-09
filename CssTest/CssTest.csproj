@@ -145,6 +145,7 @@
     <Content Include="Content\test3.css" />
     <Content Include="Content\test4.css" />
     <Content Include="Content\test5.css" />
+    <Content Include="Content\test7.css" />
     <Content Include="Images\1.gif" />
     <Content Include="Images\3.gif" />
     <Content Include="Images\bg_main.jpg" />
@@ -260,6 +261,7 @@
     <Content Include="Views\Home\Test4.cshtml" />
     <Content Include="Views\Home\Test5.cshtml" />
     <Content Include="Views\Home\Test6.cshtml" />
+    <Content Include="Views\Home\Test7.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,6 +23,7 @@ namespace MvcApplication27
             bundles.Add(new StyleBundle("~/Content/test4").Include("~/Content/test4.css"));
             bundles.Add(new StyleBundle("~/Content/test5").Include("~/Content/test5.css"));
             bundles.Add(new StyleBundle("~/Content/test6").Include("~/Content/test6.css"));
+            bundles.Add(new StyleBundle("~/Content/test7").Include("~/Content/test7.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
