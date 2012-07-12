@@ -146,6 +146,8 @@
     <Content Include="Content\test4.css" />
     <Content Include="Content\test5.css" />
     <Content Include="Content\test7.css" />
+    <Content Include="Content\test8.css" />
+    <Content Include="Content\test9.css" />
     <Content Include="Images\1.gif" />
     <Content Include="Images\3.gif" />
     <Content Include="Images\bg_main.jpg" />
@@ -185,6 +187,7 @@
     <Content Include="Images\scroll_bottom.jpg" />
     <Content Include="Images\scroll_middle.jpg" />
     <Content Include="Images\scroll_top.jpg" />
+    <Content Include="Images\sidebar_back.PNG" />
     <Content Include="Images\system_help.png" />
     <Content Include="Images\text_list_bullets.png" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -262,6 +265,9 @@
     <Content Include="Views\Home\Test5.cshtml" />
     <Content Include="Views\Home\Test6.cshtml" />
     <Content Include="Views\Home\Test7.cshtml" />
+    <Content Include="Views\Shared\_Parent.cshtml" />
+    <Content Include="Views\Home\Test8.cshtml" />
+    <Content Include="Views\Home\Test9.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
