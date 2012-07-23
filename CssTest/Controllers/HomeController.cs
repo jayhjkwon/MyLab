@@ -73,5 +73,15 @@ namespace MvcApplication27.Controllers
         {
             return View();
         }
+
+        public ActionResult Slider()
+        {
+            return View();
+        }
+
+        public ActionResult Slider1()
+        {
+            return View();
+        }
     }
 }

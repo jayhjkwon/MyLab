@@ -153,6 +153,7 @@
     <Content Include="Images\bg_main.jpg" />
     <Content Include="Images\bullet_edit.png" />
     <Content Include="Images\bullet_home.png" />
+    <Content Include="Images\Chrysanthemum.jpg" />
     <Content Include="Images\Desert.jpg" />
     <Content Include="Content\test2.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -184,6 +185,11 @@
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Hydrangeas.jpg" />
+    <Content Include="Images\Jellyfish.jpg" />
+    <Content Include="Images\Koala.jpg" />
+    <Content Include="Images\Lighthouse.jpg" />
+    <Content Include="Images\Penguins.jpg" />
     <Content Include="Images\scroll_bottom.jpg" />
     <Content Include="Images\scroll_middle.jpg" />
     <Content Include="Images\scroll_top.jpg" />
@@ -194,6 +200,7 @@
     <None Include="Scripts\jquery-1.7.2.intellisense.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </None>
+    <Content Include="Images\Tulips.jpg" />
     <Content Include="Scripts\jquery-1.7.2.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
@@ -268,6 +275,8 @@
     <Content Include="Views\Shared\_Parent.cshtml" />
     <Content Include="Views\Home\Test8.cshtml" />
     <Content Include="Views\Home\Test9.cshtml" />
+    <Content Include="Views\Home\Slider.cshtml" />
+    <Content Include="Views\Home\Slider1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

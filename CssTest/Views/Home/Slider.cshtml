@@ -1,0 +1,116 @@
+﻿@{
+    ViewBag.Title = "Slider";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        .container {
+            border: dotted 0px;
+            width: 1024px;
+            height: 768px;
+            overflow: hidden;
+            margin-left: auto;
+            margin-right: auto;
+            -moz-box-shadow: 0px 0px 5px 5px #888;
+            -o-box-shadow: 0px 0px 5px 5px #888;
+            -webkit-box-shadow: 0px 0px 5px 5px #888;
+            box-shadow: 0px 0px 10px 5px #888;
+        }
+
+        .slider {
+            border: dotted 0px;
+            width: 8192px;
+            height: 768px;
+            position: relative;
+            left: 0;
+            top: 0;
+        }
+
+        .pic {
+            width: 1024px;
+            height: 768px;
+            float: left;
+        }
+
+        img {
+            width: 800px;
+            height: 600px;
+            display: block;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.2.js"></script>
+    <script>
+        $(function () {
+            var oldX
+                , currentX
+                , oldLeft
+                , currentLeft
+                , isClicking = false;
+
+            $('.slider').on('mousedown', function (event) {                
+                isClicking = true;
+                oldX = currentLeft = event.pageX;                
+                oldLeft = currentLeft = parseInt( $(this).css('left'));
+                event.preventDefault();
+                console.log('mousedown : oldX=>' + oldX + ', currentX=>' + currentX + ', oldLeft=>' + oldLeft + ', currentLeft=>' + currentLeft);
+            });
+
+            $('.slider').on('mousemove', function (event) {
+                if (isClicking) {
+                    currentX = event.pageX;
+                    currentLeft = oldLeft - (oldX - currentX);
+                    $('.slider').css({ 'left': currentLeft });  // move elements' left as much as distance between oldX cord and currentX cord
+                    event.preventDefault();
+                    console.log('mousemove : oldX=>' + oldX + ', currentX=>' + currentX + ', oldLeft=>' + oldLeft + ', currentLeft=>' + currentLeft);
+                }
+            });
+
+            $('.slider').on('mouseup', function (event) {
+                if (isClicking) {
+                    isClicking = false;
+                    event.preventDefault();
+                    console.log('mouseup : oldX=>' + oldX + ', currentX=>' + currentX + ', oldLeft=>' + oldLeft + ', currentLeft=>' + currentLeft);
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            <div class="pic">
+                <img src="/Images/Chrysanthemum.jpg" />
+            </div>
+            <div class="pic">
+                <img src="/Images/Desert.jpg" />
+            </div>
+            <div class="pic">
+                <img src="/Images/Hydrangeas.jpg" />
+            </div>
+            <div class="pic">
+                <img src="/Images/Jellyfish.jpg" />
+            </div>
+            <div class="pic">
+                <img src="/Images/Koala.jpg" />
+            </div>
+            <div class="pic">
+                <img src="/Images/Lighthouse.jpg" />
+            </div>
+            <div class="pic">
+                <img src="/Images/Penguins.jpg" />
+            </div>
+            <div class="pic">
+                <img src="/Images/Tulips.jpg" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>
