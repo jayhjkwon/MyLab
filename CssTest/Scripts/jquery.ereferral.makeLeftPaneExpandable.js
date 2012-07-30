@@ -7,7 +7,7 @@
             var defaults;
 
             defaults = {
-                speed: 300
+                animationSpeed: 300
                 , docListWrapperExpandWidth: 100
                 , docListWrapperCollapseWidth: 30
                 , thumbnailWrapperExpandWidth: 80
@@ -18,7 +18,7 @@
                 , $btnDocListExpander: undefined
                 , $btnThumbnailExpander: undefined
             };
-
+            
             // map the options object's value to the defaults object
             $.extend(defaults, options);
 
@@ -67,56 +67,68 @@
                 defaults.$btnDocListExpander.text('<');
                 defaults.$btnThumbnailExpander.text('<');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperExpandWidth }, defaults.speed);
+                defaults.$docListWrapper.animate({ width: defaults.docListWrapperExpandWidth }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperExpandWidth,
                     width: defaults.thumbnailWrapperExpandWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
                 defaults.$docViewerWrapper.animate({
                     left: defaults.docListWrapperExpandWidth + defaults.thumbnailWrapperExpandWidth,
                     width: windowWidth - defaults.docListWrapperExpandWidth - defaults.thumbnailWrapperExpandWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
+
+                defaults.$docListWrapper.children().show();
+                defaults.$thumbnailWrapper.children().show();
             } else {
                 defaults.$btnDocListExpander.text('<');
                 defaults.$btnThumbnailExpander.text('>');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperExpandWidth }, defaults.speed);
+                defaults.$docListWrapper.animate({ width: defaults.docListWrapperExpandWidth }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperExpandWidth,
                     width: defaults.thumbnailWrapperCollapseWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
                 defaults.$docViewerWrapper.animate({
                     left: defaults.docListWrapperExpandWidth + defaults.thumbnailWrapperCollapseWidth,
                     width: windowWidth - defaults.docListWrapperExpandWidth - defaults.thumbnailWrapperCollapseWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
+
+                defaults.$docListWrapper.children().show();
+                defaults.$thumbnailWrapper.children().not(defaults.$btnThumbnailExpander).hide();
             }
         } else {
             if (expandThumb) {
                 defaults.$btnDocListExpander.text('>');
                 defaults.$btnThumbnailExpander.text('<');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperCollapseWidth }, defaults.speed);
+                defaults.$docListWrapper.animate({ width: defaults.docListWrapperCollapseWidth }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperCollapseWidth,
                     width: defaults.thumbnailWrapperExpandWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
                 defaults.$docViewerWrapper.animate({
                     left: defaults.docListWrapperCollapseWidth + defaults.thumbnailWrapperExpandWidth,
                     width: windowWidth - defaults.docListWrapperCollapseWidth - defaults.thumbnailWrapperExpandWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
+
+                defaults.$docListWrapper.children().not(defaults.$btnDocListExpander).hide();
+                defaults.$thumbnailWrapper.children().show();
             } else {
                 defaults.$btnDocListExpander.text('>');
                 defaults.$btnThumbnailExpander.text('>');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperCollapseWidth }, defaults.speed);
+                defaults.$docListWrapper.animate({ width: defaults.docListWrapperCollapseWidth }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperCollapseWidth,
                     width: defaults.thumbnailWrapperCollapseWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
                 defaults.$docViewerWrapper.animate({
                     left: defaults.docListWrapperCollapseWidth + defaults.thumbnailWrapperCollapseWidth,
                     width: windowWidth - defaults.docListWrapperCollapseWidth - defaults.thumbnailWrapperCollapseWidth
-                }, defaults.speed);
+                }, defaults.animationSpeed);
+
+                defaults.$docListWrapper.children().not(defaults.$btnDocListExpander).hide();
+                defaults.$thumbnailWrapper.children().not(defaults.$btnThumbnailExpander).hide();
             }
         }
     };
