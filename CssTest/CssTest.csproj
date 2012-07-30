@@ -143,7 +143,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Content\test10.less" />
+    <Content Include="Content\test10.css" />
     <Content Include="Content\test6.css" />
     <Content Include="Content\test1.css" />
     <Content Include="Content\test3.css" />
@@ -256,6 +256,7 @@
     <Content Include="Scripts\jquery-ui-1.8.11.min.js">
       <DependentUpon>jquery-ui-1.8.11.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery.ereferral.makeLeftPaneExpandable.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js">
       <DependentUpon>jquery.unobtrusive-ajax.js</DependentUpon>
