@@ -41,6 +41,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.3.0.5\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -140,6 +143,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Content\test10.less" />
     <Content Include="Content\test6.css" />
     <Content Include="Content\test1.css" />
     <Content Include="Content\test3.css" />
@@ -147,13 +151,21 @@
     <Content Include="Content\test5.css" />
     <Content Include="Content\test7.css" />
     <Content Include="Content\test8.css" />
-    <Content Include="Content\test9.css" />
+    <None Include="Content\test9.less" />
     <Content Include="Images\1.gif" />
     <Content Include="Images\3.gif" />
+    <Content Include="Images\arrow_black.png" />
+    <Content Include="Images\arrow_black_open.png" />
+    <Content Include="Images\arrow_white.png" />
+    <Content Include="Images\arrow_white_open.png" />
+    <Content Include="Images\bal_new.png" />
     <Content Include="Images\bg_main.jpg" />
+    <Content Include="Images\btn_close.png" />
     <Content Include="Images\bullet_edit.png" />
     <Content Include="Images\bullet_home.png" />
     <Content Include="Images\Chrysanthemum.jpg" />
+    <Content Include="Images\con_dropdown.jpg" />
+    <Content Include="Images\con_searchbox.jpg" />
     <Content Include="Images\Desert.jpg" />
     <Content Include="Content\test2.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -186,9 +198,43 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Hydrangeas.jpg" />
+    <Content Include="Images\icn_all_nor.png" />
+    <Content Include="Images\icn_all_sel.png" />
+    <Content Include="Images\icn_compare.png" />
+    <Content Include="Images\icn_contra.png" />
+    <Content Include="Images\icn_dcm.png" />
+    <Content Include="Images\icn_deny_nor.png" />
+    <Content Include="Images\icn_edit_nor.png" />
+    <Content Include="Images\icn_firstpage.png" />
+    <Content Include="Images\icn_group.png" />
+    <Content Include="Images\icn_hand.png" />
+    <Content Include="Images\icn_invert.png" />
+    <Content Include="Images\icn_jpg.png" />
+    <Content Include="Images\icn_lastpage.png" />
+    <Content Include="Images\icn_login.png" />
+    <Content Include="Images\icn_mag.png" />
+    <Content Include="Images\icn_memo.png" />
+    <Content Include="Images\icn_new_nor.png" />
+    <Content Include="Images\icn_nextpage.png" />
+    <Content Include="Images\icn_pdf.png" />
+    <Content Include="Images\icn_prepage.png" />
+    <Content Include="Images\icn_ratio.png" />
+    <Content Include="Images\icn_reply_nor.png" />
+    <Content Include="Images\icn_restore.png" />
+    <Content Include="Images\icn_rul.png" />
+    <Content Include="Images\icn_seachbox.jpg" />
+    <Content Include="Images\icn_search.png" />
+    <Content Include="Images\icn_txt.png" />
+    <Content Include="Images\icn_ungroup.png" />
+    <Content Include="Images\icn_zoomin.png" />
+    <Content Include="Images\icn_zoomout.png" />
     <Content Include="Images\Jellyfish.jpg" />
     <Content Include="Images\Koala.jpg" />
     <Content Include="Images\Lighthouse.jpg" />
+    <Content Include="Images\list_side_bg.png" />
+    <Content Include="Images\list_side_bg_close.png" />
+    <Content Include="Images\list_thumb_bg.png" />
+    <Content Include="Images\list_thumb_bg_close.png" />
     <Content Include="Images\Penguins.jpg" />
     <Content Include="Images\scroll_bottom.jpg" />
     <Content Include="Images\scroll_middle.jpg" />
@@ -201,6 +247,7 @@
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </None>
     <Content Include="Images\Tulips.jpg" />
+    <Content Include="Scripts\JavaScript1.js" />
     <Content Include="Scripts\jquery-1.7.2.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
@@ -277,6 +324,7 @@
     <Content Include="Views\Home\Test9.cshtml" />
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Home\Slider1.cshtml" />
+    <Content Include="Views\Home\Test10.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

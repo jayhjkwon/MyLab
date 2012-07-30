@@ -83,5 +83,10 @@ namespace MvcApplication27.Controllers
         {
             return View();
         }
+
+        public ActionResult Test10()
+        {
+            return View();
+        }
     }
 }
