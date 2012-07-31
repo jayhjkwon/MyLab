@@ -268,7 +268,10 @@
     <Content Include="Scripts\jquery.event.drag.min.js">
       <DependentUpon>jquery.event.drag.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.js" />
+    <Content Include="Scripts\jquery.mousewheel.min.js">
+      <DependentUpon>jquery.mousewheel.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\jquery.tinyscrollbar.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js">
@@ -285,11 +288,7 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
-    <Content Include="Scripts\plugin.scrollbar-min.js" />
-    <Content Include="Scripts\plugin.scrollbar.js" />
     <Content Include="Scripts\test.js" />
-    <Content Include="Scripts\ui.core-1.7.2.js" />
-    <Content Include="Scripts\ui.draggable-1.7.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

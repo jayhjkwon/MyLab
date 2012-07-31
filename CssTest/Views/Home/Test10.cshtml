@@ -12,6 +12,7 @@
     <script type="text/javascript" src="../../Scripts/modernizr-2.0.6-development-only.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-1.7.2.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.11.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.mousewheel.js"></script>
     <script type="text/javascript" src="~/Scripts/jquery.ereferral.expander.js"></script>
     <script>
         $(window).load(function () {
@@ -74,12 +75,56 @@
 
                 // zoomin/zoomout
                 $('#btn-zoomin').click(function () {
-                    $('#selected-img').effect('scale', { percent: 110 });
+                    //$('#selected-img').effect('scale', { percent: 101 }, 1);
+                    zoomin(0.3);
                 });
 
                 $('#btn-zoomout').click(function () {
-                    $('#selected-img').effect('scale', { percent: 90 });
+                    //$('#selected-img').effect('scale', { percent: 99 }, 1);
+                    zoomout(0.3);
                 });
+
+                $('#selected-img').mousewheel(function(event, delta, deltaX, deltaY){
+                    //console.log(event, delta, deltaX, deltaY);
+                    if (deltaY < 0) {
+                        zoomin(0.1);
+                    } else {
+                        zoomout(0.1);
+                    }
+                });
+
+                var scale = 1.0;
+                function zoomin(increment) {
+                    scale += increment;
+
+                    if (Modernizr.csstransforms) {
+                        $('#selected-img').css({
+                            '-ms-transform': 'scale(' + scale +')',
+                            '-moz-transform': 'scale(' + scale + ')',
+                            '-o-transform': 'scale(' + scale + ')',
+                            '-webkit-transform': 'scale(' + scale + ')',
+                            'transform': 'scale(' + scale + ')'
+                        });
+                    } else {
+                        alert('no csstransforms support !!');
+                    }
+                }
+
+                function zoomout(increment) {
+                    scale -= increment;
+
+                    if (Modernizr.csstransforms) {
+                        $('#selected-img').css({
+                            '-ms-transform': 'scale(' + scale + ')',
+                            '-moz-transform': 'scale(' + scale + ')',
+                            '-o-transform': 'scale(' + scale + ')',
+                            '-webkit-transform': 'scale(' + scale + ')',
+                            'transform': 'scale(' + scale + ')'
+                        });
+                    } else {
+                        alert('no csstransforms support !!');
+                    }
+                }
 
                 function setLocationCenter(callback) {
                     $('#doc-wrapper').css({
