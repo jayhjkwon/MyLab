@@ -1,0 +1,128 @@
+﻿@{
+    ViewBag.Title = "Test4";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    @Styles.Render("~/Content/test4")
+}
+@section Scripts{
+    <script>
+        $(function () {
+            //$('ul.new-menu ul').css('visibility', 'hidden');
+
+            //$('ul.new-menu li a').on('mouseenter', (function () {
+            //    $(this).siblings('ul').css('visibility', 'visible');
+            //}));
+
+            //$('ul.new-menu li a').on('mouseout', (function () {
+            //    $(this).siblings('ul').css('visibility', 'hidden');
+            //}));
+
+            $('ul.new-menu ul').hide();
+
+            $('ul.new-menu li a').on('mouseenter', function () {
+                $('ul.new-menu li ul').hide();
+                $(this).siblings('ul').slideDown('slow');
+            });
+
+            $('ul.new-menu li a').on('mouseout', function () {
+                //$('ul.new-menu li ul').hide();
+            });
+
+            $('ul.new-menu li ul').on('mouseenter', function () {
+                $('ul.new-menu li ul').hide();
+                $(this).show();
+            });
+
+            $('ul.new-menu li ul li').on('mouseout', function () {
+                //$('ul.new-menu li ul li').hide();
+            });
+
+            $('#test').click(function () {
+                $('.test-block').animate({ width: 100 }, 1000);
+            });
+
+        });
+
+    </script>
+}
+
+<button id="test">test</button>
+
+<div class="test-block"></div>
+
+<ul class="menu">
+    <li><a href="" class="menu-home">Home</a></li>
+    <li><a href="" class="menu-file">File</a></li>
+    <li><a href="" class="menu-edit">Edit</a></li>
+    <li><a href="" class="menu-help">Help</a></li>
+</ul>
+
+<ul class="new-menu">
+    <li>
+        <a href="" class="menu-home">Home</a>
+        <ul id="menu-sub">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+        </ul>
+    </li>
+    <li><a href="" class="menu-file">File</a>
+        <ul id="menu-sub">
+            <li>test</li>
+            <li>test</li>
+        </ul>
+    </li>
+    <li><a href="" class="menu-edit">Edit</a>
+        <ul id="menu-sub">
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+            <li>test</li>
+        </ul>
+    </li>
+    <li><a href="" class="menu-help">Help</a><ul id="menu-sub">
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+        <li>test</li>
+    </ul>
+    </li>
+</ul>
+@*<p>Floats come with some interesting behavior. For instance, floated items tend to collapse their parent container, leading to all kinds of messy issues if you’re applying background colors or borders. To get around this, we have a few tricks. We can either clear the floats on a new element (these days it’s often a pseudo-element) at the end of the container or use overflow:auto on the parent. Both fixes have their caveats, but if you know how to leverage each properly you can typically pull off any layout feat without too much trouble.</p>*@
+
+<div style="clear:both">
+    <div class="image-box">
+        <img src="~/Images/Desert.jpg" /><p>test test test test test test test test test test test test</p>
+    </div>
+    <div class="image-box">
+        <img src="~/Images/Desert.jpg" /><p>test test test test test test test test test test test testtest test test test test test testtest test test test test test test test test test test testtest test test test test test test</p>
+    </div>
+    <div class="image-box">
+        <img src="~/Images/Desert.jpg" /><p>test test test test test test test test test test test test</p>
+    </div>
+    <div class="image-box">
+        <img src="~/Images/Desert.jpg" /><p>test test test test test test test test test test test test</p>
+    </div>
+    <div class="image-box">
+        <img src="~/Images/Desert.jpg" /><p>test test test test test test test test test test test test</p>
+    </div>
+    <p>testtest</p>
+</div>
+
+<p>555555555</p>
+
+<div>
+    <a href="" class="button">Save</a>
+    <a href="" class="button">OK</a>
+    <a href="" class="button-special">FILE</a>
+</div>
+
+<div style="clear:both;margin-top:30px;">
+    <a id="test-link" href="">TEST</a>
+</div>
+
+

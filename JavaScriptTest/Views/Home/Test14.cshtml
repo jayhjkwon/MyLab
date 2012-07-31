@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test14</title>
+</head>
+<body>
+    <div>
+        Closure : use case of closure
+        <p>
+            <a href='#' id='size-12'>12</a>
+            <a href='#' id='size-15'>15</a>
+            <a href='#' id='size-20'>20</a>
+        </p>
+    </div>
+
+    <script>
+        function makeSizer(size) {
+            return function () {
+                document.body.style.fontSize = size + 'px';
+            };
+        }
+
+        var size12 = makeSizer(12);
+        var size15 = makeSizer(15);
+        var size20 = makeSizer(20);
+
+        document.getElementById('size-12').onclick = size12;
+        document.getElementById('size-15').onclick = size15;
+        document.getElementById('size-20').onclick = size20;
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿.top {
+    border: solid 1px;
+    background: #5d85a1;
+}
+
+.left_side {
+    border: solid 1px;
+    background: #ff6a00;
+    margin-top:10px;    
+    min-width: 100px;
+    min-height:500px;
+    /*float: left;*/
+}
+
+.content {
+    border: solid 1px;
+    background: #343232;
+    color: #f5ecec;
+    margin-top: 10px;
+    min-width:600px;
+    min-height:500px;
+    /*float: left;*/
+}
+
+.right_side {
+    border: solid 1px;
+    background: #f3b68b;
+    margin-top: 10px;
+    min-width: 100px;
+    min-height:500px;
+    float: right;    
+}
+
+.bottom {
+    border: solid 1px;
+    margin-top: 10px;    
+    min-width:100%;
+    clear:both;
+}
+ 
+.left_side, .content, .right_side {
+    display: inline-block;
+}

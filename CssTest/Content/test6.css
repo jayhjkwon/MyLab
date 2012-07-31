@@ -1,0 +1,10 @@
+﻿.container {
+    border: solid 1px;
+    width: 500px;
+}
+
+p {
+    border: dotted 1px;
+    width:50%;
+    margin:10px auto;
+}

@@ -1,0 +1,14 @@
+﻿#container {
+    border: solid 1px;
+    padding:5px;
+    overflow:auto;
+}
+
+p {
+    border: solid 1px;
+    width:300px;
+    margin:5px;
+    float:left;
+    
+    /*display:inline-block;*/
+}

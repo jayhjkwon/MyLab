@@ -1,0 +1,158 @@
+﻿.test-block {
+    width: 300px;
+    height:100px;
+    border:solid 1px;
+    background:#0094ff;
+}
+
+.image-box {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    width: 220px;
+    box-shadow: 1px 1px 3px 3px #d7d3d3;
+}
+
+    .image-box img {
+        width: 200px;
+        height: 200px;
+        margin: 10px 0 0 0;
+        border-radius: 5px;
+    }
+
+    .image-box p {
+        height: 5em;
+        overflow: hidden;
+    }
+
+div.image-box > p {
+    border: solid 10px;
+}
+
+a.button {
+    text-decoration: none;
+    padding: 5px 20px 5px 20px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #0094ff;
+    margin: 3px;
+}
+
+    a.button:hover {
+        -moz-box-shadow: 0 0 2px 2px #0094ff;
+        -webkit-box-shadow: 0 0 2px 2px #0094ff;
+        box-shadow: 0 0 2px 2px #0094ff;
+    }
+
+    a.button:active {
+        font-weight: bold;
+    }
+
+a.button-special {
+    text-decoration: none;
+    border: solid 1px;
+    border-left: solid 10px #808080;
+    padding: 5px 20px 5px 20px;
+    font-size: 15px;
+}
+
+.menu {
+    padding: 0;
+    border: dotted 1px;
+}
+
+    .menu li {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: inline-block;
+        width: 100px;
+    }
+
+    .menu a:link {
+        display:block;
+        text-decoration: none;
+        width:100%;
+        height:26px;
+        border-right: dotted 1px;
+        text-align:center;
+        padding-top:5px;
+    }
+
+        .menu a:hover {
+            font-weight: bold;
+            background-color:#000;
+            color:#fff;
+        }
+
+    .menu .menu-home {
+        background: url(../Images/bullet_home.png) no-repeat ;
+        background-position:10px 8px;
+    }
+
+    .menu .menu-file {
+        background: url(../Images/text_list_bullets.png) no-repeat ;
+        background-position:10px 8px;
+    }
+
+    .menu .menu-edit {
+        background: url(../Images/bullet_edit.png) no-repeat;
+        background-position:10px 6px;
+    }
+
+    .menu .menu-help {
+        background: url(../Images/system_help.png) no-repeat;
+        background-position:10px 8px;
+    }
+
+.new-menu {
+    margin: 0;
+    padding: 0;
+}
+
+    .new-menu li {
+        list-style-type: none;
+        float:left;
+    }
+
+        .new-menu li a {
+            display:block;
+            text-decoration: none;
+            background:#d7d3d3;
+            border-right:2px solid #fff;
+            width:100px;
+            padding:5px;
+            white-space:nowrap;
+        }
+
+            .new-menu li a:hover {
+                background: #808080;
+                font-weight:bold;
+            }
+
+        .new-menu li ul {
+            margin: 0;
+            padding: 0;
+            position:absolute;
+        }
+        
+        .new-menu li ul li {
+            clear:both;
+            display:block;
+            background:rgba(186, 179, 179, 0.85);
+            color:#fff;            
+            width:109px;
+            height:30px;
+            margin:1px;
+        }
+
+            .new-menu li ul li a {
+                text-align:center;
+            }
+
+#test-link {
+    border:solid 100px;
+    margin:50px;
+    padding:20px;
+}            

@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test15</title>
+</head>
+<body>
+    <div>
+        Module Pattern 
+        <p>
+            - self execution will create one instance while normal anonymous function does not
+        </p>
+        <p>
+            - self execution function is useful for ViewModel in KnockoutJS or View in BackboneJS, because they need to keep only one instance
+        </p>
+    </div>
+
+    <script>
+        // self execution
+        var a = function () {
+            var i = 0;
+            return {
+                increase: function () { i++; console.log(i); }
+            }
+        } ();
+
+        a.increase();
+        a.increase();
+        a.increase();
+
+
+        // normal anonymous function
+        var b = function () {
+            var i = 0;
+            return {
+                increase: function () { i++; console.log(i); }
+            }
+        };
+
+        var b1 = b();
+        b1.increase();
+        b1.increase();
+
+        var b2 = b();
+        b2.increase();
+        b2.increase();
+    </script>
+</body>
+</html>

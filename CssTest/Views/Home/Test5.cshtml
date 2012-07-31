@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Test5";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+    @Styles.Render("~/Content/test5")
+}
+
+<h2>This page shows that what is the difference among 'float:left', 'display:inline', 'display:block' and 'display:inline-block'</h2>
+
+<h3>refer : http://designshack.net/articles/css/whats-the-deal-with-display-inline-block/</h3>
+
+<ul>
+    <li>float:left => cannot set width</li>
+    <li>display:inline => when paragraphs is put inside of another block element, it is just like float:left</li>
+    <li>display:block => when paragraphs is put inside of another block element, it is just block element, it cannot make a float:left like effects</li>
+    <li>display:inline-block => when paragraphs is put inside of another block element, it has both effect of inline and block</li>
+</ul>
+
+<div id="container">
+
+    <p>Floats come with some interesting behavior. For instance, floated items tend to collapse their parent container, leading to all kinds of messy issues if you’re applying background colors or borders. To get around this, we have a few tricks. We can either clear the floats on a new element (these days it’s often a pseudo-element) at the end of the container or use overflow:auto on the parent. Both fixes have their caveats, but if you know how to leverage each properly you can typically pull off any layout feat without too much trouble.</p>
+
+    <p>Floats come with some interesting behavior. For instance, floated items tend to collapse their parent container, leading to all kinds of messy issues if you’re applying background colors or borders. To get around this, we have a few tricks. We can either clear the floats on a new element (these days it’s often a pseudo-element) at the end of the container or use overflow:auto on the parent. Both fixes have their caveats, but if you know how to leverage each properly you can typically pull off any layout feat without too much trouble.</p>
+    <p>Floats come with some interesting behavior. For instance, floated items tend to collapse their parent container, leading to all kinds of messy issues if you’re applying background colors or borders. To get around this, we have a few tricks. We can either clear the floats on a new element (these days it’s often a pseudo-element) at the end of the container or use overflow:auto on the parent. Both fixes have their caveats, but if you know how to leverage each properly you can typically pull off any layout feat without too much trouble.</p>
+    <p>Floats come with some interesting behavior. For instance, floated items tend to collapse their parent container, leading to all kinds of messy issues if you’re applying background colors or borders. To get around this, we have a few tricks. We can either clear the floats on a new element (these days it’s often a pseudo-element) at the end of the container or use overflow:auto on the parent. Both fixes have their caveats, but if you know how to leverage each properly you can typically pull off any layout feat without too much trouble.</p>
+</div>

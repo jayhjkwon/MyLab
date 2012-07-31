@@ -1,0 +1,36 @@
+﻿body {
+}
+    
+#top {
+    border: solid 1px;
+    height:50px;
+    text-align:center;
+    margin-bottom:10px;
+}
+
+#left {
+    border: dotted 1px;
+    float:left;
+    margin:0;
+    width:100px;  
+}
+
+#content {
+    border: dotted 1px;
+    margin-left:110px;
+    margin-right:110px
+}
+
+#right {
+    border: dotted 1px;
+    float:right;
+    margin:0;
+    width:100px;
+}
+
+#footer {
+    border: solid 1px;
+    clear:both;
+    height:50px;
+    text-align:center;
+}

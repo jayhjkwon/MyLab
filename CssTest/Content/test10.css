@@ -1,0 +1,134 @@
+﻿
+div {
+    border: solid 0px #000;
+}
+
+#top {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: #808080;
+}
+
+#main {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 100%;
+    background: #ffd800;
+}
+
+#doc-detail-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: #b6ff00;
+}
+
+#patient-banner {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 50px;
+    background: #ff6a00;
+    border: solid 0px;
+}
+
+#doc-list-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    width: 150px;
+    background: #0094ff;
+    overflow: auto;
+}
+
+#thumbnail-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    width: 120px;
+    background: #b200ff;
+    overflow: auto;
+}
+
+#doc-viewer-wrapper {
+    position: absolute;
+    top: 50px;
+    left: 270px;
+    background: #4b4b4b;
+    overflow: auto;
+    border: dotted 0px;
+}
+
+
+
+/* ===============================================================
+   document viewer  
+   =============================================================== */
+
+@toolbarwidth:40px;
+
+#doc-toolbar-div {
+    border: dotted 0px;
+    position: absolute;
+    top: 10px;
+    left: 50%; /* 'left:50%' and 'margin-left:140' are for horizontally center location*/
+    margin-left: -140px; /*-@toolbarwidth * 7 / 2;*/  /*140px is sum of 'ul.doc-toolbar li's width'*/
+    z-index:5;
+}
+
+ul.doc-toolbar {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: block;
+}
+
+
+    ul.doc-toolbar li {
+        background: #4b4b4b;
+        margin: 0;
+        padding: 0;
+        float: left;
+        width: 40px;
+        /*width: @toolbarwidth;*/
+        height: 35px;
+        border: solid 1px #413e3e;
+        text-align: center;
+    }
+
+        ul.doc-toolbar li button {
+            width: 100%;
+            height: 100%;
+            border-color: transparent;
+            outline: none;
+            cursor: pointer;
+        }
+        ul.doc-toolbar li button#btn-zoomout {
+            background: url(../Images/icn_zoomout.png) no-repeat center center;            
+        }
+        
+        ul.doc-toolbar li button#btn-zoomin {
+            background: url(../Images/icn_zoomin.png) no-repeat center center;            
+        }
+        
+        ul.doc-toolbar li button#btn-mag {
+            background: url(../Images/icn_mag.png) no-repeat center center;            
+        }
+        ul.doc-toolbar li button#btn-hand {
+            background: url(../Images/icn_hand.png) no-repeat center center;            
+        }
+        ul.doc-toolbar li button#btn-contra {
+            background: url(../Images/icn_contra.png) no-repeat center center;            
+        }
+        ul.doc-toolbar li button#btn-invert {
+            background: url(../Images/icn_invert.png) no-repeat center center;            
+        }
+        ul.doc-toolbar li button#btn-compare {
+            background: url(../Images/icn_compare.png) no-repeat center center;            
+        }

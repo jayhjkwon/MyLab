@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Test7";
+    Layout = "~/Views/Shared/_Parent.cshtml";
+}
+@section Styles{
+    @Styles.Render("~/Content/test7")
+}
+
+<div id="top"><span>top</span></div>
+
+<div id="left">
+    <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>account</li>
+    </ul>
+</div>
+
+<div id="right">
+    <p>Floats come with some interesting behavior. For instance, floated items tend to collapse their parent container</p>
+</div>
+
+<div id="content">
+    <p>Floats come with some interesting behavior. For instance, floated items tend to collapse their parent container, leading to all kinds of messy issues if you’re applying background colors or borders. To get around this, we have a few tricks. We can either clear the floats on a new element (these days it’s often a pseudo-element) at the end of the container or use overflow:auto on the parent. Both fixes have their caveats, but if you know how to leverage each properly you can typically pull off any layout feat without too much trouble.</p>
+</div>
+
+<div id="footer">copyright 2012, GE Healthcare KTC</div>
+

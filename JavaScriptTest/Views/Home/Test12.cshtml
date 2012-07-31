@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test12</title>
+</head>
+<body>
+    <div>
+        Function Hoisting 
+        <p>- function statement is hoisted up both declaration and assignment while function expression is hoisted up only declaration</p>
+    </div>
+
+    <script>
+        hello();
+
+        function hello() {
+            console.log('hello');
+        }
+
+        try {
+            bye();
+        } catch (e) {
+            console.log(e.message);
+        }
+
+        var bye = function () {
+            console.log('bye');
+        };
+
+        bye();
+    </script>
+</body>
+</html>

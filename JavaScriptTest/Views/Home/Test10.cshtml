@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test10</title>
+</head>
+<body>
+    <div>
+        Private - compare two samples         
+    </div>
+
+    <script>
+
+    
+
+        var counter = function () {
+            var a, f;
+
+            a = 0;
+            f = function (i) {
+                a = a + i;
+                return a;
+            };
+
+            return f;
+
+        };
+
+        var c = counter();
+        alert(c(1));
+        alert(c(1));
+        alert(c(1));
+
+
+
+
+//        var counter = (function () {
+//            var a, f;
+
+//            a = 0;
+//            f = function (i) {
+//                a = a + i;
+//                return a;
+//            };
+
+//            return f;
+
+//        })();
+
+//        alert(counter(1));
+//        alert(counter(1));
+//        alert(counter(1));
+    </script>
+</body>
+</html>

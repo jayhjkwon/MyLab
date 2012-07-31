@@ -1,0 +1,44 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test13</title>
+</head>
+<body>
+    <div>
+        Closure        
+    </div>
+
+    <ul>
+    </ul>
+    <script src="../../Scripts/json2.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.2.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            var list = $('ul');
+            var i = 0;
+            for (var i = 0; i < 5; i++) {
+                $('<li />', {
+                    id: i,
+                    text: 'link ' + i,
+                    style: 'cursor:pointer',
+//                    click: function (index) {
+//                        return function () {
+//                            console.log(index);
+//                        }
+//                    } (i)
+                    click:  function () {
+                            console.log(i);
+                        }
+                }).appendTo(list);
+            }
+            });
+
+            
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿function Get() {
+    
+    if (value) {
+
+
+    }
+
+
+
+}

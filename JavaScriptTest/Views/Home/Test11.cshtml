@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Test11</title>
+</head>
+<body>
+    <div>
+        Global variables
+    </div>
+
+    <script>
+        // if you use variable without declaration (e.g. var result) variable will is global variable after function is calling
+        function test() {
+            result = 3;
+            return result;
+        };
+        test();
+        alert(window.result);   // --> 3
+
+
+        function test1() {
+            var num = 3;
+            return num;
+        };
+
+        test1();
+
+        alert(window.num);   // --> undefined
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿body {
+    background-image: url(../Images/bg_main.jpg);
+    background-repeat: no-repeat;
+    /*width:960px;*/
+    background-position: center top;
+    /*background-position: 10px 10px;*/
+    /*background-position: 10% 10%;
+    background-attachment:fixed;*/
+}
+
+footer {
+    background: #fff;
+}
+
+.announcement {
+    margin-top:100px;
+    background: url(../Images/scroll_middle.jpg) repeat-y;
+}
+
+    .announcement h2 {
+        background: url('../Images/scroll_top.jpg') no-repeat;
+        padding-left: 80px;
+        padding-top: 60px;
+        font-size:20px;
+    }
+
+    .announcement ul {
+        background: url(../Images/scroll_bottom.jpg) no-repeat left bottom;
+        padding-left:60px;
+        padding-bottom:69px;
+    }
+    
+    .announcement li {
+        list-style: none;
+        background: url(../Images/bullet.png) no-repeat;
+        background-position-y:5px;
+        padding-left:30px;
+        margin-bottom:5px;
+        font-size:15px;
+    } 
+    
+    
