@@ -152,6 +152,7 @@
     <Content Include="Content\test7.css" />
     <Content Include="Content\test8.css" />
     <None Include="Content\test9.less" />
+    <Content Include="Content\website.css" />
     <Content Include="Images\1.gif" />
     <Content Include="Images\3.gif" />
     <Content Include="Images\arrow_black.png" />
@@ -159,6 +160,9 @@
     <Content Include="Images\arrow_white.png" />
     <Content Include="Images\arrow_white_open.png" />
     <Content Include="Images\bal_new.png" />
+    <Content Include="Images\bg-scrollbar-thumb-y.png" />
+    <Content Include="Images\bg-scrollbar-track-y.png" />
+    <Content Include="Images\bg-scrollbar-trackend-y.png" />
     <Content Include="Images\bg_main.jpg" />
     <Content Include="Images\btn_close.png" />
     <Content Include="Images\bullet_edit.png" />
@@ -236,6 +240,8 @@
     <Content Include="Images\list_thumb_bg.png" />
     <Content Include="Images\list_thumb_bg_close.png" />
     <Content Include="Images\Penguins.jpg" />
+    <Content Include="Images\popup_arrow.png" />
+    <Content Include="Images\sample_doc_1.jpg" />
     <Content Include="Images\scroll_bottom.jpg" />
     <Content Include="Images\scroll_middle.jpg" />
     <Content Include="Images\scroll_top.jpg" />
@@ -247,6 +253,7 @@
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
     </None>
     <Content Include="Images\Tulips.jpg" />
+    <Content Include="popup_arrow.png" />
     <Content Include="Scripts\JavaScript1.js" />
     <Content Include="Scripts\jquery-1.7.2.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js">
@@ -256,7 +263,13 @@
     <Content Include="Scripts\jquery-ui-1.8.11.min.js">
       <DependentUpon>jquery-ui-1.8.11.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery.ereferral.makeLeftPaneExpandable.js" />
+    <Content Include="Scripts\jquery.ereferral.expander.js" />
+    <Content Include="Scripts\jquery.event.drag.js" />
+    <Content Include="Scripts\jquery.event.drag.min.js">
+      <DependentUpon>jquery.event.drag.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\jquery.tinyscrollbar.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js">
       <DependentUpon>jquery.unobtrusive-ajax.js</DependentUpon>
@@ -272,7 +285,11 @@
     <Content Include="Scripts\knockout-2.0.0.debug.js" />
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
+    <Content Include="Scripts\plugin.scrollbar-min.js" />
+    <Content Include="Scripts\plugin.scrollbar.js" />
     <Content Include="Scripts\test.js" />
+    <Content Include="Scripts\ui.core-1.7.2.js" />
+    <Content Include="Scripts\ui.draggable-1.7.2.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -326,6 +343,7 @@
     <Content Include="Views\Home\Slider.cshtml" />
     <Content Include="Views\Home\Slider1.cshtml" />
     <Content Include="Views\Home\Test10.cshtml" />
+    <Content Include="Views\Home\Test11.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

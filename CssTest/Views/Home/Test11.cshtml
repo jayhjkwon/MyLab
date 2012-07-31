@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test11</title>
+    <style>
+        body {
+            background:#ff6a00;
+        }
+        .box {
+            position:absolute;
+            left:100px;
+            top:100px;
+            background:#fff;
+            /*background-image:url(../Images/popup_arrow.png);
+            background-repeat:no-repeat;
+            background-position-x:-10px;
+            background-position-y:0px;*/
+            margin:0px;
+            padding:0px;
+            width:150px;
+            /*height:150px;*/
+            z-index:1000;
+            border:solid 0px;
+        }
+
+            .box img {
+                position:absolute;
+                top:10px;
+                left:-8px;
+                margin:0;
+                padding:0;
+            }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../../Images/popup_arrow.png" />
+        <p style="margin:8px;">I got this weird litle situation that I had to use a negative background-position value to a background-image witin a layer.</p>
+    </div>
+
+    
+</body>
+</html>

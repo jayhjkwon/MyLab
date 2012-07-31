@@ -9,61 +9,90 @@
     <meta name="viewport" content="width=device-width" />
     <title>Test10</title>
     <link rel="stylesheet" type="text/css" href="../../Content/test10.css" />
+    <script type="text/javascript" src="../../Scripts/modernizr-2.0.6-development-only.js"></script>
     <script type="text/javascript" src="../../Scripts/jquery-1.7.2.js"></script>
-    <script type="text/javascript" src="../../Scripts/jquery.validate.js"></script>
-    <script type="text/javascript" src="~/Scripts/jquery.ereferral.makeLeftPaneExpandable.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.11.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.ereferral.expander.js"></script>
     <script>
+        $(window).load(function () {
+            $(function () {
 
-        $(function () {
-            var leftExpanded = true
-                , thumbExpanded = true;
-
-            // set size of panes
-            setSize();
-            $(window).resize(function () {
+                // set size of panes
                 setSize();
+                $(window).resize(function () {
+                    setSize();
+                });
+
+                function setSize() {
+                    var windowHeight
+                        , topHeight
+                        , bannerHeight
+                        , newHeight
+                        , windowWidth
+                        , docListWrapperWidth
+                        , thumbnailWrapperWidth
+                        , docViewerWrapperWidth;
+
+                    windowHeight = $(window).height();
+                    topHeight = $('#top').height();
+                    bannerHeight = $('#patient-banner').height();
+                    newHeight = windowHeight - topHeight - bannerHeight;
+                    $('#doc-list-wrapper').height(newHeight);
+                    $('#thumbnail-wrapper').height(newHeight);
+                    $('#doc-viewer-wrapper').height(newHeight);
+
+                    windowWidth = $(window).width();
+                    docListWrapperWidth = $('#doc-list-wrapper').width();
+                    thumbnailWrapperWidth = $('#thumbnail-wrapper').width();
+                    docViewerWrapperWidth = $('#doc-viewer-wrapper').width();
+
+                    $('#doc-viewer-wrapper').width(windowWidth - docListWrapperWidth - thumbnailWrapperWidth);
+                }
+
+                // make left two panes expandable
+                $.makeLeftPaneExpandable({
+                    animationSpeed: 300
+                    , docListWrapperExpandWidth: 150
+                    , docListWrapperCollapseWidth: 30
+                    , thumbnailWrapperExpandWidth: 120
+                    , thumbnailWrapperCollapseWidth: 30
+                    , $docListWrapper: $('#doc-list-wrapper')
+                    , $thumbnailWrapper: $('#thumbnail-wrapper')
+                    , $docViewerWrapper: $('#doc-viewer-wrapper')
+                    , $btnDocListExpander: $('#btnDocListExpander')
+                    , $btnThumbnailExpander: $('#btnThumbnailExpander')
+                });
+
+                var widthSelectedImg = $('#selected-img').width();
+                var heightSelectedImg = $('#selected-img').height();
+
+                // locate image div center horizontally and vertically
+                setLocationCenter();
+
+                // make img draggable
+                $('#doc-wrapper').draggable();
+
+                // zoomin/zoomout
+                $('#btn-zoomin').click(function () {
+                    $('#selected-img').effect('scale', { percent: 110 });
+                });
+
+                $('#btn-zoomout').click(function () {
+                    $('#selected-img').effect('scale', { percent: 90 });
+                });
+
+                function setLocationCenter(callback) {
+                    $('#doc-wrapper').css({
+                        'margin-top': '-' + $('#selected-img').height() / 2 + 'px'
+                      , 'margin-left': '-' + $('#selected-img').width() / 2 + 'px'
+                    });
+
+                    if (callback) {
+                        callback();
+                    }
+                }
+
             });
-
-            function setSize() {
-                var windowHeight
-                    , topHeight
-                    , bannerHeight
-                    , newHeight
-                    , windowWidth
-                    , docListWrapperWidth
-                    , thumbnailWrapperWidth
-                    , docViewerWrapperWidth;
-
-                windowHeight = $(window).height();
-                topHeight = $('#top').height();
-                bannerHeight = $('#patient-banner').height();
-                newHeight = windowHeight - topHeight - bannerHeight;
-                $('#doc-list-wrapper').height(newHeight);
-                $('#thumbnail-wrapper').height(newHeight);
-                $('#doc-viewer-wrapper').height(newHeight);
-
-                windowWidth = $(window).width();
-                docListWrapperWidth = $('#doc-list-wrapper').width();
-                thumbnailWrapperWidth = $('#thumbnail-wrapper').width();
-                docViewerWrapperWidth = $('#doc-viewer-wrapper').width();
-
-                $('#doc-viewer-wrapper').width(windowWidth - docListWrapperWidth - thumbnailWrapperWidth);
-            }
-
-            // make left two panes expandable
-            $.makeLeftPaneExpandable({
-                animationSpeed: 300
-                , docListWrapperExpandWidth: 150
-                , docListWrapperCollapseWidth: 30
-                , thumbnailWrapperExpandWidth: 120
-                , thumbnailWrapperCollapseWidth: 30
-                , $docListWrapper: $('#doc-list-wrapper')
-                , $thumbnailWrapper: $('#thumbnail-wrapper')
-                , $docViewerWrapper: $('#doc-viewer-wrapper')
-                , $btnDocListExpander: $('#btnDocListExpander')
-                , $btnThumbnailExpander: $('#btnThumbnailExpander')
-            });
-
         });
     </script>
 </head>
@@ -73,19 +102,23 @@
     <div id="main">
         <div id="doc-detail-wrapper">
             <div id="patient-banner">patient-banner</div>
-            <div id="doc-list-wrapper" class="test-doc">
+            <div id="doc-list-wrapper">
                 <button id="btnDocListExpander" style="width: 100%; margin: 0; padding: 0;"><</button>
-                <p>I occasionally write about implementing design patterns in JavaScript. They’re an excellent way of building upon proven approaches to solving common development problems, and I think there’s a lot of benefit to using them. But while well-known JavaScript patterns are useful, another side of development could benefit from its own set of design patterns: jQuery plugins. The official jQuery plugin authoring guide offers a great starting point for getting into writing plugins and widgets, but let’s take it further.
+                <p>
+                    I occasionally write about implementing design patterns in JavaScript. They’re an excellent way of building upon proven approaches to solving common development problems, and I think there’s a lot of benefit to using them. But while well-known JavaScript patterns are useful, another side of development could benefit from its own set of design patterns: jQuery plugins. The official jQuery plugin authoring guide offers a great starting point for getting into writing plugins and widgets, but let’s take it further.
 Plugin development has evolved over the past few years. We no longer have just one way to write plugins, but many. In reality, certain patterns might work better for a particular problem or component than others.
 Some developers may wish to use the jQuery UI widget factory; it’s great for complex, flexible UI components. Some may not. Some might like to structure their plugins more like modules (similar to the module pattern) or use a more formal module format such as AMD (asynchronous module definition). Some might want their plugins to harness the power of prototypal inheritance. Some might want to use custom events or pub/sub to communicate from plugins to the rest of their app. And so on.
-I began to think about plugin patterns after noticing a number of efforts to create a one-size-fits-all jQuery plugin boilerplate. While such a boilerplate is a great idea in theory, the reality is that we rarely write plugins in one fixed way, using a single pattern all the time.</p>
+I began to think about plugin patterns after noticing a number of efforts to create a one-size-fits-all jQuery plugin boilerplate. While such a boilerplate is a great idea in theory, the reality is that we rarely write plugins in one fixed way, using a single pattern all the time.
+                </p>
             </div>
             <div id="thumbnail-wrapper">
                 <button id="btnThumbnailExpander" style="width: 100%; margin: 0; padding: 0;"><</button>
-                <p>I occasionally write about implementing design patterns in JavaScript. They’re an excellent way of building upon proven approaches to solving common development problems, and I think there’s a lot of benefit to using them. But while well-known JavaScript patterns are useful, another side of development could benefit from its own set of design patterns: jQuery plugins. The official jQuery plugin authoring guide offers a great starting point for getting into writing plugins and widgets, but let’s take it further.
+                <p>
+                    I occasionally write about implementing design patterns in JavaScript. They’re an excellent way of building upon proven approaches to solving common development problems, and I think there’s a lot of benefit to using them. But while well-known JavaScript patterns are useful, another side of development could benefit from its own set of design patterns: jQuery plugins. The official jQuery plugin authoring guide offers a great starting point for getting into writing plugins and widgets, but let’s take it further.
 Plugin development has evolved over the past few years. We no longer have just one way to write plugins, but many. In reality, certain patterns might work better for a particular problem or component than others.
 Some developers may wish to use the jQuery UI widget factory; it’s great for complex, flexible UI components. Some may not. Some might like to structure their plugins more like modules (similar to the module pattern) or use a more formal module format such as AMD (asynchronous module definition). Some might want their plugins to harness the power of prototypal inheritance. Some might want to use custom events or pub/sub to communicate from plugins to the rest of their app. And so on.
-I began to think about plugin patterns after noticing a number of efforts to create a one-size-fits-all jQuery plugin boilerplate. While such a boilerplate is a great idea in theory, the reality is that we rarely write plugins in one fixed way, using a single pattern all the time.</p>
+I began to think about plugin patterns after noticing a number of efforts to create a one-size-fits-all jQuery plugin boilerplate. While such a boilerplate is a great idea in theory, the reality is that we rarely write plugins in one fixed way, using a single pattern all the time.
+                </p>
             </div>
             <div id="doc-viewer-wrapper">
                 <div id="doc-toolbar-div">
@@ -112,6 +145,9 @@ I began to think about plugin patterns after noticing a number of efforts to cre
                             <button id="btn-compare"></button>
                         </li>
                     </ul>
+                </div>
+                <div id="doc-wrapper">
+                    <img id="selected-img" src="../../Images/sample_doc_1.jpg" />
                 </div>
             </div>
         </div>

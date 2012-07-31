@@ -44,13 +44,24 @@
                 return;
             }
             
+            // initiate screen, no animation for the first screen
+            var optionForInit = {};            
+            $.extend(optionForInit, defaults);
+            optionForInit.animationSpeed = 0;
+            performAction(true, true, optionForInit);
+            
 
+            // bind click event on expander button 
             defaults.$btnDocListExpander.click(function () {
-                performAction(!isExpandedLeftPane(defaults), isExpandedThumbnailPane(defaults), defaults);
+                performAction(!isExpandedLeftPane(defaults),
+                                isExpandedThumbnailPane(defaults),
+                                defaults);
             });
 
             defaults.$btnThumbnailExpander.click(function () {
-                performAction(isExpandedLeftPane(defaults), !isExpandedThumbnailPane(defaults), defaults);
+                performAction(isExpandedLeftPane(defaults),
+                                !isExpandedThumbnailPane(defaults),
+                                defaults);
             });
 
             return this;
@@ -67,7 +78,10 @@
                 defaults.$btnDocListExpander.text('<');
                 defaults.$btnThumbnailExpander.text('<');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperExpandWidth }, defaults.animationSpeed);
+                defaults.$docListWrapper.animate({
+                    left:0,
+                    width: defaults.docListWrapperExpandWidth
+                }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperExpandWidth,
                     width: defaults.thumbnailWrapperExpandWidth
@@ -83,7 +97,10 @@
                 defaults.$btnDocListExpander.text('<');
                 defaults.$btnThumbnailExpander.text('>');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperExpandWidth }, defaults.animationSpeed);
+                defaults.$docListWrapper.animate({
+                    left:0,
+                    width: defaults.docListWrapperExpandWidth
+                }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperExpandWidth,
                     width: defaults.thumbnailWrapperCollapseWidth
@@ -101,7 +118,10 @@
                 defaults.$btnDocListExpander.text('>');
                 defaults.$btnThumbnailExpander.text('<');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperCollapseWidth }, defaults.animationSpeed);
+                defaults.$docListWrapper.animate({
+                    left:0,
+                    width: defaults.docListWrapperCollapseWidth
+                }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperCollapseWidth,
                     width: defaults.thumbnailWrapperExpandWidth
@@ -117,7 +137,10 @@
                 defaults.$btnDocListExpander.text('>');
                 defaults.$btnThumbnailExpander.text('>');
 
-                defaults.$docListWrapper.animate({ width: defaults.docListWrapperCollapseWidth }, defaults.animationSpeed);
+                defaults.$docListWrapper.animate({
+                    left:0,
+                    width: defaults.docListWrapperCollapseWidth
+                }, defaults.animationSpeed);
                 defaults.$thumbnailWrapper.animate({
                     left: defaults.docListWrapperCollapseWidth,
                     width: defaults.thumbnailWrapperCollapseWidth

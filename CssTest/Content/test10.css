@@ -41,8 +41,8 @@ div {
 #doc-list-wrapper {
     position: absolute;
     top: 50px;
-    left: 0px;
-    width: 150px;
+    /*left: 0px;
+    width: 150px;*/
     background: #0094ff;
     overflow: auto;
 }
@@ -50,8 +50,8 @@ div {
 #thumbnail-wrapper {
     position: absolute;
     top: 50px;
-    left: 150px;
-    width: 120px;
+    /*left: 150px;
+    width: 120px;*/
     background: #b200ff;
     overflow: auto;
 }
@@ -59,9 +59,9 @@ div {
 #doc-viewer-wrapper {
     position: absolute;
     top: 50px;
-    left: 270px;
+    /*left: 270px;*/
     background: #4b4b4b;
-    overflow: auto;
+    overflow: hidden;
     border: dotted 0px;
 }
 
@@ -78,8 +78,8 @@ div {
     position: absolute;
     top: 10px;
     left: 50%; /* 'left:50%' and 'margin-left:140' are for horizontally center location*/
-    margin-left: -140px; /*-@toolbarwidth * 7 / 2;*/  /*140px is sum of 'ul.doc-toolbar li's width'*/
-    z-index:5;
+    margin-left: -140px; /*-@toolbarwidth * 7 / 2;*/ /*140px is sum of 'ul.doc-toolbar li's width'*/
+    z-index: 5;
 }
 
 ul.doc-toolbar {
@@ -109,26 +109,39 @@ ul.doc-toolbar {
             outline: none;
             cursor: pointer;
         }
-        ul.doc-toolbar li button#btn-zoomout {
-            background: url(../Images/icn_zoomout.png) no-repeat center center;            
-        }
-        
-        ul.doc-toolbar li button#btn-zoomin {
-            background: url(../Images/icn_zoomin.png) no-repeat center center;            
-        }
-        
-        ul.doc-toolbar li button#btn-mag {
-            background: url(../Images/icn_mag.png) no-repeat center center;            
-        }
-        ul.doc-toolbar li button#btn-hand {
-            background: url(../Images/icn_hand.png) no-repeat center center;            
-        }
-        ul.doc-toolbar li button#btn-contra {
-            background: url(../Images/icn_contra.png) no-repeat center center;            
-        }
-        ul.doc-toolbar li button#btn-invert {
-            background: url(../Images/icn_invert.png) no-repeat center center;            
-        }
-        ul.doc-toolbar li button#btn-compare {
-            background: url(../Images/icn_compare.png) no-repeat center center;            
-        }
+
+            ul.doc-toolbar li button#btn-zoomout {
+                background: url(../Images/icn_zoomout.png) no-repeat center center;
+            }
+
+            ul.doc-toolbar li button#btn-zoomin {
+                background: url(../Images/icn_zoomin.png) no-repeat center center;
+            }
+
+            ul.doc-toolbar li button#btn-mag {
+                background: url(../Images/icn_mag.png) no-repeat center center;
+            }
+
+            ul.doc-toolbar li button#btn-hand {
+                background: url(../Images/icn_hand.png) no-repeat center center;
+            }
+
+            ul.doc-toolbar li button#btn-contra {
+                background: url(../Images/icn_contra.png) no-repeat center center;
+            }
+
+            ul.doc-toolbar li button#btn-invert {
+                background: url(../Images/icn_invert.png) no-repeat center center;
+            }
+
+            ul.doc-toolbar li button#btn-compare {
+                background: url(../Images/icn_compare.png) no-repeat center center;
+            }
+
+#doc-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: dotted 0px;
+    cursor: move;
+}
