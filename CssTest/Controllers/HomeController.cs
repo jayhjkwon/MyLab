@@ -93,5 +93,14 @@ namespace MvcApplication27.Controllers
         {
             return View();
         }
+
+        public ActionResult AngularJSTest()
+        {
+            return View();
+        }
+        public ActionResult TabTest()
+        {
+            return View();
+        }
     }
 }

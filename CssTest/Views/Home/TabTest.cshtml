@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TabTest</title>
+    <link rel="stylesheet" type="text/css" href="../../Content/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" type="text/css" href="../../Content/tabTest.css" />
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.22.js"></script>
+    <script>
+        $(function () {
+            $('#tabs').tabs();
+        });
+    </script>
+</head>
+<body>
+    <div id="tabs">
+        <ul>
+            <li>
+                <a href="#tabs-1">Tab 1</a>
+            </li>
+            <li>
+                <a href="#tabs-2">Tab 2</a>
+            </li>
+            <li>
+                <a href="#tabs-3">Tab 3</a>
+            </li>
+        </ul>
+
+        <div id="tabs-1" class="my-content">
+            tab 1
+        </div>
+        <div id="tabs-2" class="my-content">
+            tab 2
+        </div>
+        <div id="tabs-3" class="my-content">
+            <h2>tab 3</h2>
+            <div class="mytable">
+                <ul>
+                    <li>first</li>
+                    <li>second</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
