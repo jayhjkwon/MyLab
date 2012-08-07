@@ -23,15 +23,12 @@
                     , indexSelected = $('#tabs ul li.ui-tabs-selected').index();
 
                 $(this).parent().hide('drop', 1000, function () {
-
                     // if animation is used while remove, tab to be selected should be designated manually
                     if (indexTabToClose === indexSelected) {
                         $('#tabs').tabs('select', 0);
                     }
-
                     $('#tabs').tabs("remove", indexTabToClose);
                 });
-
             });
         });
     </script>
