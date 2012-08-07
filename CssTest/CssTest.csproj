@@ -256,6 +256,7 @@
     <Content Include="Images\icn_rul.png" />
     <Content Include="Images\icn_seachbox.jpg" />
     <Content Include="Images\icn_search.png" />
+    <Content Include="Images\icn_sear_ptbanner_close.png" />
     <Content Include="Images\icn_txt.png" />
     <Content Include="Images\icn_ungroup.png" />
     <Content Include="Images\icn_zoomin.png" />

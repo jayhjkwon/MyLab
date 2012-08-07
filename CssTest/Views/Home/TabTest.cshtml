@@ -14,7 +14,25 @@
     <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.22.js"></script>
     <script>
         $(function () {
+            // initiate tabs
             $('#tabs').tabs();
+
+            // close tab
+            $(".close-tab").live("click", function () {
+                var indexTabToClose = $(this).parent().index()
+                    , indexSelected = $('#tabs ul li.ui-tabs-selected').index();
+
+                $(this).parent().hide('drop', 1000, function () {
+
+                    // if animation is used while remove, tab to be selected should be designated manually
+                    if (indexTabToClose === indexSelected) {
+                        $('#tabs').tabs('select', 0);
+                    }
+
+                    $('#tabs').tabs("remove", indexTabToClose);
+                });
+
+            });
         });
     </script>
 </head>
@@ -22,13 +40,24 @@
     <div id="tabs">
         <ul>
             <li>
-                <a href="#tabs-1">Tab 1</a>
+                <a href="#tabs-1">Brams Hans</a>
+                <img class="close-tab" src="~/Images/icn_sear_ptbanner_close.png" />
             </li>
             <li>
-                <a href="#tabs-2">Tab 2</a>
+                <a href="#tabs-2">Kwon Hyojung</a>
+                <img class="close-tab" src="~/Images/icn_sear_ptbanner_close.png" />
             </li>
             <li>
-                <a href="#tabs-3">Tab 3</a>
+                <a href="#tabs-3">Park Jisung</a>
+                <img class="close-tab" src="~/Images/icn_sear_ptbanner_close.png" />
+            </li>
+            <li>
+                <a href="#tabs-4">Ki Sungyoung</a>
+                <img class="close-tab" src="~/Images/icn_sear_ptbanner_close.png" />
+            </li>
+            <li>
+                <a href="#tabs-5">Koo Jachul</a>
+                <img class="close-tab" src="~/Images/icn_sear_ptbanner_close.png" />
             </li>
         </ul>
 
@@ -46,6 +75,12 @@
                     <li>second</li>
                 </ul>
             </div>
+        </div>
+        <div id="tabs-4" class="my-content">
+            tab 4
+        </div>
+        <div id="tabs-5" class="my-content">
+            tab 5
         </div>
     </div>
 

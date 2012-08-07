@@ -1,58 +1,60 @@
-﻿
+﻿#tabs {
+    position: absolute;
+    top: 50px;
+    left: 70px;
+    right: 70px;
+}
+
 .ui-tabs {
-    padding:0px;
-    border:solid 1px #5fa8b8;
-    border-top:0;
-    border-left:0;
-    border-right:0;
-    
+    padding: 0px;
+    border: solid 1px #5fa8b8;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
 }
 
 .ui-tabs-nav {
     background: white;
-    border:solid 0px !important;
-    padding-left:0px !important;
-    
+    border: solid 0px !important;
+    padding-left: 0px !important;
+    /*margin-bottom: 0px !important;*/
 }
 
-    .ui-tabs-nav li {
-        background: #96cad5 !important;
-        margin-bottom:1px !important;    
-        width:120px;
-        border-top-right-radius:6px;
-        border-top-left-radius:6px;
-    }
+.ui-tabs .ui-tabs-nav li {
+    width: 180px;
+    color: #175866 !important;
+    font-size: 15px !important;
+    font-weight: bold !important;
+    background: #96cad5 !important;
+    margin-bottom: 1px !important;
+    margin-right: 5px !important;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    border-left: solid 1px #5fa8b8 !important;
+    border-right: solid 1px #5fa8b8 !important;
+    border-top: solid 1px #5fa8b8 !important;
+    border-bottom: solid 0px #5fa8b8 !important;
+}
 
-        .ui-tabs-nav li a {
-        }
+.ui-tabs-nav li img.close-tab {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
 
-.ui-tabs-selected {
-    margin-bottom:-10px !important;    
+.ui-tabs-nav li a {
+    margin-left: -5px !important;
+}
+
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+    border-bottom: solid 0px !important;
 }
 
 .ui-tabs-panel {
     background: #96cad5 !important;
-    border-left:solid 1px #5fa8b8 !important;
-    border-right:solid 1px #5fa8b8 !important;
-    border-top:solid 1px #96cad5 !important;
-    border-top-right-radius:6px;
+    border-left: solid 1px #5fa8b8 !important;
+    border-right: solid 1px #5fa8b8 !important;
+    border-top: solid 1px #96cad5 !important;
+    border-top-right-radius: 6px;
 }
-
-/*.my-content {
-    margin:0;
-    padding:0;
-}
-
-.mytable {
-    font-size: 10px;
-    color: white;
-}
-
-    .mytable ul {
-        list-style: none;
-    }
-
-        .mytable ul li {
-            float: left;
-            width:100px;
-        }*/
