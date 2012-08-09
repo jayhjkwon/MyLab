@@ -568,6 +568,7 @@
     <Content Include="Views\Home\AngularJSTest.cshtml" />
     <Content Include="Views\Home\TabTest.cshtml" />
     <Content Include="Views\Home\ScrollToTest.cshtml" />
+    <Content Include="Views\Home\Test12.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
