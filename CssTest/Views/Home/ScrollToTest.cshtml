@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ScrollToTest</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        ol {
+            width:3000px;
+            /*list-style: none;*/
+        }
+
+        li {
+            float: left;
+        }
+
+        .screen {
+            height: 150px;
+            width:500px;
+            overflow: auto;
+        }
+        
+    </style>
+    <script type="text/javascript" src="../../Scripts/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.scrollTo-1.4.2.js"></script>
+    <script>
+        $(function () {
+            $('#scroll').click(function () {
+                $('.screen').scrollTo('#1', 1000, { 'easing': 'linear' });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <button id="scroll">scroll</button>
+    </div>
+    <div class="screen">
+        <ol class="images">
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li id="1"><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+            <li><img src="~/Images/Desert.jpg" /></li>
+        </ol>
+    </div>
+</body>
+</html>

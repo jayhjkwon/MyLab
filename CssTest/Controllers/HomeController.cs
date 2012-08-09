@@ -102,5 +102,10 @@ namespace MvcApplication27.Controllers
         {
             return View();
         }
+
+        public ActionResult ScrollToTest()
+        {
+            return View();
+        }
     }
 }

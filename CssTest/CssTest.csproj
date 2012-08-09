@@ -490,6 +490,7 @@
     <Content Include="Scripts\jquery.mousewheel.min.js">
       <DependentUpon>jquery.mousewheel.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery.scrollTo-1.4.2.js" />
     <Content Include="Scripts\jquery.tinyscrollbar.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js">
@@ -509,6 +510,7 @@
     <Content Include="Scripts\knockout-2.0.0.js" />
     <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Scripts\test.js" />
+    <Content Include="Templates\TabContent.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -565,6 +567,7 @@
     <Content Include="Views\Home\Test11.cshtml" />
     <Content Include="Views\Home\AngularJSTest.cshtml" />
     <Content Include="Views\Home\TabTest.cshtml" />
+    <Content Include="Views\Home\ScrollToTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

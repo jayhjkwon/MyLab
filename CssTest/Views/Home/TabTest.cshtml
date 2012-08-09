@@ -30,6 +30,11 @@
                     $('#tabs').tabs("remove", indexTabToClose);
                 });
             });
+
+            // add tab
+            $('#btn-add').click(function () {
+                $('#tabs').tabs('add', '../../Templates/TabContent.html', 'test');
+            });
         });
     </script>
 </head>
@@ -59,7 +64,11 @@
         </ul>
 
         <div id="tabs-1" class="my-content">
-            tab 1
+            <h2>tab 1</h2>
+            <div>
+                <button id="btn-add">Add Tab</button>
+            </div>
+
         </div>
         <div id="tabs-2" class="my-content">
             tab 2
