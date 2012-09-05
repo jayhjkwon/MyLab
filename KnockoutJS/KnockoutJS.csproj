@@ -23,6 +23,10 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -211,6 +215,7 @@
     <Content Include="Scripts\TrafficCop.js" />
     <Content Include="Scripts\TrafficCop.min.gz.js" />
     <Content Include="Scripts\TrafficCop.min.js" />
+    <Content Include="Views\Home\JqueryUiTabInteg.cshtml" />
     <None Include="Views\Home\person.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

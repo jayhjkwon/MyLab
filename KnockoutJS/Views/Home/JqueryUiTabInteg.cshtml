@@ -1,0 +1,86 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>JqueryUiTabInteg</title>
+</head>
+<body>
+    <div>
+        <button id='add'>add</button>
+
+        @*<div data-bind="template: 'tabsTmpl'" data-my="jquery"></div>
+<script id="tabsTmpl" type="text/html">
+    <div data-bind="jqTabs: { fx: { } }">
+        <ul>
+            {{each tabs}}
+            <li>
+                <a href="#tab-${id}">${id}</a>
+            </li>
+            {{/each}}
+        </ul>
+        {{each tabs}}
+        <div id="tab-${id}" >${id}</div>
+        {{/each}}
+    </div>
+</script>*@
+
+
+
+        <div data-my="native">
+            <div data-bind="jqTabs: {}, if: tabs().length > -1">
+                <ul>
+                    <li>
+                        <a href="#tab-0">0</a>
+                    </li>
+                    <!-- ko foreach: tabs -->
+                    <li>
+                        <a data-bind="attr:{href:'#tab-' + id()}, text:id"></a>
+                    </li>
+                    <!-- /ko -->
+                </ul>
+                <div id="tab-0">0</div>
+                <!-- ko foreach: tabs -->
+                <div data-bind="attr:{id:'tab-'+id()}, text:id"></div>
+                <!-- /ko -->
+            </div>
+        </div>
+
+        <script src="@Url.Content("~/Scripts/jquery-1.7.2.js")" type="text/javascript"></script>
+        <script src="../../Scripts/jquery-ui-1.8.20.js"></script>
+        <script src="@Url.Content("~/Scripts/knockout-2.1.0.debug.js")" type="text/javascript"></script>
+        <script>
+            ko.bindingHandlers.jqTabs = {
+                update: function (element, valueAccessor) {
+                    var options = valueAccessor() || {};
+                    setTimeout(function () {
+                        $(element).tabs('destroy');
+                        $(element).tabs(options);
+                    }, 0);
+                }
+            };
+
+            function TabItem(id) {
+                this.id = ko.observable(id);
+            }
+
+            var viewModel = {
+                //tabs: ko.observableArray([new TabItem(1), new TabItem(2), new TabItem(3)])
+                tabs: ko.observableArray([])
+            };
+
+
+            $(function () {
+                ko.applyBindings(viewModel);
+
+                $('#add').click(function () {
+                    viewModel.tabs.push(new TabItem(viewModel.tabs().length + 1));
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

@@ -91,6 +91,11 @@ namespace KnockoutJS.Controllers
         {
             return View();
         }
+
+        public ActionResult JqueryUiTabInteg()
+        {
+            return View();
+        }
         
         public JsonResult GetPeopleViaAjax()
         {
