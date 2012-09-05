@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<button id="btnSend">send</button>
+
+<ul id="messagePanel">
+
+</ul>
+
+@section scripts{
+    <script src="~/Scripts/jquery.signalR-0.5.3.js"></script>
+    <script type="text/javascript" src="/signalr/hubs"></script>
+    <script>
+        $(function () {
+            var hub = $.connection.helloHub,
+                $messagePanel = $('#messagePanel');
+
+            hub.doStuffClient = function (msg) {
+                $messagePanel.append('<li>' + msg + '</li>');
+            };
+
+            hub.getPersonClient = function (person) {
+                $messagePanel.append('<li>' + person.Id +', ' + person.Name + '</li>');
+            }
+
+            $.connection.hub.start().done(function () {
+
+                $('#btnSend').click(function () {
+                    //var value = hub.doStuffServer('khj').done(function(value){
+                    //    console.log('val=' + value);
+                    //    //$messagePanel.append('<li>' + value + '</li>');
+                    //    hub.doStuffClient(value);
+                    //});
+
+                    //hub.doStuffServer('khj');
+
+                    hub.getPersonServer();
+                });
+            });
+        });
+    </script>
+}
