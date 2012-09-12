@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "JqueryUiSlider";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>JqueryUiSlider</h2>
+
+<!-- #1 without Knockout -->
+@*<div id="slider"></div>
+<input type="text" id="val" style="margin-top:100px;" />
+@section Script{
+    <script type="text/javascript">
+        $(function () {
+            $("#slider").slider({
+                slide: function (event, ui) {
+                    $('#val').val(ui.value);
+                }
+            });
+
+            $('#val').keyup(function () {
+                $('#slider').slider({value: $(this).val()});
+            });
+        });
+    </script>
+}*@
+
+
+<!-- #2 with Knockout -->
+@*<div id="slider"></div>
+<input type="text" id="val" style="margin-top:100px;" data-bind="value: sliderValue, valueUpdate: 'afterkeydown'" />
+@section Script{
+    <script type="text/javascript">
+        var ViewModel = function () {
+            var self = this;
+
+            self.sliderValue = ko.observable(1);
+            self.sliderValue.subscribe(function (newValue) {
+                $('#slider').slider({value: newValue});
+            });
+        };
+
+        $(function () {
+            var vm = new ViewModel();
+            ko.applyBindings(vm);
+
+            $("#slider").slider({
+                slide: function (event, ui) {
+                    vm.sliderValue(ui.value);
+                }
+            });
+        });
+    </script>
+}*@
+
+
+<!-- #3 with Knockout Custom Binding -->
+<div id="slider" data-bind="sliderBinding: sliderValue, step: 10"></div>
+<input type="text" id="val" style="margin-top:100px;" data-bind="value: sliderValue, valueUpdate: 'afterkeydown'" />
+@section Script{
+    <script type="text/javascript">
+        ko.bindingHandlers.sliderBinding = {
+            init: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                $(element).slider({
+                    step: allBindingsAccessor().step || 1,
+                    slide: function (event, ui) {
+                        var value = valueAccessor();
+                        value(ui.value);
+                    }
+                });
+            },
+
+            update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+                var val = ko.utils.unwrapObservable(valueAccessor());
+                $(element).slider({value: val});
+            }
+        }
+
+        var ViewModel = function () {
+            var self = this;
+            self.sliderValue = ko.observable(1);
+        };
+
+        $(function () {
+            var vm = new ViewModel();
+            ko.applyBindings(vm);
+        });
+    </script>
+}

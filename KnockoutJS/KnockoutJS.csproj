@@ -215,7 +215,9 @@
     <Content Include="Scripts\TrafficCop.js" />
     <Content Include="Scripts\TrafficCop.min.gz.js" />
     <Content Include="Scripts\TrafficCop.min.js" />
+    <Content Include="Scripts\_references.js" />
     <Content Include="Views\Home\JqueryUiTabInteg.cshtml" />
+    <Content Include="Views\Home\JqueryUiSlider.cshtml" />
     <None Include="Views\Home\person.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

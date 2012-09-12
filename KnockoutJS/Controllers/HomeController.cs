@@ -102,6 +102,11 @@ namespace KnockoutJS.Controllers
             return Json(_people, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult JqueryUiSlider()
+        {
+            return View();
+        }
+
         [HttpPost]
         public JsonResult Create(List<Person> people)
         {

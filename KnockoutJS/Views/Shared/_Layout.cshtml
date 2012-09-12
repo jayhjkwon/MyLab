@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
-    @*<link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />*@
-    
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="../../Content/themes/base/jquery-ui.css" rel="stylesheet" />
 </head>
 <body>
     <div class="page">
@@ -20,6 +20,7 @@
                     <li>@Html.ActionLink("Fourth", "Fourth", "Home")</li>
                     <li>@Html.ActionLink("Fifth", "Fifth", "Home")</li>
                     <li>@Html.ActionLink("Sixth", "Sixth", "Home")</li>
+                    <li>@Html.ActionLink("JqueryUiSlider", "JqueryUiSlider", "Home")</li>
                     <li>@Html.ActionLink("JqueryUiTabIngeg", "JqueryUiTabIngeg", "Home")</li>
                     <li>@Html.ActionLink("TemplateTest", "TemplateTest", "Home")</li>
                 </ul>
@@ -33,6 +34,7 @@
     </div>
     
     <script src="@Url.Content("~/Scripts/jquery-1.7.2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/knockout-2.1.0.debug.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/sammy/sammy.js")" type="text/javascript"></script>
